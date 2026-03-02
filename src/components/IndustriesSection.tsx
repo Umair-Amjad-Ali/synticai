@@ -211,14 +211,20 @@ export default function IndustriesSection({
                       </span>
                     </div>
 
-                    {/* Description — reveal on hover */}
+                    {/* Description & Read More — reveal on hover */}
                     <div
                       className="overflow-hidden transition-all duration-400"
-                      style={{ maxHeight: isHov ? "80px" : "0px", opacity: isHov ? 1 : 0 }}
+                      style={{ maxHeight: isHov ? "120px" : "0px", opacity: isHov ? 1 : 0 }}
                     >
-                      <p className="text-gray-300 text-[11px] leading-relaxed">
+                      <p className="text-gray-300 text-[11px] leading-relaxed mb-3">
                         {industry.description.slice(0, 100)}…
                       </p>
+                      <a href="#" className="inline-flex items-center gap-1.5 text-cyan-400 text-[11px] font-semibold hover:gap-2 transition-all duration-200">
+                        Read More
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </div>

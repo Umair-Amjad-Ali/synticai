@@ -80,7 +80,7 @@ export default function StatsSection({ title, subtitle, stats }: StatsSectionPro
 
               {/* Number */}
               <div
-                className="text-4xl md:text-5xl font-black leading-none tracking-tight"
+                className="text-2xl md:text-4xl font-black leading-none tracking-tight"
                 style={{
                   background: "linear-gradient(135deg, #0A051E 20%, #1C75BC 100%)",
                   WebkitBackgroundClip: "text",

@@ -3,6 +3,8 @@ import InfoSection from "@/components/InfoSection";
 import ServicesTabs from "@/components/ServicesTabs";
 import StatsSection from "@/components/StatsSection";
 import IndustriesSection from "@/components/IndustriesSection";
+import MethodologySection from "@/components/MethodologySection";
+import ClientSolutionsSection from "@/components/ClientSolutionsSection";
 import { servicesTabs } from "@/data/servicesData";
 import { industriesData } from "@/data/industriesData";
 
@@ -60,6 +62,8 @@ export default function ServicesPage() {
         subtitle="We are committed to innovating across industries with our custom AI solutions, empowering businesses to thrive in the digital era."
         industries={industriesData}
       />
+      <ClientSolutionsSection />
+      <MethodologySection />
     </main>
   );
 }
