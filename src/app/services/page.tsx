@@ -5,6 +5,8 @@ import StatsSection from "@/components/StatsSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import MethodologySection from "@/components/MethodologySection";
 import ClientSolutionsSection from "@/components/ClientSolutionsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FaqSection from "@/components/FaqSection";
 import { servicesTabs } from "@/data/servicesData";
 import { industriesData } from "@/data/industriesData";
 
@@ -64,6 +66,8 @@ export default function ServicesPage() {
       />
       <ClientSolutionsSection />
       <MethodologySection />
+      <TestimonialsSection />
+      <FaqSection />
     </main>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,10 +34,7 @@ export default function RootLayout({
         {/* This "children" is where your specific page content loads */}
         <main>{children}</main>
 
-        {/* Simple Bottom Bar */}
-        <footer className="w-full py-4 border-t border-gray-200 text-center text-sm text-gray-500 bg-white">
-          © 2026 SynticAI. All rights reserved. | Trusted AI Solutions
-        </footer>
+        <Footer />
       </body>
     </html>
   );
