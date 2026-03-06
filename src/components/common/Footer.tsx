@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Linkedin, Instagram, Twitter, Youtube, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
@@ -21,11 +21,11 @@ export default function Footer() {
           <div className="flex flex-col pr-4">
             <Link href="/" className="mb-6 inline-block">
               <Image 
-                src="/assets/synticai-logo.png" 
+                src="/assets/synticai-logo-footer.png" 
                 alt="SynticAI Logo" 
-                width={200} 
+                width={400} 
                 height={50} 
-                className="h-12 w-auto object-contain brightness-0 invert" 
+                className="h-14 w-auto object-contain brightness-0 invert" 
                 priority
               />
             </Link>
@@ -108,12 +108,12 @@ export default function Footer() {
                 <input 
                   type="email" 
                   placeholder="Enter your email" 
-                  className="w-[calc(100%-100px)] bg-transparent border border-white/5 border-r-0 text-white text-[13px] px-4 outline-none placeholder:text-gray-500 rounded-l-md transition-colors"
+                  className="w-[calc(100%-70px)] bg-transparent border border-white/5 border-r-0 text-white text-[13px] px-4 outline-none placeholder:text-gray-500 rounded-l-md transition-colors"
                   required
                 />
                 <button 
                   type="submit" 
-                  className="h-full bg-[#1e81c7] text-white text-[12px] font-bold px-4 tracking-wider hover:bg-[#1C75BC] transition-colors duration-300 w-[100px] shrink-0 min-w-[100px]"
+                  className="h-full bg-[#1e81c7] text-white text-[10px] font-medium px-2 tracking-wider hover:bg-[#1C75BC] transition-colors duration-300 w-[70px] shrink-0 min-w-[70px]"
                 >
                   SUBMIT
                 </button>

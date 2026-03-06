@@ -1,12 +1,12 @@
-import PageHero from "@/components/PageHero";
-import InfoSection from "@/components/InfoSection";
-import ServicesTabs from "@/components/ServicesTabs";
-import StatsSection from "@/components/StatsSection";
-import IndustriesSection from "@/components/IndustriesSection";
-import MethodologySection from "@/components/MethodologySection";
-import ClientSolutionsSection from "@/components/ClientSolutionsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import FaqSection from "@/components/FaqSection";
+import PageHero from "@/components/common/PageHero";
+import InfoSection from "@/components/common/InfoSection";
+import ServicesTabs from "@/components/services/ServicesTabs";
+import StatsSection from "@/components/services/StatsSection";
+import IndustriesSection from "@/components/services/IndustriesSection";
+import MethodologySection from "@/components/services/MethodologySection";
+import ClientSolutionsSection from "@/components/services/ClientSolutionsSection";
+import TestimonialsSection from "@/components/services/TestimonialsSection";
+import FaqSection from "@/components/services/FaqSection";
 import { servicesTabs } from "@/data/servicesData";
 import { industriesData } from "@/data/industriesData";
 

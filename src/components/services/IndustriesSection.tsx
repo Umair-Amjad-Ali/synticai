@@ -137,9 +137,9 @@ export default function IndustriesSection({
               </div>
               {/* Bottom: name + description */}
               <div>
-                <h3 className="text-white font-bold text-xl mb-3">{featured.name}</h3>
-                <p className="text-gray-300 text-[13px] leading-relaxed">{featured.description}</p>
-                <a href="#" className="inline-flex items-center gap-1.5 text-cyan-400 text-[12px] font-semibold mt-4 hover:gap-2.5 transition-all duration-200">
+                <h3 className="text-white font-bold text-xl mb-2">{featured.name}</h3>
+                <p className="text-gray-300 text-[13px] leading-relaxed truncate mb-3">{featured.description}</p>
+                <a href="#" className="inline-flex items-center gap-1.5 text-cyan-400 text-[12px] font-semibold hover:gap-2.5 transition-all duration-200">
                   Read More
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -213,13 +213,13 @@ export default function IndustriesSection({
 
                     {/* Description & Read More — reveal on hover */}
                     <div
-                      className="overflow-hidden transition-all duration-400"
-                      style={{ maxHeight: isHov ? "120px" : "0px", opacity: isHov ? 1 : 0 }}
+                      className="overflow-hidden transition-all duration-400 flex flex-col justify-end"
+                      style={{ maxHeight: isHov ? "80px" : "0px", opacity: isHov ? 1 : 0 }}
                     >
-                      <p className="text-gray-300 text-[11px] leading-relaxed mb-3">
-                        {industry.description.slice(0, 100)}…
+                      <p className="text-gray-300 text-[11px] leading-relaxed mb-2 truncate" title={industry.description}>
+                        {industry.description}
                       </p>
-                      <a href="#" className="inline-flex items-center gap-1.5 text-cyan-400 text-[11px] font-semibold hover:gap-2 transition-all duration-200">
+                      <a href="#" className="inline-flex items-center gap-1.5 text-cyan-400 text-[11px] font-semibold hover:gap-2 transition-all duration-200 mt-auto">
                         Read More
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                           <path d="M5 12h14M12 5l7 7-7 7"/>

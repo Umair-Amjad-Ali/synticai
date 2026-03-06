@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ActionButton from "./ActionButton";
+import ActionButton from "@/components/common/ActionButton";
 import type { ServiceTab } from "@/data/servicesData";
 
 interface ServicesTabsProps {
@@ -21,10 +21,10 @@ export default function ServicesTabs({
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="pt-10 pb-24 bg-white">
+    <section className="pt-8 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
         {/* Section Title */}
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0A051E] mb-12 leading-tight">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0A051E] mb-8 leading-tight">
           <span className="inline-block border-l-4 border-[#1C75BC] pl-4">
             {sectionTitle}
           </span>
@@ -35,7 +35,7 @@ export default function ServicesTabs({
 
           {/* ── LEFT SIDEBAR ─────────────────────────────── */}
           <div
-            className="w-full md:w-[300px] shrink-0 flex flex-col overflow-x-hidden rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none [&::-webkit-scrollbar]:hidden"
+            className="w-full md:w-[260px] shrink-0 flex flex-col overflow-x-hidden rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none [&::-webkit-scrollbar]:hidden"
             style={{
               background: "linear-gradient(170deg, #0C0A27 70%, #0e1a3a 100%)",
               boxShadow: "12px 0 40px rgba(0,0,0,0.5)",
@@ -71,7 +71,7 @@ export default function ServicesTabs({
                     }
                   >
                     <span
-                      className={`flex items-center gap-3 px-6 py-[13px] text-sm ${
+                      className={`flex items-center gap-3 px-5 py-[11px] text-[13.5px] ${
                         isActive
                           ? "text-white font-semibold"
                           : "text-gray-400 hover:text-gray-200"
@@ -125,38 +125,38 @@ export default function ServicesTabs({
                     key={tab.name}
                     animate={{ opacity: isActive ? 1 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="px-10 py-8 md:px-16 md:py-10 flex flex-col"
+                    className="px-6 py-6 md:px-10 md:py-8 flex flex-col"
                     style={{
                       gridArea: "1 / 1",
                       pointerEvents: isActive ? "auto" : "none",
                     }}
                   >
                     {/* Service name chip */}
-                    <span className="inline-block text-[11px] font-semibold tracking-widest text-[#1C75BC] uppercase mb-4">
+                    <span className="inline-block text-[11px] font-semibold tracking-widest text-[#1C75BC] uppercase mb-3">
                       SynticAI Services
                     </span>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0A051E] mb-4 leading-snug">
+                    <h3 className="text-xl md:text-2xl font-bold text-[#0A051E] mb-3 leading-snug">
                       {tab.heading}
                     </h3>
 
-                    <p className="text-gray-500 text-[14.5px] leading-relaxed mb-8 max-w-xl">
+                    <p className="text-gray-500 text-[14px] leading-relaxed mb-5 max-w-xl">
                       {tab.description}
                     </p>
 
                     {tab.benefitsTitle && (
-                      <div className="flex items-center gap-3 mb-5">
+                      <div className="flex items-center gap-3 mb-3">
                         <div className="w-5 h-[2px] bg-[#1C75BC]" />
-                        <h4 className="text-sm font-bold text-[#0A051E] uppercase tracking-widest">
+                        <h4 className="text-[13px] font-bold text-[#0A051E] uppercase tracking-widest">
                           {tab.benefitsTitle}
                         </h4>
                       </div>
                     )}
 
                     {tab.benefits && (
-                      <ul className="space-y-4 mb-10">
+                      <ul className="space-y-3 mb-6">
                         {tab.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-start gap-4">
+                          <li key={i} className="flex items-start gap-3">
                             <span
                               className="shrink-0 mt-[7px] rounded-sm"
                               style={{
@@ -166,7 +166,7 @@ export default function ServicesTabs({
                                 background: "#1C75BC",
                               }}
                             />
-                            <p className="text-[14px] text-gray-600 leading-relaxed">
+                            <p className="text-[13.5px] text-gray-600 leading-relaxed">
                               <span className="font-semibold text-[#0A051E]">
                                 {benefit.title}:
                               </span>{" "}
@@ -178,8 +178,8 @@ export default function ServicesTabs({
                     )}
 
                     {showButton && (
-                      <div className="flex justify-end mt-auto pt-6">
-                        <ActionButton className="rounded-md!">{buttonText}</ActionButton>
+                      <div className="flex justify-end mt-auto pt-4">
+                        <ActionButton className="rounded-md! py-2.5 px-6 text-sm">{buttonText}</ActionButton>
                       </div>
                     )}
                   </motion.div>
