@@ -108,12 +108,12 @@ export default function Footer() {
                 <input 
                   type="email" 
                   placeholder="Enter your email" 
-                  className="w-[calc(100%-70px)] bg-transparent border border-white/5 border-r-0 text-white text-[13px] px-4 outline-none placeholder:text-gray-500 rounded-l-md transition-colors"
+                  className="flex-1 min-w-0 bg-transparent border border-white/5 border-r-0 text-white text-[13px] px-4 outline-none placeholder:text-gray-500 rounded-l-md transition-colors"
                   required
                 />
                 <button 
                   type="submit" 
-                  className="h-full bg-[#1e81c7] text-white text-[10px] font-medium px-2 tracking-wider hover:bg-[#1C75BC] transition-colors duration-300 w-[70px] shrink-0 min-w-[70px]"
+                  className="h-full bg-[#1e81c7] text-white text-[10px] font-medium px-3 tracking-wider hover:bg-[#1C75BC] transition-colors duration-300 shrink-0 w-16"
                 >
                   SUBMIT
                 </button>

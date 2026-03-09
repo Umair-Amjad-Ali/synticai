@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           
           {/* Logo - Left Side */}
-          <div className="shrink-0 w-48 flex items-center">
+          <div className="shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -49,11 +49,11 @@ export default function Navbar() {
                 transition={{ duration: 0.5 }}
               >
                 <Image 
-                  src="/assets/synticai-logo.png" 
+                  src="/assets/synticai-logo-footer.png" 
                   alt="SynticAI Logo" 
-                  width={240} 
-                  height={60} 
-                  className="h-80 w-auto object-contain" 
+                  width={140} 
+                  height={40} 
+                  className="h-10 w-auto object-contain" 
                   priority
                 />
               </motion.div>
@@ -155,7 +155,7 @@ export default function Navbar() {
                 if (link.subItems) {
                   return (
                     <div key={link.name} className="py-2">
-                      <div className="px-3 py-2 text-base font-bold text-gray-400 uppercase tracking-wider text-xs">{link.name}</div>
+                      <div className="px-3 py-2 text-base font-bold text-gray-400 uppercase tracking-wider">{link.name}</div>
                       <div className="pl-4 flex flex-col gap-1 mt-1">
                         {link.subItems.map((subItem) => (
                           <Link
