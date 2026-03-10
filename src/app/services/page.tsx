@@ -1,73 +1,90 @@
-import PageHero from "@/components/common/PageHero";
-import InfoSection from "@/components/common/InfoSection";
-import ServicesTabs from "@/components/services/ServicesTabs";
-import StatsSection from "@/components/services/StatsSection";
-import IndustriesSection from "@/components/services/IndustriesSection";
-import MethodologySection from "@/components/services/MethodologySection";
-import ClientSolutionsSection from "@/components/services/ClientSolutionsSection";
-import TestimonialsSection from "@/components/services/TestimonialsSection";
-import FaqSection from "@/components/services/FaqSection";
+import ServicesHero from "@/components/services/ServicesHero";
+import ServiceCategoryNav from "@/components/services/ServiceCategoryNav";
+import StickyFeatureService from "@/components/services/StickyFeatureService";
+import ServicesBentoGrid from "@/components/services/ServicesBentoGrid";
+import CustomSoftwareSection from "@/components/services/CustomSoftwareSection";
 import { servicesTabs } from "@/data/servicesData";
-import { industriesData } from "@/data/industriesData";
 
 export default function ServicesPage() {
+  // Section 1: Custom Software Development (featured)
+  const featuredSoftware = servicesTabs.find(s => s.name === "Custom Software Development");
+
+  // Section 2: AI & Machine Learning
+  const featuredAI = servicesTabs.find(s => s.name === "AI Development");
+  const featuredML = servicesTabs.find(s => s.name === "Machine & Deep Learning");
+  const remainingAIML = servicesTabs.filter(s =>
+    ["Natural Language Processing", "Computer Vision"].includes(s.name)
+  );
+
+  // Section 3: GenAI & Bots
+  const genAIBots = servicesTabs.filter(s =>
+    ["AI Chatbot Development", "ChatGPT Integration"].includes(s.name)
+  );
+
+  // Section 4: Digital Strategy + Data & Engineering (combined)
+  const digitalAndData = servicesTabs.filter(s =>
+    ["Digital Marketing", "UI/UX", "Big Data Analytics", "Predictive Modeling", "DevOps"].includes(s.name)
+  );
+
   return (
     <main className="min-h-screen bg-white">
-      <PageHero
-        title="Your Trusted AI Development Company"
-        subtitle="We build meaningful AI Healthcare Solutions to shape the future of your business"
+
+      <div className="bg-[#0A051E]">
+        {/* 1. Immersive Hero (Dark) */}
+        <ServicesHero />
+
+        {/* Floating Pill Navigation - only appears on scroll as right-side vertical bar */}
+        <ServiceCategoryNav />
+      </div>
+
+      {/* Section 1: Custom Software Development */}
+      <CustomSoftwareSection />
+
+      {/* Section 2: AI & Machine Learning (Dark) */}
+      <div id="ai-ml">
+        {featuredAI && (
+          <StickyFeatureService
+            id="featured-ai"
+            service={featuredAI}
+            theme="dark"
+            imageSrc="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop"
+          />
+        )}
+        {featuredML && (
+          <StickyFeatureService
+            id="featured-ml"
+            service={featuredML}
+            theme="dark"
+            imageSrc="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1000&auto=format&fit=crop"
+          />
+        )}
+        <ServicesBentoGrid
+          id="ai-ml-grid"
+          categoryTitle="Core AI & Vision"
+          categoryDescription="Unleashing the power of computer vision and natural language processing to automate tasks and extract meaningful insights."
+          services={remainingAIML}
+          theme="dark"
+        />
+      </div>
+
+      {/* Section 3: GenAI & Bots (Light) */}
+      <ServicesBentoGrid
+        id="genai-bots"
+        categoryTitle="Generative AI & Chatbots"
+        categoryDescription="Transform your customer interactions and operational efficiency with conversational AI and ChatGPT integrations."
+        services={genAIBots}
+        theme="light"
       />
 
-      <InfoSection
-        title="Drive Unstoppable Business Success Through AI!"
-        paragraphs={[
-          "Maximize your business potential with our exceptional AI Development Services. Our customer-centric and passionate team of engineers is committed to delivering tailored solutions that exceed your expectations.",
-          "We leverage our expertise in machine learning, deep learning, and AI development to deliver exceptional solutions in NLP, computer vision, predictive analytics, generative AI, AI chatbot development, and more.",
-          "Our AI-based solutions offer a clear pathway to success, helping businesses improve decision-making, automate operations, save time, and boost profits. Partner with SynticAI – AI Experts in Pakistan, to seamlessly integrate, scale, and access data-driven insights, leading to exceptional business outcomes.",
-        ]}
-        buttonText="Get A Free Quote"
-        imageSrc="/assets/service-business.png"
-        imageAlt="AI Development Services"
+      {/* Section 4: Digital Strategy (Dark) */}
+      <ServicesBentoGrid
+        id="digital"
+        categoryTitle="Digital Strategy, Data & Design"
+        categoryDescription="Crafting visually stunning UI/UX and data-driven marketing campaigns while powering your infrastructure with big data and DevOps."
+        services={digitalAndData}
+        theme="dark"
       />
 
-      <ServicesTabs
-        sectionTitle="Services We Offer"
-        tabs={servicesTabs}
-        showButton={true}
-        buttonText="Read More"
-      />
-
-      <StatsSection
-        title="Why Choose SynticAI?"
-        subtitle="This highlights our skills, experience, and quality of work, demonstrating our commitment to excellence."
-        stats={[
-          {
-            value: 10, suffix: "+", label: "Years of Experience",
-            icon: <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
-          },
-          {
-            value: 170, suffix: "+", label: "Happy Clients",
-            icon: <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
-          },
-          {
-            value: 200, suffix: "+", label: "Projects Delivered",
-            icon: <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
-          },
-          {
-            value: 4, prefix: "0", label: "Global Connections",
-            icon: <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
-          },
-        ]}
-      />
-      <IndustriesSection
-        title="Industries We Transformed with Innovative Software Solutions"
-        subtitle="We are committed to innovating across industries with our custom AI solutions, empowering businesses to thrive in the digital era."
-        industries={industriesData}
-      />
-      <ClientSolutionsSection />
-      <MethodologySection />
-      <TestimonialsSection />
-      <FaqSection />
     </main>
   );
 }

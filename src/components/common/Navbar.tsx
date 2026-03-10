@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Services", href: "/services" },
-    { name: "Salesforce", href: "/salesforce" },
+    // { name: "Salesforce", href: "/salesforce" },
     { name: "Industries", href: "/industries" },
     { name: "Portfolio", href: "/portfolio" },
     { 
@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white shadow-md border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
           {/* Logo - Left Side */}
@@ -63,7 +63,7 @@ export default function Navbar() {
           {/* Desktop Nav - Center */}
           <div className="hidden md:flex flex-1 h-full items-center justify-center space-x-8">
             {navLinks.map((link, index) => {
-              const isActive = (link.href !== '/' && pathname.startsWith(link.href)) || pathname === link.href || (pathname === '/' && link.name === 'Services');
+              const isActive = (link.href !== '/' && pathname.startsWith(link.href)) || pathname === link.href;
               
               if (link.subItems) {
                 // Dropdown for Desktop
@@ -150,7 +150,7 @@ export default function Navbar() {
           >
             <div className="px-4 pt-2 pb-4 space-y-1 shadow-inner">
               {navLinks.map((link) => {
-                const isActive = (link.href !== '/' && pathname.startsWith(link.href)) || pathname === link.href || (pathname === '/' && link.name === 'Services');
+                const isActive = (link.href !== '/' && pathname.startsWith(link.href)) || pathname === link.href;
                 
                 if (link.subItems) {
                   return (
