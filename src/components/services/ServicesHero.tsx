@@ -49,7 +49,7 @@ export default function ServicesHero() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-8 relative z-10">
         
         {/* Left Content Area */}
         <div className="lg:col-span-6 flex flex-col justify-center text-left">

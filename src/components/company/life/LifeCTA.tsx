@@ -36,7 +36,7 @@ export default function LifeCTA() {
           className="relative w-full max-w-4xl rounded-[32px] md:rounded-[48px] bg-[#0B1224]/40 backdrop-blur-3xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.6)] group overflow-hidden flex flex-col md:flex-row items-center justify-between p-8 md:p-12 gap-8"
         >
           {/* Subtle inner animated ring */}
-          <div className="absolute -inset-px rounded-[32px] md:rounded-[48px] border border-transparent bg-linear-to-r from-transparent via-[#45d1f5]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 [mask-image:linear-gradient(black,black)] [mask-composite:exclude]" />
+          <div className="absolute -inset-px rounded-[32px] md:rounded-[48px] border border-transparent bg-linear-to-r from-transparent via-[#45d1f5]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 mask-[linear-gradient(black,black)] mask-exclude" />
 
           {/* Left Text */}
           <div className="text-center md:text-left flex-1 max-w-lg">

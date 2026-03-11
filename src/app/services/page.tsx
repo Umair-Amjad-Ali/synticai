@@ -54,7 +54,7 @@ export default function ServicesPage() {
           <StickyFeatureService
             id="featured-ml"
             service={featuredML}
-            theme="dark"
+            theme="light"
             imageSrc="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1000&auto=format&fit=crop"
           />
         )}

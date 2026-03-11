@@ -11,68 +11,84 @@ const capabilities = [
     icon: Globe,
     title: "Web Development",
     color: "#1C75BC",
-    bg: "rgba(28,117,188,0.12)",
-    border: "rgba(28,117,188,0.25)",
     description: "Scalable SaaS platforms, enterprise portals, and pixel-perfect websites built to convert.",
     techStack: [
       { name: "React", icon: "⚛️" },
       { name: "Next.js", icon: "▲" },
       { name: "TypeScript", icon: "𝗧𝗦" },
-      { name: "Tailwind", icon: "🎨" }
+      { name: "Tailwind", icon: "🎨" },
+      { name: "Redux", icon: "🔮" },
     ],
     whatWeBuild: ["High-performance SaaS products", "Enterprise internal dashboards", "B2B and B2C web applications", "High-conversion landing pages"],
-    howWeDoIt: "We employ modern component-driven architecture using Next.js and React. Our approach prioritizes blazing-fast SSR/SSG load times, strict TypeScript typing for zero runtime errors, and automated CI/CD pipelines for seamless daily deployments."
+    features: [
+      { title: "Server-Side Rendering", description: "Blazing fast SSR using Next.js for flawless SEO and zero-layout-shift performance." },
+      { title: "Automated Deployment", description: "Zero-downtime CI/CD pipelines deploying directly to platforms like Vercel or AWS." },
+      { title: "Edge Architecture", description: "Distributing assets globally via CDN Edge networks for the lowest possible latency." },
+      { title: "Component Systems", description: "Modular, reusable UI architectures wrapped in strict TypeScript for zero runtime errors." }
+    ]
   },
   {
     id: "mobile",
     icon: Smartphone,
     title: "Mobile Apps",
     color: "#45d1f5",
-    bg: "rgba(69,209,245,0.10)",
-    border: "rgba(69,209,245,0.25)",
     description: "Cross-platform mobile applications delivering native-quality experiences on iOS and Android.",
     techStack: [
       { name: "Flutter", icon: "💙" },
       { name: "Dart", icon: "🎯" },
+      { name: "React Native", icon: "⚛️" },
       { name: "Swift", icon: "🍎" },
       { name: "Kotlin", icon: "🤖" },
     ],
     whatWeBuild: ["Consumer iOS & Android apps", "On-demand service platforms", "Fintech & healthcare applications", "IoT companion apps"],
-    howWeDoIt: "Utilizing Flutter, we build from a single robust codebase that compiles strictly to native ARM code. We integrate complex animations, native device features (camera, GPS, biometrics), and real-time backend synchronization."
+    features: [
+      { title: "Native vs Hybrid", description: "We architect the optimal path, whether compiling cross-platform or writing pure native." },
+      { title: "App Store Deployment", description: "End-to-end management of Apple & Google build variants, testing, and store compliance." },
+      { title: "Offline-First Design", description: "Robust local databases ensuring the app functions flawlessly without internet access." },
+      { title: "Hardware Integration", description: "Deep native bindings into Bluetooth edge devices, camera APIs, and biometric sensors." }
+    ]
   },
   {
     id: "backend",
     icon: Server,
     title: "Backend Development",
     color: "#a78bfa",
-    bg: "rgba(167,139,250,0.10)",
-    border: "rgba(167,139,250,0.25)",
     description: "Rock-solid APIs and microservices powering your product's core business logic at scale.",
     techStack: [
       { name: "Node.js", icon: "🟢" },
       { name: "Python", icon: "🐍" },
       { name: "FastAPI", icon: "🚀" },
       { name: "PostgreSQL", icon: "🐘" },
+      { name: "Redis", icon: "🟥" }
     ],
     whatWeBuild: ["RESTful & GraphQL APIs", "Distributed microservices", "Real-time socket servers", "High-volume data pipelines"],
-    howWeDoIt: "We design resilient architectures using Node.js and Python. Our focus is on horizontal scalability, rigorous database normalization (PostgreSQL), memory caching (Redis), and top-tier security including JWT auth and rate limiting."
+    features: [
+      { title: "Microservices", description: "Decoupled domain logic for maximum horizontal scalability and isolated fault tolerance." },
+      { title: "DevOps & CI/CD", description: "Rigorous automated testing, Docker container orchestration, and Kubernetes clusters." },
+      { title: "Data Integrity", description: "Strict database normalization combined with blazing-fast in-memory caching layers." },
+      { title: "Advanced Security", description: "Enterprise-grade JWT authentication, IP rate limiting, and encrypted data at rest." }
+    ]
   },
   {
     id: "fullstack",
     icon: Layers,
     title: "Full Stack Apps",
     color: "#34d399",
-    bg: "rgba(52,211,153,0.10)",
-    border: "rgba(52,211,153,0.25)",
     description: "End-to-end product delivery — from concept and architecture to deployment and maintenance.",
     techStack: [
       { name: "Supabase", icon: "⚡" },
       { name: "Firebase", icon: "🔥" },
       { name: "Docker", icon: "🐳" },
       { name: "AWS", icon: "☁️" },
+      { name: "GCP", icon: "🌩️" }
     ],
     whatWeBuild: ["Marketplace platforms", "E-learning ecosystems", "Custom ERP / CRM systems", "AI-integrated products"],
-    howWeDoIt: "Taking full ownership of the stack, we wrap your frontend and backend in Docker containers, orchestrate them on AWS, and leverage BaaS like Supabase for rapid iteration. One cohesive team delivers the entire product lifecycle."
+    features: [
+      { title: "End-to-End Ownership", description: "From initial DB schema to frontend UI, handled entirely by one synchronized agile team." },
+      { title: "Cloud Infrastructure", description: "Scalable AWS or GCP hosting, utilizing modern serverless and containerized deployment." },
+      { title: "Agile Delivery", description: "Iterative two-week sprints ensuring continuous stakeholder feedback and rapid shipping." },
+      { title: "Active Monitoring", description: "Post-launch application performance monitoring (APM) and centralized log management." }
+    ]
   },
 ];
 
@@ -99,16 +115,29 @@ function MarqueeRow({ items, direction = 1 }: { items: string[]; direction?: 1 |
     <div className="flex overflow-hidden w-full">
       <motion.div
         animate={{ x: direction === 1 ? ["0%", "-50%"] : ["-50%", "0%"] }}
-        transition={{ ease: "linear", duration: 22, repeat: Infinity }}
-        className="flex gap-3 px-2 w-max shrink-0"
+        transition={{ ease: "linear", duration: 35, repeat: Infinity }}
+        className="flex gap-4 px-2 w-max shrink-0"
       >
         {looped.map((name, i) => (
           <div
             key={i}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white text-sm font-semibold text-gray-600 hover:border-[#1C75BC]/40 hover:text-[#1C75BC] hover:bg-blue-50/50 transition-all duration-200 whitespace-nowrap cursor-default shadow-sm group"
+            className="group relative flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-[#110B29]/80 backdrop-blur-md border border-white/5 text-sm font-bold text-gray-300 transition-all duration-500 whitespace-nowrap cursor-pointer hover:text-white hover:bg-[#1A1140]/90 overflow-hidden"
+            style={{ boxShadow: "inset 0 1px 1px rgba(255,255,255,0.05), 0 4px 20px rgba(0,0,0,0.2)" }}
           >
-            <span className="text-base leading-none group-hover:scale-110 transition-transform">{techIcons[name]}</span>
-            {name}
+            {/* Multi-layered Glowing Hover Border */}
+            <div className="absolute inset-0 rounded-2xl border border-[#45d1f5]/0 group-hover:border-[#45d1f5]/60 transition-colors duration-500 pointer-events-none" />
+            <div className="absolute inset-px rounded-[15px] border border-transparent group-hover:border-[#1C75BC]/30 transition-colors duration-500 pointer-events-none" />
+            
+            {/* Dynamic Sweeping Reflection (Glass Effect) */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none overflow-hidden rounded-2xl">
+              <div className="w-[150%] h-[150%] absolute -top-[25%] -left-[25%] bg-linear-to-r from-transparent via-white/5 to-transparent rotate-45 -translate-x-full group-hover:animate-[sweep_1.5s_ease-in-out]" />
+            </div>
+
+            {/* Soft Ambient Icon Glow (Expands on hover) */}
+            <div className="absolute left-6 w-6 h-6 bg-white/10 blur-xl rounded-full group-hover:bg-[#45d1f5]/60 group-hover:w-10 group-hover:h-10 transition-all duration-500" />
+            
+            <span className="text-xl leading-none relative z-10 drop-shadow-sm group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-500 ease-out">{techIcons[name]}</span>
+            <span className="tracking-wide relative z-10 transition-colors duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-white group-hover:to-[#45d1f5]">{name}</span>
           </div>
         ))}
       </motion.div>
@@ -119,151 +148,38 @@ function MarqueeRow({ items, direction = 1 }: { items: string[]; direction?: 1 |
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function CustomSoftwareSection() {
-  const [activeCard, setActiveCard] = useState<typeof capabilities[0] | null>(null);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  // Lock body scroll when modal is open
-  if (typeof window !== "undefined") {
-    document.body.style.overflow = activeCard ? "hidden" : "unset";
-  }
-
-  const newLocal = "fixed inset-0 bg-[#0A051E]/80 backdrop-blur-md z-200 cursor-pointer";
   return (
     <section id="custom-software" className="w-full bg-[#0A051E] relative">
-      
-      {/* Expanded Modal Overlay */}
-      <AnimatePresence>
-        {activeCard && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setActiveCard(null)}
-              className={newLocal}
-            />
-            <div className="fixed inset-0 flex items-center justify-center z-201 p-4 pointer-events-none">
-              <motion.div
-                layoutId={`card-${activeCard.id}`}
-                className="w-full max-w-2xl bg-[#110B29] border rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)] pointer-events-auto flex flex-col max-h-[90vh]"
-                style={{ borderColor: activeCard.border }}
-              >
-                {/* Modal Header */}
-                <div 
-                  className="p-6 md:p-8 relative overflow-hidden"
-                  style={{ background: activeCard.bg }}
-                >
-                  <div 
-                    className="absolute -top-20 -right-20 w-64 h-64 rounded-full blur-[80px] opacity-40"
-                    style={{ background: activeCard.color }}
-                  />
-                  <div className="relative z-10 flex items-start justify-between">
-                    <div className="flex items-center gap-4">
-                      <div
-                        className="w-14 h-14 rounded-2xl flex items-center justify-center border shadow-inner"
-                        style={{ background: `${activeCard.color}15`, borderColor: `${activeCard.color}40` }}
-                      >
-                        <activeCard.icon className="w-7 h-7" style={{ color: activeCard.color }} />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
-                          {activeCard.title}
-                        </h3>
-                        <p className="text-gray-400 text-sm mt-1">{activeCard.description}</p>
-                      </div>
-                    </div>
-                    <button 
-                      onClick={() => setActiveCard(null)}
-                      className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
-                    >
-                      <X className="w-5 h-5" />
-                    </button>
-                  </div>
-                </div>
 
-                {/* Modal Body (Scrollable) */}
-                <div className="p-6 md:p-8 overflow-y-auto no-scrollbar space-y-8 bg-[#0A051E]/50">
-                  
-                  {/* Detailed Tech Stack */}
-                  <div>
-                    <h4 className="text-[11px] font-bold uppercase tracking-widest text-white/40 mb-4 border-b border-white/10 pb-2">
-                      Full Technology Stack
-                    </h4>
-                    <div className="flex flex-wrap gap-2.5">
-                      {activeCard.techStack.map((tech, i) => (
-                        <div 
-                          key={i} 
-                          className="flex items-center gap-2 px-3 py-1.5 rounded-lg border bg-white/5 shadow-sm"
-                          style={{ borderColor: `${activeCard.color}30` }}
-                        >
-                          <span className="text-lg leading-none">{tech.icon}</span>
-                          <span className="text-sm font-bold text-white tracking-wide">{tech.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* What We Build */}
-                  <div>
-                    <h4 className="text-[11px] font-bold uppercase tracking-widest text-white/40 mb-4 border-b border-white/10 pb-2">
-                      What We Build
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {activeCard.whatWeBuild.map((item, i) => (
-                        <div key={i} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0" style={{ color: activeCard.color }} />
-                          <span className="text-gray-300 text-sm font-medium">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* How We Do It */}
-                  <div>
-                    <h4 className="text-[11px] font-bold uppercase tracking-widest text-white/40 mb-4 border-b border-white/10 pb-2">
-                      How We Engineer It
-                    </h4>
-                    <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                      {activeCard.howWeDoIt}
-                    </p>
-                  </div>
-
-                </div>
-              </motion.div>
-            </div>
-          </>
-        )}
-      </AnimatePresence>
-
-      {/* ── A. Stunning Section Header ── */}
-      <div className="max-w-6xl mx-auto px-6 pt-20 pb-12 text-center">
-        {/* Animated Glowing Eyebrow Pill */}
+      <div className="max-w-6xl mx-auto px-6 pt-24 pb-12 text-left flex flex-col items-start gap-5 relative z-10">
+        
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative inline-block mb-6"
+          className="flex items-center gap-4"
         >
-          <div className="absolute inset-0 bg-linear-to-r from-[#1C75BC] to-[#45d1f5] rounded-full blur-md opacity-50 animate-pulse" />
-          <div className="relative inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full border border-white/20 bg-[#0A051E] shadow-[0_0_20px_rgba(69,209,245,0.2)]">
-            <Code2 className="w-4 h-4 text-[#45d1f5]" /> 
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#45d1f5] to-[#1C75BC] text-xs font-black tracking-widest uppercase">
-              Custom Development
-            </span>
+          <div className="flex items-center gap-1.5">
+            <div className="w-2 h-2 rounded-full bg-[#1C75BC]" />
+            <div className="w-12 h-[2px] bg-linear-to-r from-[#1C75BC] to-transparent" />
           </div>
+          <span className="text-[#1C75BC] text-[11px] font-extrabold uppercase tracking-[0.3em]">
+            Custom Development
+          </span>
         </motion.div>
 
         <motion.h2
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-5"
+          className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.1]"
         >
           We Build.{" "}
-          <span className="relative">
-            <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-[#45d1f5] via-white to-[#1C75BC]">
-              End to End.
-            </span>
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#45d1f5] to-[#1C75BC]">
+            End to End.
           </span>
         </motion.h2>
 
@@ -272,83 +188,198 @@ export default function CustomSoftwareSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+          className="text-[#8b92a5] text-base md:text-lg max-w-2xl leading-relaxed mt-2 font-medium"
         >
           Full-spectrum software engineering across web, mobile, backend, and cloud — from raw idea to beautifully shipped product. Click on any capability below to explore our process.
         </motion.p>
       </div>
 
-      {/* ── B. 4 Expandable Capability Cards ── */}
-      <div className="max-w-6xl mx-auto px-6 pb-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
+      {/* ── B. Unique Capability Directory (Interactive Accordion Rows) ── */}
+      <div className="max-w-6xl mx-auto px-6 pb-24">
+        <div className="flex flex-col border-t border-white/5 relative z-10 w-full">
           {capabilities.map((cap, idx) => {
             const Icon = cap.icon;
-            // Hide the actual grid card if it's currently expanded in the modal
-            const isExpanded = activeCard?.id === cap.id;
+            const isExpanded = expandedId === cap.id;
 
             return (
               <motion.div
                 key={cap.id}
-                layoutId={`card-${cap.id}`}
-                onClick={() => setActiveCard(cap)}
-                initial={{ opacity: 0, y: 25 }}
+                layout
+                onClick={() => setExpandedId(isExpanded ? null : cap.id)}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className={`group flex flex-col relative overflow-hidden rounded-[20px] border p-6 transition-all duration-400 bg-[#110B29]/40 backdrop-blur-xs cursor-pointer ${
-                  isExpanded ? "opacity-0 pointer-events-none" : "hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className={`group relative flex flex-col py-6 md:py-8 border-b border-white/5 cursor-pointer transition-colors duration-500 overflow-hidden ${
+                  isExpanded ? "bg-white/3" : "hover:bg-white/2"
                 }`}
-                style={{ borderColor: cap.border }}
               >
-                {/* Highlight line on hover */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: `linear-gradient(90deg, transparent, ${cap.color}, transparent)` }}
+                {/* Subtle Hover & Expanded Gradient Background */}
+                <div 
+                  className={`absolute inset-0 transition-opacity duration-700 pointer-events-none ${isExpanded ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                  style={{ background: `linear-gradient(90deg, transparent 0%, ${cap.color}05 40%, transparent 100%)` }}
                 />
 
-                {/* Ambient background glow */}
+                {/* Vertical Divider / Accent Line on Hover or Expanded */}
                 <div 
-                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-[50px] opacity-20 pointer-events-none group-hover:opacity-50 transition-opacity duration-500"
+                  className={`absolute left-0 top-0 bottom-0 w-[2px] transition-all duration-500 ${isExpanded ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 group-hover:opacity-100 group-hover:scale-y-100"}`}
                   style={{ background: cap.color }}
                 />
 
-                {/* Icon */}
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border relative z-10 shadow-inner group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: `${cap.color}15`, borderColor: `${cap.color}40` }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: cap.color }} />
+                {/* --- ALWAYS VISIBLE ROW HEADER --- */}
+                <div className="flex flex-col lg:flex-row items-start lg:items-center w-full">
+                  {/* Left: Icon & Title */}
+                  <div className="flex items-center gap-6 w-full lg:w-[32%] relative z-10 mb-6 lg:mb-0 pl-4 md:pl-8">
+                    <div 
+                      className={`w-14 h-14 rounded-2xl flex shrink-0 items-center justify-center border transition-all duration-500 shadow-lg ${isExpanded ? "scale-110" : "bg-[#0C0A1D] group-hover:scale-110"}`}
+                      style={{ 
+                        borderColor: isExpanded ? `${cap.color}80` : `${cap.color}25`,
+                        background: isExpanded ? `${cap.color}20` : undefined,
+                        boxShadow: isExpanded ? `0 0 30px ${cap.color}30` : undefined
+                      }}
+                    >
+                      <Icon className="w-6 h-6 transition-colors duration-500" style={{ color: cap.color }} strokeWidth={isExpanded ? 2 : 1.5} />
+                    </div>
+                    <div>
+                      <div className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-1 transition-opacity duration-500 ${isExpanded ? "opacity-100 text-white" : "opacity-50 text-[#8b92a5] group-hover:opacity-100"}`}>
+                        Capability 0{idx + 1}
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-extrabold text-white tracking-tight transition-colors duration-500">
+                        {cap.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Center: Description (Fades out seamlessly if expanded on mobile, stays on desktop) */}
+                  <div className={`w-full lg:w-[33%] relative z-10 pr-4 md:pr-8 mb-6 lg:mb-0 pl-4 md:pl-0 transition-opacity duration-300 ${isExpanded ? "opacity-50 lg:opacity-100 hidden lg:block" : "opacity-100"}`}>
+                    <p className="text-[#8b92a5] text-[13px] leading-relaxed font-medium transition-colors duration-500 group-hover:text-gray-300">
+                      {cap.description}
+                    </p>
+                  </div>
+
+                  {/* Right: Tech Stack & Arrow */}
+                  <div className="flex items-center justify-between w-full lg:w-[35%] relative z-10 pr-4 md:pr-8 pl-4 md:pl-0">
+                    <div className="flex flex-wrap gap-2 transition-opacity duration-300">
+                      {cap.techStack.slice(0, 3).map((tech, i) => (
+                        <div 
+                          key={i} 
+                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] font-semibold transition-all duration-500 ${isExpanded ? "bg-[#110B29] border-white/10 text-white shadow-sm" : "bg-[#0A051E] border-white/5 text-gray-400 group-hover:border-white/10 group-hover:bg-[#110B29] group-hover:shadow-sm"}`}
+                        >
+                          <span className={`text-[12px] transition-opacity ${isExpanded ? "opacity-100" : "opacity-80 group-hover:opacity-100"}`}>{tech.icon}</span> 
+                          <span className={`transition-colors ${isExpanded ? "text-white" : "group-hover:text-white"}`}>{tech.name}</span>
+                        </div>
+                      ))}
+                      {cap.techStack.length > 3 && (
+                        <div 
+                          className={`flex items-center justify-center min-w-[32px] px-2 py-1.5 rounded-lg border text-[11px] font-bold transition-all duration-500 ${isExpanded ? "bg-[#110B29] border-white/10" : "bg-[#0A051E] border-white/5 group-hover:border-white/10 group-hover:bg-[#110B29]"}`}
+                          style={{ color: cap.color }}
+                        >
+                          +{cap.techStack.length - 3}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Explore Arrow */}
+                    <div 
+                      className={`w-10 h-10 rounded-full border flex shrink-0 items-center justify-center transition-all duration-500 ml-4 ${isExpanded ? "bg-white/10 border-white/30 rotate-90 scale-110" : "bg-[#0C0A1D] border-white/5 group-hover:scale-110 group-hover:bg-white/5 group-hover:border-white/20"}`}
+                    >
+                      <ArrowRight 
+                        className={`w-4 h-4 transition-all duration-500 text-gray-600 ${isExpanded ? "translate-x-0" : "group-hover:translate-x-0.5"}`} 
+                        style={{ color: cap.color }} 
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                {/* Title + Description */}
-                <h3 className="text-xl font-bold text-white mb-2 relative z-10 transition-colors duration-200 group-hover:text-white/90 tracking-tight">
-                  {cap.title}
-                </h3>
-                <p className="text-gray-400 text-xs leading-relaxed mb-6 relative z-10 grow">
-                  {cap.description}
-                </p>
+                {/* --- INLINE EXPANDED CONTENT --- */}
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.div
+                      layout
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="w-full relative z-10"
+                    >
+                      <div className="pt-10 pb-6 pl-4 md:pl-[120px] pr-4 md:pr-8 flex flex-col gap-12">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16">
+                          
+                          {/* Col 1: Core Offerings */}
+                          <div className="lg:col-span-1">
+                            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-[#8b92a5] mb-5 flex items-center gap-3">
+                              <span className="w-6 h-px bg-white/10" />
+                              Core Offerings
+                            </h4>
+                            <div className="flex flex-col gap-4">
+                              {cap.whatWeBuild.map((item, i) => (
+                                <motion.div 
+                                  initial={{ opacity: 0, x: -10 }} 
+                                  animate={{ opacity: 1, x: 0 }} 
+                                  transition={{ delay: 0.2 + (i * 0.05) }} 
+                                  key={i} 
+                                  className="flex items-start gap-3"
+                                >
+                                  <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0" style={{ color: cap.color }} />
+                                  <span className="text-gray-200 text-sm font-medium leading-snug">{item}</span>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </div>
 
-                {/* Condensed Tech Stack Pills */}
-                <div className="relative z-10 mt-auto">
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {cap.techStack.slice(0, 3).map((tech, i) => (
-                      <div 
-                        key={i} 
-                        className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-semibold text-gray-300"
-                      >
-                        {tech.icon} {tech.name}
+                          {/* Col 2 & 3: Methodology & Deployment */}
+                          <div className="lg:col-span-2">
+                            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-[#8b92a5] mb-5 flex items-center gap-3">
+                              <span className="w-6 h-px bg-white/10" />
+                              Methodology & Deployment
+                            </h4>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              {cap.features.map((f, i) => (
+                                <motion.div
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: 0.3 + (i * 0.05) }}
+                                  key={i}
+                                  className="p-5 rounded-2xl border bg-white/2 hover:bg-white/5 transition-colors"
+                                  style={{ borderColor: `${cap.color}15` }}
+                                >
+                                  <h5 className="text-sm font-bold text-white mb-2" style={{ color: cap.color }}>{f.title}</h5>
+                                  <p className="text-[13px] text-gray-400 leading-relaxed">{f.description}</p>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Full Width Row: Tech Stack */}
+                        <div className="pt-6 border-t border-white/5">
+                          <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-[#8b92a5] mb-5 flex items-center gap-3">
+                            <span className="w-6 h-px bg-white/10" />
+                            Full Technology Stack
+                          </h4>
+                          <motion.div 
+                            initial={{ opacity: 0, y: 10 }} 
+                            animate={{ opacity: 1, y: 0 }} 
+                            transition={{ delay: 0.5 }}
+                            className="flex flex-wrap gap-2.5"
+                          >
+                            {cap.techStack.map((tech, i) => (
+                              <div 
+                                key={i} 
+                                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border bg-white/5 shadow-inner"
+                                style={{ borderColor: `${cap.color}30` }}
+                              >
+                                <span className="text-base leading-none">{tech.icon}</span>
+                                <span className="text-xs font-bold text-white tracking-wide">{tech.name}</span>
+                              </div>
+                            ))}
+                          </motion.div>
+                        </div>
                       </div>
-                    ))}
-                    {cap.techStack.length > 3 && (
-                      <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-bold text-[#45d1f5]">
-                        +{cap.techStack.length - 3}
-                      </div>
-                    )}
-                  </div>
-                  <div className="text-[11px] font-bold text-[#45d1f5] flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Explore Details <ArrowRight className="w-3 h-3" />
-                  </div>
-                </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
               </motion.div>
             );
           })}
@@ -356,32 +387,40 @@ export default function CustomSoftwareSection() {
       </div>
 
       {/* ── C. Tech Stack Carousel ── */}
-      <div className="w-full bg-white py-16 relative">
-        <div className="max-w-6xl mx-auto px-6 text-center mb-10">
-          <motion.p
+      <div className="w-full py-20 relative bg-[#0C0A1D] border-y border-white/5 overflow-hidden">
+        {/* Ambient background glows */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#1C75BC]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#45d1f5]/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto px-6 text-center mb-14 relative z-10 flex flex-col items-center">
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[11px] font-bold tracking-widest uppercase text-[#1C75BC] mb-3"
+            className="flex items-center gap-3 mb-4"
           >
-            Technologies We Excel In
-          </motion.p>
+            <div className="w-12 h-px bg-linear-to-r from-transparent to-[#45d1f5]/50" />
+            <span className="text-[#45d1f5] text-[10px] font-extrabold uppercase tracking-[0.3em]">
+              Technologies We Excel In
+            </span>
+             <div className="w-12 h-px bg-linear-to-l from-transparent to-[#45d1f5]/50" />
+          </motion.div>
           <motion.h3
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#0A051E] tracking-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight"
           >
             Our Complete Tech Stack
           </motion.h3>
         </div>
 
         <div
-          className="relative flex flex-col gap-4 overflow-hidden"
+          className="relative flex flex-col gap-6 overflow-hidden z-10"
           style={{
-            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-            WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
           }}
         >
           <MarqueeRow items={row1Tech} direction={1} />
@@ -389,43 +428,54 @@ export default function CustomSoftwareSection() {
         </div>
       </div>
 
-      {/* ── D. Stats Strip ── */}
-      <div className="w-full bg-[#f8fafc] border-t border-gray-200 border-b pb-14 pt-14">
-        <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
-          {stats.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className={(i > 0 ? "pt-8 md:pt-0" : "")}
-            >
-              <div className="flex flex-col items-center justify-center h-full">
-                <div className="text-4xl md:text-5xl font-extrabold text-[#0A051E] mb-2 tracking-tight">{s.value}</div>
-                <div className="text-xs text-gray-500 font-bold uppercase tracking-wider">{s.label}</div>
-              </div>
-            </motion.div>
-          ))}
+      {/* ── D. Stats Strip (Premium Dark Dashboard) ── */}
+      <div className="w-full relative overflow-hidden bg-[#0A051E] py-20 border-b border-white/5">
+        
+        {/* Subtle Animated Grid Background */}
+        <div 
+          className="absolute inset-0 z-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
+            backgroundSize: '40px 40px',
+            backgroundPosition: 'center center'
+          }}
+        />
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {stats.map((s, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="group relative flex flex-col items-center justify-center py-10 px-6 rounded-3xl border bg-[#110B29]/40 backdrop-blur-md cursor-default transition-all duration-500 hover:bg-[#110B29]/80 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] overflow-hidden"
+                style={{ borderColor: "rgba(255,255,255,0.05)" }}
+              >
+                {/* Glowing Top Border Line */}
+                <div className="absolute top-0 inset-x-0 h-[2px] w-full bg-linear-to-r from-transparent via-[#45d1f5]/0 to-transparent group-hover:via-[#45d1f5] transition-all duration-700 opacity-0 group-hover:opacity-100" />
+                
+                {/* Ambient Center Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#1C75BC]/20 rounded-full blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                <div className="text-5xl md:text-6xl font-extrabold mb-3 tracking-tighter relative z-10 transition-transform duration-500 group-hover:scale-110">
+                  <span className="text-transparent bg-clip-text bg-linear-to-b from-white to-gray-400 group-hover:from-white group-hover:to-[#45d1f5] transition-all duration-500">
+                    {s.value}
+                  </span>
+                </div>
+                
+                <div className="text-xs md:text-sm text-[#8b92a5] font-bold uppercase tracking-[0.2em] relative z-10 group-hover:text-gray-300 transition-colors duration-500">
+                  {s.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* ── E. CTA ── */}
-      <div className="w-full bg-[#0A051E] py-16 border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div>
-            <h4 className="text-3xl font-extrabold text-white mb-2 tracking-tight">Ready to build something great?</h4>
-            <p className="text-gray-400 text-sm md:text-base">Let's discuss your project and architect the perfect solution.</p>
-          </div>
-          <a
-            href="/contact"
-            className="group inline-flex items-center gap-2.5 px-8 py-4 bg-white text-[#0A051E] font-bold rounded-full hover:bg-[#45d1f5] transition-all duration-300 transform hover:scale-105 whitespace-nowrap shadow-[0_8px_24px_rgba(255,255,255,0.08)] hover:shadow-[0_8px_30px_rgba(69,209,245,0.3)] text-sm uppercase tracking-wider"
-          >
-            <span>Start a Project</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
-      </div>
+    
 
     </section>
   );
