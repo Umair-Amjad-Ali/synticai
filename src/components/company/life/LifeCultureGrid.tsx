@@ -125,13 +125,13 @@ export default function LifeCultureGrid() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-4 h-[2px] bg-linear-to-r from-[#1C75BC] to-[#45d1f5]" />
-              <span className="text-[#45d1f5] text-[10px] font-black uppercase tracking-[0.2em]">Our DNA</span>
+              <div className="w-4 h-[2px] bg-linear-to-r from-[#1C75BC] to-[#101254]" />
+              <span className="text-[#1C75BC] text-[10px] font-black uppercase tracking-[0.2em]">Our DNA</span>
             </div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#0A051E] mb-3 tracking-tight leading-snug">
-              More than <br/>just code.
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A051E] tracking-tight max-w-lg border-l-4 border-[#1C75BC] pl-4">
+            More than <br/>just code.
             </h2>
-            <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-6">
+            <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-6 mt-5">
               Step inside SynticAI and discover a culture built on relentless innovation, unwavering support, and genuine human connection.
             </p>
           </motion.div>

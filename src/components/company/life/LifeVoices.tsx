@@ -42,6 +42,42 @@ const testimonials = [
     role: "People & Culture Lead",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
   },
+  {
+    quote: "Working at SynticAI means you are constantly surrounded by people who are just as obsessed with perfecting the craft as you are. The level of engineering excellence here is unmatched.",
+    name: "Alex Johnson",
+    role: "Senior Machine Learning Engineer",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+  },
+  {
+    quote: "I've never been at a company that truly encourages 'breaking things to learn' like this. Leadership trusts us with autonomy, and that results in our best, most innovative work.",
+    name: "Priya Patel",
+    role: "Lead Product Designer",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+  },
+  {
+    quote: "The ability to work asynchronously from anywhere in the world, while feeling deeply connected to my team, is incredible. SynticAI actually practices the work-life harmony it preaches.",
+    name: "Marcus Thorne",
+    role: "Backend Architect",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+  },
+  {
+    quote: "From day one, I felt like my ideas matter. The flat hierarchy here means anyone can pitch a great concept, and if it's solid, the whole team rallies behind building it.",
+    name: "Elena Rostova",
+    role: "AI Research Scientist",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+  },
+  {
+    quote: "SynticAI gives you the absolute best tools, the most challenging problems, and the smartest colleagues. It is the ultimate playground for ambitious engineers.",
+    name: "Jin Soo",
+    role: "DevOps Lead",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
+  },
+  {
+    quote: "The culture here is built on genuine human connection. Even though we are scattered across the globe, the camaraderie and support system make it feel like we share an office.",
+    name: "Sarah Jenkins",
+    role: "People & Culture Lead",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
+  },
 ];
 
 export default function LifeVoices() {
@@ -63,8 +99,8 @@ export default function LifeVoices() {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header */}
-        <div className="flex flex-col items-center mb-16 md:mb-24 relative z-20">
-          <Quote className="w-12 h-12 md:w-16 md:h-16 text-[#1C75BC]/20 absolute -top-6 md:-top-8 -rotate-12" />
+        <div className="flex flex-col items-center mb-12 md:mb-24 relative z-20">
+          <Quote className="w-10 h-10 md:w-16 md:h-16 text-[#1C75BC]/20 absolute -top-4 md:-top-8 -rotate-12" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -77,9 +113,9 @@ export default function LifeVoices() {
           </motion.div>
         </div>
 
-        {/* Orbit Constellation Container */}
+        {/* Desktop Orbit Constellation (Hidden on Mobile) */}
         <div 
-          className="relative w-full max-w-4xl mx-auto aspect-square md:aspect-video flex items-center justify-center"
+          className="hidden md:flex relative w-full max-w-5xl mx-auto aspect-video items-center justify-center"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -91,7 +127,7 @@ export default function LifeVoices() {
           </div>
 
           {/* Central Quote Hub */}
-          <div className="relative z-20 w-[85%] md:w-[60%] bg-[#0B1224]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+          <div className="relative z-20 w-[60%] bg-[#0B1224]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-12 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -101,16 +137,12 @@ export default function LifeVoices() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="flex flex-col items-center text-center"
               >
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-[#45d1f5] shadow-[0_0_20px_rgba(69,209,245,0.4)] mb-6 md:mb-8 md:hidden">
-                  <Image src={testimonials[current].image} alt={testimonials[current].name} fill className="object-cover" />
-                </div>
-                
-                <p className="text-lg md:text-2xl font-medium text-white leading-relaxed mb-6 md:mb-8">
+                <p className="text-2xl font-medium text-white leading-relaxed mb-8">
                   "{testimonials[current].quote}"
                 </p>
                 <div>
-                  <h4 className="text-white font-bold text-base md:text-lg">{testimonials[current].name}</h4>
-                  <p className="text-[#45d1f5] text-[10px] md:text-xs font-bold tracking-widest uppercase mt-1">
+                  <h4 className="text-white font-bold text-lg">{testimonials[current].name}</h4>
+                  <p className="text-[#1C75BC] text-xs font-bold tracking-widest uppercase mt-1">
                     {testimonials[current].role}
                   </p>
                 </div>
@@ -118,8 +150,8 @@ export default function LifeVoices() {
             </AnimatePresence>
           </div>
 
-          {/* Orbiting Avatar Nodes (Desktop Only) */}
-          <div className="absolute inset-0 hidden md:block pointer-events-none">
+          {/* Orbiting Avatar Nodes */}
+          <div className="absolute inset-0 pointer-events-none">
             {testimonials.map((t, idx) => {
               // Calculate position on an ellipse
               const angle = (idx / testimonials.length) * Math.PI * 2;
@@ -140,11 +172,11 @@ export default function LifeVoices() {
                   className="absolute z-30 transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
                   style={{ left, top }}
                 >
-                  {/* Subtle connection line visualization (simplified with pseudo-glow towards center) */}
+                  {/* Subtle connection line visualization */}
                   {isActive && (
                     <motion.div 
                       layoutId="activeGlow"
-                      className="absolute inset-0 bg-[#45d1f5] rounded-full blur-[20px] opacity-40"
+                      className="absolute inset-0 bg-[#1C75BC] rounded-full blur-[20px] opacity-40"
                     />
                   )}
 
@@ -161,7 +193,7 @@ export default function LifeVoices() {
                     }}
                     className={`relative w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border-2 transition-all duration-500 ease-out focus:outline-hidden ${
                       isActive 
-                        ? "border-[#45d1f5] shadow-[0_0_30px_rgba(69,209,245,0.6)] scale-125 z-40" 
+                        ? "border-[#1C75BC] shadow-[0_0_30px_rgba(69,209,245,0.6)] scale-125 z-40" 
                         : "border-white/20 opacity-50 hover:opacity-100 hover:scale-110 hover:border-white/50"
                     }`}
                     aria-label={`Show quote from ${t.name}`}
@@ -173,7 +205,54 @@ export default function LifeVoices() {
               );
             })}
           </div>
+        </div>
 
+        {/* Mobile Testimonial Card (Hidden on Desktop) */}
+        <div className="md:hidden flex flex-col items-center w-full px-2 mt-8">
+            <AnimatePresence mode="wait">
+                <motion.div 
+                    key={current}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full bg-[#0B1224]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 shadow-[0_0_40px_rgba(0,0,0,0.4)] relative mt-12"
+                >
+                    {/* Active Avatar Protruding from Top */}
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full border-4 border-[#060B18] shadow-[0_0_20px_rgba(69,209,245,0.3)] overflow-hidden bg-gray-900 z-10">
+                        <Image src={testimonials[current].image} alt={testimonials[current].name} fill className="object-cover" />
+                    </div>
+                    
+                    <div className="mt-12 text-center relative z-20">
+                        <Quote className="w-8 h-8 text-[#1C75BC]/30 mx-auto mb-4" />
+                        <p className="text-[15px] sm:text-base font-medium text-gray-200 leading-relaxed italic mb-6 min-h-[120px] flex items-center justify-center">
+                            "{testimonials[current].quote}"
+                        </p>
+                        <h4 className="text-white font-bold text-base sm:text-lg">{testimonials[current].name}</h4>
+                        <p className="text-[#1C75BC] text-[10px] sm:text-xs font-bold tracking-widest uppercase mt-1">
+                            {testimonials[current].role}
+                        </p>
+                    </div>
+                </motion.div>
+            </AnimatePresence>
+
+            {/* Mobile Controls */}
+            <div className="flex flex-wrap justify-center gap-3 mt-8 w-full max-w-sm">
+                {testimonials.map((t, idx) => (
+                   <button
+                     key={`mobile-btn-${idx}`}
+                     onClick={() => setCurrent(idx)}
+                     className={`relative w-12 h-12 rounded-full overflow-hidden border-2 transition-all duration-300 ${
+                       current === idx 
+                         ? "border-[#1C75BC] scale-110 shadow-[0_0_15px_rgba(69,209,245,0.5)] z-10" 
+                         : "border-white/20 opacity-40 hover:opacity-100"
+                     }`}
+                     aria-label={`Show quote from ${t.name}`}
+                   >
+                     <Image src={t.image} alt={t.name} fill className="object-cover" />
+                   </button>
+                ))}
+            </div>
         </div>
 
       </div>

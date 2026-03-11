@@ -9,12 +9,12 @@ export default function LifePhotoGrid() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12 lg:gap-16">
         
         {/* Left Side: Overlapping Image Collage */}
-        <div className="flex-1 w-full relative h-[400px] md:h-[450px] perspective-[1000px]">
+        <div className="flex-1 w-full flex flex-col md:block relative md:h-[450px] perspective-[1000px] mt-10 md:mt-0 order-2 md:order-1 gap-6 md:gap-0">
           
           {/* Back left image */}
           <motion.div 
-            initial={{ opacity: 0, x: -20, rotate: -2 }}
-            whileInView={{ opacity: 1, x: 0, rotate: -3 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             whileHover={{ 
               rotateY: 5, 
               rotateX: -5, 
@@ -24,10 +24,10 @@ export default function LifePhotoGrid() {
             }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="absolute top-4 left-0 w-3/5 h-64 md:h-72 rounded-3xl shadow-2xl border border-white/10 z-10"
+            className="relative md:absolute md:top-4 md:left-0 w-full md:w-3/5 h-[220px] sm:h-[300px] md:h-72 rounded-2xl md:rounded-3xl shadow-2xl border border-white/10 z-10 md:-rotate-3"
             style={{ transformStyle: "preserve-3d" }}
           >
-            <div className="w-full h-full rounded-3xl overflow-hidden relative">
+            <div className="w-full h-full rounded-2xl md:rounded-3xl overflow-hidden relative">
               <Image 
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop" 
                 alt="Strategy session" 
@@ -41,8 +41,8 @@ export default function LifePhotoGrid() {
 
           {/* Front right image */}
           <motion.div 
-            initial={{ opacity: 0, y: 30, rotate: 2 }}
-            whileInView={{ opacity: 1, y: 0, rotate: 3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ 
               rotateY: -8, 
               rotateX: 5, 
@@ -52,10 +52,10 @@ export default function LifePhotoGrid() {
             }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="absolute bottom-4 right-0 w-[65%] h-[280px] md:h-[320px] rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/20 z-20"
+            className="relative md:absolute md:bottom-4 md:right-0 w-full md:w-[65%] h-[240px] sm:h-[320px] md:h-[320px] rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/20 z-20 md:rotate-3"
             style={{ transformStyle: "preserve-3d" }}
           >
-            <div className="w-full h-full rounded-3xl overflow-hidden relative" style={{ transform: "translateZ(20px)" }}>
+            <div className="w-full h-full rounded-2xl md:rounded-3xl overflow-hidden relative md:-translate-z-[-20px]">
               <Image 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" 
                 alt="Team collaboration" 
@@ -66,8 +66,7 @@ export default function LifePhotoGrid() {
               
               {/* Overlay Badge */}
               <div 
-                className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 flex items-center gap-2 shadow-xl"
-                style={{ transform: "translateZ(30px)" }}
+                className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 flex items-center gap-2 shadow-xl"
               >
                  <div className="w-2 h-2 rounded-full bg-[#45d1f5] animate-pulse" />
                  <span className="text-white text-xs font-bold tracking-wide">Remote Hubs</span>
@@ -84,21 +83,21 @@ export default function LifePhotoGrid() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex-1 max-w-lg lg:ml-auto"
+          className="flex-1 max-w-lg lg:ml-auto order-1 md:order-2"
         >
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-6 h-[2px] bg-linear-to-r from-[#1C75BC] to-[#45d1f5]" />
-            <span className="text-[#45d1f5] text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">The Environment</span>
+            <div className="w-6 h-[2px] bg-linear-to-r from-[#1C75BC] to-[#101254]" />
+            <span className="text-[#1C75BC] text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">The Environment</span>
           </div>
-          
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight tracking-tight">
-            Spaces built for <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#1C75BC] to-[#45d1f5]">
+
+           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight max-w-lg border-l-4 border-[#1C75BC] pl-4">
+             Spaces built for <br />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#1C75BC] to-[#101254]">
               deep focus
             </span> & play.
-          </h2>
+            </h2>
           
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
+          <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 mt-5">
             Whether you&apos;re whiteboarding complex LLM architectures, or grabbing coffee with the design team. Our remote-first and hybrid hubs are engineered to support how you work best.
           </p>
           

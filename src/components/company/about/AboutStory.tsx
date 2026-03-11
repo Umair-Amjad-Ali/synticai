@@ -40,7 +40,7 @@ export default function AboutStory() {
   const [activeIdx, setActiveIdx] = useState<number>(0);
 
   return (
-    <section className="w-full bg-[#f8fafc] py-24 overflow-hidden relative">
+    <section className="w-full bg-[#f8fafc] pb-20 pt-10 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 md:px-16 relative z-10">
 
         {/* Header */}

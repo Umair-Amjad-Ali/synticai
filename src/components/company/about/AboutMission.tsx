@@ -48,10 +48,10 @@ export default function AboutMission() {
               <div className="w-8 h-px bg-[#1C75BC]" />
               <span className="text-[#1C75BC] text-xs font-bold uppercase tracking-[0.25em]">Who We Are</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#0A051E] mb-6 leading-tight tracking-tight">
-              Our Mission
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A051E] tracking-tight max-w-lg border-l-4 border-[#1C75BC] pl-4">
+            Our Mission
             </h2>
-            <p className="text-gray-500 text-lg leading-relaxed mb-10">
+            <p className="text-gray-500 text-lg leading-relaxed mb-10 mt-5">
               At SynticAI, we don&apos;t just build software. We forge intelligent engines that drive global
               enterprises into the future. Our core mission is to democratize highly advanced, enterprise-grade
               AI — making it accessible, scalable, and radically transformational for any business.

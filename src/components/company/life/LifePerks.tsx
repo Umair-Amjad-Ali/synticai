@@ -38,7 +38,7 @@ const perks = [
 
 export default function LifePerks() {
   return (
-    <section className="w-full bg-[#f8fafc] py-24 relative overflow-hidden">
+    <section className="w-full bg-[#f8fafc] py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         
         {/* Header */}
@@ -47,14 +47,14 @@ export default function LifePerks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16 flex flex-col items-center"
+          className="text-start mb-16 flex flex-col items-start"
         >
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#1C75BC]" />
             <span className="text-[#1C75BC] text-xs font-bold uppercase tracking-[0.25em]">Benefits</span>
             <div className="w-8 h-px bg-[#1C75BC]" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#0A051E] mb-6 tracking-tight max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-black tracking-tight max-w-lg border-l-4 border-[#1C75BC] pl-4">
             Perks that support <br/>your best work.
           </h2>
         </motion.div>
@@ -68,7 +68,7 @@ export default function LifePerks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_40px_rgba(28,117,188,0.08)] transition-all duration-300 overflow-hidden"
+              className="group relative p-8 rounded-3xl bg-white border border-gray-200 shadow-[0_0_20px_rgba(0,0,0,0.06)] hover:shadow-[0_0_30px_rgba(28,117,188,0.1)] overflow-hidden transition-shadow duration-300"
             >
               <div className="w-14 h-14 bg-[#1C75BC]/10 rounded-2xl flex items-center justify-center text-[#1C75BC] mb-6 group-hover:bg-[#1C75BC] group-hover:text-white transition-colors duration-300 shadow-sm">
                 {perk.icon}
