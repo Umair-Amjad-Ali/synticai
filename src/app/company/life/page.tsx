@@ -10,7 +10,7 @@ import LifeCTA from "@/components/company/life/LifeCTA";
 
 export default function LifeAtSynticAIPage() {
   return (
-    <main className="min-h-screen bg-[#0A051E] overflow-x-hidden relative">
+    <main className="min-h-screen bg-dark-bg overflow-x-hidden relative">
       <div className="bg-white">
         <LifeHero />
         <LifeTicker />

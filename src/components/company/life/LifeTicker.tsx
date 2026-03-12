@@ -22,7 +22,7 @@ const keywords2 = [
 
 export default function LifeTicker() {
   return (
-    <div className="w-full bg-[#0A051E] py-8 overflow-hidden relative border-y border-white/5 flex flex-col items-center justify-center -mt-px">
+    <div className="w-full bg-dark-bg py-8 overflow-hidden relative border-y border-white/5 flex flex-col items-center justify-center -mt-px">
       
       {/* The Container holding both strips straight */}
       <div className="relative w-full flex flex-col gap-4 transform-gpu">
@@ -42,7 +42,7 @@ export default function LifeTicker() {
                 >
                   {keyword}
                 </span>
-                <span className="text-[#1C75BC] text-xl md:text-2xl leading-none">✦</span>
+                <span className="text-brand text-xl md:text-2xl leading-none">✦</span>
               </div>
             ))}
           </motion.div>
@@ -60,7 +60,7 @@ export default function LifeTicker() {
                 <span className="text-2xl md:text-3xl font-black uppercase tracking-wider px-6 md:px-10 text-white/80">
                   {keyword}
                 </span>
-                <span className="text-[#45d1f5] text-xl md:text-2xl leading-none">✧</span>
+                <span className="text-brand-light text-xl md:text-2xl leading-none">✧</span>
               </div>
             ))}
           </motion.div>

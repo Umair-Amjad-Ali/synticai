@@ -1,5 +1,4 @@
 import ServicesHero from "@/components/services/ServicesHero";
-import ServiceCategoryNav from "@/components/services/ServiceCategoryNav";
 import StickyFeatureService from "@/components/services/StickyFeatureService";
 import ServicesBentoGrid from "@/components/services/ServicesBentoGrid";
 import CustomSoftwareSection from "@/components/services/CustomSoftwareSection";
@@ -29,12 +28,8 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-white">
 
-      <div className="bg-[#0A051E]">
-        {/* 1. Immersive Hero (Dark) */}
+      <div className="bg-dark-bg">
         <ServicesHero />
-
-        {/* Floating Pill Navigation - only appears on scroll as right-side vertical bar */}
-        <ServiceCategoryNav />
       </div>
 
       {/* Section 1: Custom Software Development */}

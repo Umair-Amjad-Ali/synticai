@@ -2,111 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, Smartphone, Server, Layers, ArrowRight, Code2, X, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Code2, X, CheckCircle2 } from "lucide-react";
+import { capabilities, row1Tech, row2Tech, techIcons, stats } from "@/data/CustomSoftwareData";
 
-
-const capabilities = [
-  {
-    id: "web",
-    icon: Globe,
-    title: "Web Development",
-    color: "#1C75BC",
-    description: "Scalable SaaS platforms, enterprise portals, and pixel-perfect websites built to convert.",
-    techStack: [
-      { name: "React", icon: "⚛️" },
-      { name: "Next.js", icon: "▲" },
-      { name: "TypeScript", icon: "𝗧𝗦" },
-      { name: "Tailwind", icon: "🎨" },
-      { name: "Redux", icon: "🔮" },
-    ],
-    whatWeBuild: ["High-performance SaaS products", "Enterprise internal dashboards", "B2B and B2C web applications", "High-conversion landing pages"],
-    features: [
-      { title: "Server-Side Rendering", description: "Blazing fast SSR using Next.js for flawless SEO and zero-layout-shift performance." },
-      { title: "Automated Deployment", description: "Zero-downtime CI/CD pipelines deploying directly to platforms like Vercel or AWS." },
-      { title: "Edge Architecture", description: "Distributing assets globally via CDN Edge networks for the lowest possible latency." },
-      { title: "Component Systems", description: "Modular, reusable UI architectures wrapped in strict TypeScript for zero runtime errors." }
-    ]
-  },
-  {
-    id: "mobile",
-    icon: Smartphone,
-    title: "Mobile Apps",
-    color: "#45d1f5",
-    description: "Cross-platform mobile applications delivering native-quality experiences on iOS and Android.",
-    techStack: [
-      { name: "Flutter", icon: "💙" },
-      { name: "Dart", icon: "🎯" },
-      { name: "React Native", icon: "⚛️" },
-      { name: "Swift", icon: "🍎" },
-      { name: "Kotlin", icon: "🤖" },
-    ],
-    whatWeBuild: ["Consumer iOS & Android apps", "On-demand service platforms", "Fintech & healthcare applications", "IoT companion apps"],
-    features: [
-      { title: "Native vs Hybrid", description: "We architect the optimal path, whether compiling cross-platform or writing pure native." },
-      { title: "App Store Deployment", description: "End-to-end management of Apple & Google build variants, testing, and store compliance." },
-      { title: "Offline-First Design", description: "Robust local databases ensuring the app functions flawlessly without internet access." },
-      { title: "Hardware Integration", description: "Deep native bindings into Bluetooth edge devices, camera APIs, and biometric sensors." }
-    ]
-  },
-  {
-    id: "backend",
-    icon: Server,
-    title: "Backend Development",
-    color: "#a78bfa",
-    description: "Rock-solid APIs and microservices powering your product's core business logic at scale.",
-    techStack: [
-      { name: "Node.js", icon: "🟢" },
-      { name: "Python", icon: "🐍" },
-      { name: "FastAPI", icon: "🚀" },
-      { name: "PostgreSQL", icon: "🐘" },
-      { name: "Redis", icon: "🟥" }
-    ],
-    whatWeBuild: ["RESTful & GraphQL APIs", "Distributed microservices", "Real-time socket servers", "High-volume data pipelines"],
-    features: [
-      { title: "Microservices", description: "Decoupled domain logic for maximum horizontal scalability and isolated fault tolerance." },
-      { title: "DevOps & CI/CD", description: "Rigorous automated testing, Docker container orchestration, and Kubernetes clusters." },
-      { title: "Data Integrity", description: "Strict database normalization combined with blazing-fast in-memory caching layers." },
-      { title: "Advanced Security", description: "Enterprise-grade JWT authentication, IP rate limiting, and encrypted data at rest." }
-    ]
-  },
-  {
-    id: "fullstack",
-    icon: Layers,
-    title: "Full Stack Apps",
-    color: "#34d399",
-    description: "End-to-end product delivery — from concept and architecture to deployment and maintenance.",
-    techStack: [
-      { name: "Supabase", icon: "⚡" },
-      { name: "Firebase", icon: "🔥" },
-      { name: "Docker", icon: "🐳" },
-      { name: "AWS", icon: "☁️" },
-      { name: "GCP", icon: "🌩️" }
-    ],
-    whatWeBuild: ["Marketplace platforms", "E-learning ecosystems", "Custom ERP / CRM systems", "AI-integrated products"],
-    features: [
-      { title: "End-to-End Ownership", description: "From initial DB schema to frontend UI, handled entirely by one synchronized agile team." },
-      { title: "Cloud Infrastructure", description: "Scalable AWS or GCP hosting, utilizing modern serverless and containerized deployment." },
-      { title: "Agile Delivery", description: "Iterative two-week sprints ensuring continuous stakeholder feedback and rapid shipping." },
-      { title: "Active Monitoring", description: "Post-launch application performance monitoring (APM) and centralized log management." }
-    ]
-  },
-];
-
-const row1Tech = ["React", "Next.js", "TypeScript", "JavaScript", "Vue.js", "Tailwind CSS", "Angular", "Vite", "Redux", "React Query"];
-const row2Tech = ["Flutter", "Dart", "Node.js", "Python", "FastAPI", "PostgreSQL", "Firebase", "Supabase", "Docker", "AWS"];
-
-const techIcons: Record<string, string> = {
-  "React": "⚛️", "Next.js": "▲", "TypeScript": "𝗧𝗦", "JavaScript": "𝗝𝗦", "Vue.js": "💚",
-  "Tailwind CSS": "🎨", "Angular": "🔺", "Vite": "⚡", "Redux": "🔮", "React Query": "🔁",
-  "Flutter": "💙", "Dart": "🎯", "Node.js": "🟢", "Python": "🐍", "FastAPI": "🚀",
-  "PostgreSQL": "🐘", "Firebase": "🔥", "Supabase": "⚡", "Docker": "🐳", "AWS": "☁️",
-};
-
-const stats = [
-  { value: "500+", label: "Projects Delivered" },
-  { value: "12+", label: "Technologies" },
-  { value: "98%", label: "Client Satisfaction" },
-];
 
 function MarqueeRow({ items, direction = 1 }: { items: string[]; direction?: 1 | -1 }) {
   const looped = [...items, ...items, ...items, ...items];
@@ -121,12 +19,12 @@ function MarqueeRow({ items, direction = 1 }: { items: string[]; direction?: 1 |
         {looped.map((name, i) => (
           <div
             key={i}
-            className="group relative flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-[#110B29]/80 backdrop-blur-md border border-white/5 text-sm font-bold text-gray-300 transition-all duration-500 whitespace-nowrap cursor-pointer hover:text-white hover:bg-[#1A1140]/90 overflow-hidden"
+            className="group relative flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-dark-card-2/80 backdrop-blur-md border border-white/5 text-sm font-bold text-gray-300 transition-all duration-500 whitespace-nowrap cursor-pointer hover:text-white hover:bg-[#1A1140]/90 overflow-hidden"
             style={{ boxShadow: "inset 0 1px 1px rgba(255,255,255,0.05), 0 4px 20px rgba(0,0,0,0.2)" }}
           >
             {/* Multi-layered Glowing Hover Border */}
-            <div className="absolute inset-0 rounded-2xl border border-[#45d1f5]/0 group-hover:border-[#45d1f5]/60 transition-colors duration-500 pointer-events-none" />
-            <div className="absolute inset-px rounded-[15px] border border-transparent group-hover:border-[#1C75BC]/30 transition-colors duration-500 pointer-events-none" />
+            <div className="absolute inset-0 rounded-2xl border border-brand-light/0 group-hover:border-brand-light/60 transition-colors duration-500 pointer-events-none" />
+            <div className="absolute inset-px rounded-[15px] border border-transparent group-hover:border-brand/30 transition-colors duration-500 pointer-events-none" />
             
             {/* Dynamic Sweeping Reflection (Glass Effect) */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none overflow-hidden rounded-2xl">
@@ -134,10 +32,10 @@ function MarqueeRow({ items, direction = 1 }: { items: string[]; direction?: 1 |
             </div>
 
             {/* Soft Ambient Icon Glow (Expands on hover) */}
-            <div className="absolute left-6 w-6 h-6 bg-white/10 blur-xl rounded-full group-hover:bg-[#45d1f5]/60 group-hover:w-10 group-hover:h-10 transition-all duration-500" />
+            <div className="absolute left-6 w-6 h-6 bg-white/10 blur-xl rounded-full group-hover:bg-brand/60 group-hover:w-10 group-hover:h-10 transition-all duration-500" />
             
             <span className="text-xl leading-none relative z-10 drop-shadow-sm group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-500 ease-out">{techIcons[name]}</span>
-            <span className="tracking-wide relative z-10 transition-colors duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-white group-hover:to-[#45d1f5]">{name}</span>
+            <span className="tracking-wide relative z-10 transition-colors duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-white group-hover:to-brand-light">{name}</span>
           </div>
         ))}
       </motion.div>
@@ -145,13 +43,12 @@ function MarqueeRow({ items, direction = 1 }: { items: string[]; direction?: 1 |
   );
 }
 
-// ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function CustomSoftwareSection() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
-    <section id="custom-software" className="w-full bg-[#0A051E] relative">
+    <section id="custom-software" className="w-full bg-dark-bg relative">
 
       <div className="max-w-6xl mx-auto px-6 pt-24 pb-12 text-left flex flex-col items-start gap-5 relative z-10">
         
@@ -162,10 +59,10 @@ export default function CustomSoftwareSection() {
           className="flex items-center gap-4"
         >
           <div className="flex items-center gap-1.5">
-            <div className="w-2 h-2 rounded-full bg-[#1C75BC]" />
-            <div className="w-12 h-[2px] bg-linear-to-r from-[#1C75BC] to-transparent" />
+            <div className="w-2 h-2 rounded-full bg-brand" />
+            <div className="w-12 h-[2px] bg-linear-to-r from-brand to-transparent" />
           </div>
-          <span className="text-[#1C75BC] text-[11px] font-extrabold uppercase tracking-[0.3em]">
+          <span className="text-brand text-[11px] font-extrabold uppercase tracking-[0.3em]">
             Custom Development
           </span>
         </motion.div>
@@ -178,7 +75,7 @@ export default function CustomSoftwareSection() {
           className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.1]"
         >
           We Build.{" "}
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#45d1f5] to-[#1C75BC]">
+          <span className="text-transparent bg-clip-text brand-gradient-text">
             End to End.
           </span>
         </motion.h2>
@@ -263,7 +160,7 @@ export default function CustomSoftwareSection() {
                       {cap.techStack.slice(0, 3).map((tech, i) => (
                         <div 
                           key={i} 
-                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] font-semibold transition-all duration-500 ${isExpanded ? "bg-[#110B29] border-white/10 text-white shadow-sm" : "bg-[#0A051E] border-white/5 text-gray-400 group-hover:border-white/10 group-hover:bg-[#110B29] group-hover:shadow-sm"}`}
+                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] font-semibold transition-all duration-500 ${isExpanded ? "bg-dark-card-2 border-white/10 text-white shadow-sm" : "bg-dark-bg border-white/5 text-gray-400 group-hover:border-white/10 group-hover:bg-dark-card-2 group-hover:shadow-sm"}`}
                         >
                           <span className={`text-[12px] transition-opacity ${isExpanded ? "opacity-100" : "opacity-80 group-hover:opacity-100"}`}>{tech.icon}</span> 
                           <span className={`transition-colors ${isExpanded ? "text-white" : "group-hover:text-white"}`}>{tech.name}</span>
@@ -271,7 +168,7 @@ export default function CustomSoftwareSection() {
                       ))}
                       {cap.techStack.length > 3 && (
                         <div 
-                          className={`flex items-center justify-center min-w-[32px] px-2 py-1.5 rounded-lg border text-[11px] font-bold transition-all duration-500 ${isExpanded ? "bg-[#110B29] border-white/10" : "bg-[#0A051E] border-white/5 group-hover:border-white/10 group-hover:bg-[#110B29]"}`}
+                          className={`flex items-center justify-center min-w-[32px] px-2 py-1.5 rounded-lg border text-[11px] font-bold transition-all duration-500 ${isExpanded ? "bg-dark-card-2 border-white/10" : "bg-dark-bg border-white/5 group-hover:border-white/10 group-hover:bg-dark-card-2"}`}
                           style={{ color: cap.color }}
                         >
                           +{cap.techStack.length - 3}
@@ -387,10 +284,10 @@ export default function CustomSoftwareSection() {
       </div>
 
       {/* ── C. Tech Stack Carousel ── */}
-      <div className="w-full py-20 relative bg-[#0C0A1D] border-y border-white/5 overflow-hidden">
+      <div className="w-full py-20 relative bg-dark-bg border-y border-white/5 overflow-hidden">
         {/* Ambient background glows */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#1C75BC]/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#45d1f5]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-light/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-6 text-center mb-14 relative z-10 flex flex-col items-center">
           <motion.div
@@ -399,11 +296,11 @@ export default function CustomSoftwareSection() {
             viewport={{ once: true }}
             className="flex items-center gap-3 mb-4"
           >
-            <div className="w-12 h-px bg-linear-to-r from-transparent to-[#45d1f5]/50" />
-            <span className="text-[#45d1f5] text-[10px] font-extrabold uppercase tracking-[0.3em]">
+            <div className="w-12 h-px bg-linear-to-r from-transparent to-brand-light/50" />
+            <span className="text-brand text-[10px] font-extrabold uppercase tracking-[0.3em]">
               Technologies We Excel In
             </span>
-             <div className="w-12 h-px bg-linear-to-l from-transparent to-[#45d1f5]/50" />
+             <div className="w-12 h-px bg-linear-to-l from-transparent to-brand-light/50" />
           </motion.div>
           <motion.h3
             initial={{ opacity: 0, y: 15 }}
@@ -429,7 +326,7 @@ export default function CustomSoftwareSection() {
       </div>
 
       {/* ── D. Stats Strip (Premium Dark Dashboard) ── */}
-      <div className="w-full relative overflow-hidden bg-[#0A051E] py-20 border-b border-white/5">
+      <div className="w-full relative overflow-hidden bg-dark-bg py-20 border-b border-white/5">
         
         {/* Subtle Animated Grid Background */}
         <div 
@@ -450,17 +347,17 @@ export default function CustomSoftwareSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="group relative flex flex-col items-center justify-center py-10 px-6 rounded-3xl border bg-[#110B29]/40 backdrop-blur-md cursor-default transition-all duration-500 hover:bg-[#110B29]/80 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] overflow-hidden"
+                className="group relative flex flex-col items-center justify-center py-10 px-6 rounded-3xl border bg-dark-card-2/40 backdrop-blur-md cursor-default transition-all duration-500 hover:bg-dark-card-2/80 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] overflow-hidden"
                 style={{ borderColor: "rgba(255,255,255,0.05)" }}
               >
                 {/* Glowing Top Border Line */}
-                <div className="absolute top-0 inset-x-0 h-[2px] w-full bg-linear-to-r from-transparent via-[#45d1f5]/0 to-transparent group-hover:via-[#45d1f5] transition-all duration-700 opacity-0 group-hover:opacity-100" />
+                <div className="absolute top-0 inset-x-0 h-[2px] w-full bg-linear-to-r from-transparent via-brand-light/0 to-transparent group-hover:via-brand transition-all duration-700 opacity-0 group-hover:opacity-100" />
                 
                 {/* Ambient Center Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#1C75BC]/20 rounded-full blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand/20 rounded-full blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
                 <div className="text-5xl md:text-6xl font-extrabold mb-3 tracking-tighter relative z-10 transition-transform duration-500 group-hover:scale-110">
-                  <span className="text-transparent bg-clip-text bg-linear-to-b from-white to-gray-400 group-hover:from-white group-hover:to-[#45d1f5] transition-all duration-500">
+                  <span className="text-transparent bg-clip-text bg-linear-to-b from-white to-gray-400 group-hover:from-white group-hover:to-brand transition-all duration-500">
                     {s.value}
                   </span>
                 </div>
@@ -472,10 +369,7 @@ export default function CustomSoftwareSection() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* ── E. CTA ── */}
-    
+      </div>    
 
     </section>
   );

@@ -5,8 +5,9 @@ import { Zap } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutHero() {
+  const newLocal = "text-brand text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2";
   return (
-    <div className="relative w-full min-h-screen flex items-center bg-[#0A051E] overflow-hidden">
+    <div className="relative w-full min-h-screen flex items-center bg-dark-bg overflow-hidden">
       
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div
@@ -26,9 +27,9 @@ export default function AboutHero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full xl:pr-10"
           >
-            <div className="inline-flex flex-wrap items-center gap-2.5 px-4 py-2 rounded-full bg-[#1C75BC]/10 border border-[#1C75BC]/30 mb-8 max-w-full">
-              <span className="w-2 h-2 rounded-full bg-[#45d1f5] animate-pulse shrink-0" />
-              <span className="text-[#45d1f5] font-semibold uppercase tracking-[0.15em] text-[11px]">
+            <div className="inline-flex flex-wrap items-center gap-2.5 px-4 py-2 rounded-full bg-brand/10 border border-brand/30 mb-8 max-w-full">
+              <span className="w-2 h-2 rounded-full bg-brand animate-pulse shrink-0" />
+              <span className="text-brand font-semibold uppercase tracking-[0.15em] text-[11px]">
                 The Intelligence Architects
               </span>
             </div>
@@ -40,7 +41,7 @@ export default function AboutHero() {
             </h1>
 
             <div className="flex gap-5 mb-10">
-              <div className="w-[4px] bg-[#1C75BC] rounded-full shrink-0" />
+              <div className="w-[4px] bg-brand rounded-full shrink-0" />
               <p className="text-lg text-gray-400 leading-relaxed">
                 We are a premier engineering collective democratizing highly advanced,
                 enterprise-grade AI and custom software development across the globe.
@@ -50,15 +51,15 @@ export default function AboutHero() {
             <div className="grid grid-cols-3 w-full border border-white/10 rounded-2xl overflow-hidden">
               <div className="px-2 sm:px-6 py-3 sm:py-5 bg-white/5">
                 <h4 className="text-xl sm:text-3xl font-black text-white leading-none">2019</h4>
-                <p className="text-[#1C75BC] text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2">Established</p>
+                <p className="text-brand text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2">Established</p>
               </div>
               <div className="px-2 sm:px-6 py-3 sm:py-5 bg-white/5 border-x border-white/10">
                 <h4 className="text-xl sm:text-3xl font-black text-white leading-none">50+</h4>
-                <p className="text-[#1C75BC] text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2">Products</p>
+                <p className={newLocal}>Products</p>
               </div>
               <div className="px-2 sm:px-6 py-3 sm:py-5 bg-white/5">
                 <h4 className="text-xl sm:text-3xl font-black text-white leading-none">100%</h4>
-                <p className="text-[#1C75BC] text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2">In-House</p>
+                <p className="text-brand text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2">In-House</p>
               </div>
             </div>
           </motion.div>
@@ -76,7 +77,7 @@ export default function AboutHero() {
                 fill
                 className="object-cover opacity-80"
               />
-              <div className="absolute inset-0 bg-[#0A051E]/20" />
+              <div className="absolute inset-0 bg-dark-bg/20" />
             </div>
 
             <motion.div
@@ -86,7 +87,7 @@ export default function AboutHero() {
               className="w-full mt-4 bg-white/5 backdrop-blur-xl p-6 rounded-2xl border border-white/10"
             >
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 shrink-0 rounded-xl bg-[#1C75BC]/20 flex items-center justify-center text-[#45d1f5]">
+                <div className="w-10 h-10 shrink-0 rounded-xl bg-brand/20 flex items-center justify-center text-brand">
                   <Zap className="w-5 h-5" />
                 </div>
                 <div>

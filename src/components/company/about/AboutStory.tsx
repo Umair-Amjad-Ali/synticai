@@ -2,39 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Compass, Rocket, Trophy } from "lucide-react";
+import { timeline } from "@/data/AboutStoryData";
 import Image from "next/image";
 
-const timeline = [
-  {
-    year: "2019",
-    title: "The Genesis",
-    desc: "Founded with a unified vision: to democratize enterprise AI and make it accessible worldwide.",
-    icon: <Sparkles className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    year: "2021",
-    title: "Global Reach",
-    desc: "Expanded operations to the UK, USA, and UAE. Delivered our 50th successful AI product.",
-    icon: <Compass className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    year: "2023",
-    title: "The Scale Up",
-    desc: "Grew our engineering team to over 100+ experts, launching proprietary LLM accelerators.",
-    icon: <Rocket className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    year: "2025",
-    title: "Leadership",
-    desc: "Recognized as a leading generative AI partner, pushing the boundaries for enterprises.",
-    icon: <Trophy className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
-  },
-];
 
 export default function AboutStory() {
   const [activeIdx, setActiveIdx] = useState<number>(0);
@@ -52,11 +22,11 @@ export default function AboutStory() {
           className="mb-14 flex flex-col items-start"
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-px bg-[#1C75BC]" />
-            <span className="text-[#1C75BC] text-xs font-bold uppercase tracking-[0.25em]">Our Journey</span>
-            <div className="w-8 h-px bg-[#1C75BC]" />
+            <div className="w-8 h-px bg-brand" />
+            <span className="text-brand text-xs font-bold uppercase tracking-[0.25em]">Our Journey</span>
+            <div className="w-8 h-px bg-brand" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A051E] tracking-tight max-w-lg border-l-4 border-[#1C75BC] pl-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-dark-bg tracking-tight max-w-lg border-l-4 border-brand pl-4">
             Discover Our Story
           </h2>
           <p className="text-gray-500 max-w-2xl text-[15px] leading-relaxed pt-6">
@@ -95,8 +65,8 @@ export default function AboutStory() {
                 <div 
                   className={`absolute inset-0 bg-linear-to-t transition-opacity duration-700 ${
                     isActive 
-                      ? "from-[#0A051E]/95 via-[#0A051E]/40 to-transparent opacity-100" 
-                      : "from-[#0A051E]/90 via-[#0A051E]/30 to-[#0A051E]/10 opacity-80 group-hover:opacity-70"
+                      ? "from-dark-bg/95 via-dark-bg/40 to-transparent opacity-100" 
+                      : "from-dark-bg/90 via-dark-bg/30 to-dark-bg/10 opacity-80 group-hover:opacity-70"
                   }`} 
                 />
 
@@ -114,7 +84,7 @@ export default function AboutStory() {
                 {/* Header for collapsed mobile views */}
                 <div className={`lg:hidden absolute top-4 left-6 right-6 flex items-center justify-between transition-opacity duration-300 ${isActive ? "opacity-0" : "opacity-100"}`}>
                    <h3 className="text-white font-bold text-xl drop-shadow-md">{item.title}</h3>
-                   <span className="text-[#1C75BC] font-black">{item.year}</span>
+                   <span className="text-brand font-black">{item.year}</span>
                 </div>
 
                 {/* Content Panel (Bottom aligned) */}
@@ -127,10 +97,10 @@ export default function AboutStory() {
                     
                     {/* Header: Icon + Year */}
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-[#1C75BC] flex items-center justify-center text-white shrink-0 shadow-[0_4px_20px_rgba(28,117,188,0.4)]">
-                        {item.icon}
+                      <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-white shrink-0 shadow-[0_4px_20px_rgba(28,117,188,0.4)]">
+                        <item.icon className="w-5 h-5" />
                       </div>
-                      <span className="text-[#1C75BC] font-black text-2xl tracking-widest drop-shadow-md">
+                      <span className="text-brand font-black text-2xl tracking-widest drop-shadow-md">
                         {item.year}
                       </span>
                     </div>
@@ -156,7 +126,7 @@ export default function AboutStory() {
                 </div>
 
                 {/* Bottom active state indicator */}
-                <div className={`absolute bottom-0 left-0 right-0 h-1.5 bg-[#1C75BC] transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] origin-left ${
+                <div className={`absolute bottom-0 left-0 right-0 h-1.5 bg-brand transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] origin-left ${
                   isActive ? "scale-x-100" : "scale-x-0"
                 }`} />
 

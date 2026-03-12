@@ -4,81 +4,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote } from "lucide-react";
 import Image from "next/image";
+import { testimonials } from "@/data/LifeTestimonialsData";
 
-const testimonials = [
-  {
-    quote: "Working at SynticAI means you are constantly surrounded by people who are just as obsessed with perfecting the craft as you are. The level of engineering excellence here is unmatched.",
-    name: "Alex Johnson",
-    role: "Senior Machine Learning Engineer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "I've never been at a company that truly encourages 'breaking things to learn' like this. Leadership trusts us with autonomy, and that results in our best, most innovative work.",
-    name: "Priya Patel",
-    role: "Lead Product Designer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "The ability to work asynchronously from anywhere in the world, while feeling deeply connected to my team, is incredible. SynticAI actually practices the work-life harmony it preaches.",
-    name: "Marcus Thorne",
-    role: "Backend Architect",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "From day one, I felt like my ideas matter. The flat hierarchy here means anyone can pitch a great concept, and if it's solid, the whole team rallies behind building it.",
-    name: "Elena Rostova",
-    role: "AI Research Scientist",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "SynticAI gives you the absolute best tools, the most challenging problems, and the smartest colleagues. It is the ultimate playground for ambitious engineers.",
-    name: "Jin Soo",
-    role: "DevOps Lead",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "The culture here is built on genuine human connection. Even though we are scattered across the globe, the camaraderie and support system make it feel like we share an office.",
-    name: "Sarah Jenkins",
-    role: "People & Culture Lead",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "Working at SynticAI means you are constantly surrounded by people who are just as obsessed with perfecting the craft as you are. The level of engineering excellence here is unmatched.",
-    name: "Alex Johnson",
-    role: "Senior Machine Learning Engineer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "I've never been at a company that truly encourages 'breaking things to learn' like this. Leadership trusts us with autonomy, and that results in our best, most innovative work.",
-    name: "Priya Patel",
-    role: "Lead Product Designer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "The ability to work asynchronously from anywhere in the world, while feeling deeply connected to my team, is incredible. SynticAI actually practices the work-life harmony it preaches.",
-    name: "Marcus Thorne",
-    role: "Backend Architect",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "From day one, I felt like my ideas matter. The flat hierarchy here means anyone can pitch a great concept, and if it's solid, the whole team rallies behind building it.",
-    name: "Elena Rostova",
-    role: "AI Research Scientist",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "SynticAI gives you the absolute best tools, the most challenging problems, and the smartest colleagues. It is the ultimate playground for ambitious engineers.",
-    name: "Jin Soo",
-    role: "DevOps Lead",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
-  },
-  {
-    quote: "The culture here is built on genuine human connection. Even though we are scattered across the globe, the camaraderie and support system make it feel like we share an office.",
-    name: "Sarah Jenkins",
-    role: "People & Culture Lead",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
-  },
-];
 
 export default function LifeVoices() {
   const [current, setCurrent] = useState(0);
@@ -100,16 +27,16 @@ export default function LifeVoices() {
         
         {/* Header */}
         <div className="flex flex-col items-center mb-12 md:mb-24 relative z-20">
-          <Quote className="w-10 h-10 md:w-16 md:h-16 text-[#1C75BC]/20 absolute -top-4 md:-top-8 -rotate-12" />
+          <Quote className="w-10 h-10 md:w-16 md:h-16 text-brand/20 absolute -top-4 md:-top-8 -rotate-12" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="flex items-center gap-3 relative z-10"
           >
-             <div className="w-6 md:w-8 h-px bg-[#1C75BC]" />
-             <span className="text-[#1C75BC] text-[10px] md:text-xs font-bold uppercase tracking-[0.25em]">Inside SynticAI</span>
-             <div className="w-6 md:w-8 h-px bg-[#1C75BC]" />
+             <div className="w-6 md:w-8 h-px bg-brand" />
+             <span className="text-brand text-[10px] md:text-xs font-bold uppercase tracking-[0.25em]">Inside SynticAI</span>
+             <div className="w-6 md:w-8 h-px bg-brand" />
           </motion.div>
         </div>
 
@@ -121,7 +48,7 @@ export default function LifeVoices() {
         >
           {/* Background decorative rings */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-[60%] h-[60%] rounded-full border border-white/5 bg-[#1C75BC]/5 blur-3xl" />
+            <div className="w-[60%] h-[60%] rounded-full border border-white/5 bg-brand/5 blur-3xl" />
             <div className="absolute w-[80%] h-[80%] rounded-full border border-white/3 border-dashed" />
             <div className="absolute w-full h-full rounded-full border border-white/2" />
           </div>
@@ -142,7 +69,7 @@ export default function LifeVoices() {
                 </p>
                 <div>
                   <h4 className="text-white font-bold text-lg">{testimonials[current].name}</h4>
-                  <p className="text-[#1C75BC] text-xs font-bold tracking-widest uppercase mt-1">
+                  <p className="text-brand text-xs font-bold tracking-widest uppercase mt-1">
                     {testimonials[current].role}
                   </p>
                 </div>
@@ -153,13 +80,11 @@ export default function LifeVoices() {
           {/* Orbiting Avatar Nodes */}
           <div className="absolute inset-0 pointer-events-none">
             {testimonials.map((t, idx) => {
-              // Calculate position on an ellipse
               const angle = (idx / testimonials.length) * Math.PI * 2;
-              // Add a slight offset to staring angle so it doesn't always start at exact right
               const adjustedAngle = angle - Math.PI / 4; 
               
-              const radiusX = 45; // percentage of container width
-              const radiusY = 40; // percentage of container height
+              const radiusX = 45; 
+              const radiusY = 40; 
               
               const left = `${50 + radiusX * Math.cos(adjustedAngle)}%`;
               const top = `${50 + radiusY * Math.sin(adjustedAngle)}%`;
@@ -176,7 +101,7 @@ export default function LifeVoices() {
                   {isActive && (
                     <motion.div 
                       layoutId="activeGlow"
-                      className="absolute inset-0 bg-[#1C75BC] rounded-full blur-[20px] opacity-40"
+                      className="absolute inset-0 bg-brand rounded-full blur-[20px] opacity-40"
                     />
                   )}
 
@@ -193,7 +118,7 @@ export default function LifeVoices() {
                     }}
                     className={`relative w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border-2 transition-all duration-500 ease-out focus:outline-hidden ${
                       isActive 
-                        ? "border-[#1C75BC] shadow-[0_0_30px_rgba(69,209,245,0.6)] scale-125 z-40" 
+                        ? "border-brand shadow-[0_0_30px_rgba(69,209,245,0.6)] scale-125 z-40" 
                         : "border-white/20 opacity-50 hover:opacity-100 hover:scale-110 hover:border-white/50"
                     }`}
                     aria-label={`Show quote from ${t.name}`}
@@ -224,12 +149,12 @@ export default function LifeVoices() {
                     </div>
                     
                     <div className="mt-12 text-center relative z-20">
-                        <Quote className="w-8 h-8 text-[#1C75BC]/30 mx-auto mb-4" />
+                        <Quote className="w-8 h-8 text-brand/30 mx-auto mb-4" />
                         <p className="text-[15px] sm:text-base font-medium text-gray-200 leading-relaxed italic mb-6 min-h-[120px] flex items-center justify-center">
                             "{testimonials[current].quote}"
                         </p>
                         <h4 className="text-white font-bold text-base sm:text-lg">{testimonials[current].name}</h4>
-                        <p className="text-[#1C75BC] text-[10px] sm:text-xs font-bold tracking-widest uppercase mt-1">
+                        <p className="text-brand text-[10px] sm:text-xs font-bold tracking-widest uppercase mt-1">
                             {testimonials[current].role}
                         </p>
                     </div>
@@ -244,7 +169,7 @@ export default function LifeVoices() {
                      onClick={() => setCurrent(idx)}
                      className={`relative w-12 h-12 rounded-full overflow-hidden border-2 transition-all duration-300 ${
                        current === idx 
-                         ? "border-[#1C75BC] scale-110 shadow-[0_0_15px_rgba(69,209,245,0.5)] z-10" 
+                         ? "border-brand scale-110 shadow-[0_0_15px_rgba(69,209,245,0.5)] z-10" 
                          : "border-white/20 opacity-40 hover:opacity-100"
                      }`}
                      aria-label={`Show quote from ${t.name}`}

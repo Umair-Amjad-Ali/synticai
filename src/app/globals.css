@@ -10,6 +10,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* ── Synticai Brand Tokens ── */
+  --color-brand:        #1C75BC;   /* primary blue */
+  --color-brand-light:  #45d1f5;   /* cyan accent */
+  --color-brand-dark:   #101254;   /* deep navy */
+  --color-dark-bg:      #0A051E;   /* page background */
+  --color-dark-card:    #0C0822;   /* card background */
+  --color-dark-card-2:  #110B29;   /* hover card background */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,4 +44,88 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+/* ── Custom 3D Transform Utilities ── */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z-\[-40px\] {
+  transform: translateZ(-40px);
+}
+
+.translate-z-\[-20px\] {
+  transform: translateZ(-20px);
+}
+
+.translate-z-\[-10px\] {
+  transform: translateZ(-10px);
+}
+
+.translate-z-\[30px\] {
+  transform: translateZ(30px);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Synticai Brand Utility Classes
+   Use these instead of repeating raw color values everywhere.
+   ─────────────────────────────────────────────────────────────
+
+   GRADIENTS
+   .brand-gradient       → bg-linear-to-r from-[#1C75BC] to-[#101254] (primary button/fill)
+   .brand-gradient-soft  → bg-linear-to-r from-[#45d1f5] to-[#1C75BC] (text gradient / hero)
+   .brand-gradient-dark  → bg-linear-to-br from-[#0C0822] to-[#0A051E] (dark card fill)
+
+   TEXT
+   .text-brand           → #1C75BC primary blue
+   .text-brand-light     → #45d1f5 cyan accent
+
+   BACKGROUNDS
+   .bg-brand             → #1C75BC
+   .bg-brand-light       → #45d1f5
+   .bg-dark              → #0A051E page bg
+   .bg-dark-card         → #0C0822 card bg
+
+   BORDERS
+   .border-brand         → border-color #1C75BC
+   .border-brand-light   → border-color #45d1f5
+   ───────────────────────────────────────────── */
+
+@layer utilities {
+  /* Gradients */
+  .brand-gradient {
+    background-image: linear-gradient(to right, #1C75BC, #101254);
+  }
+  .brand-gradient-soft {
+    background-image: linear-gradient(to right, #45d1f5, #1C75BC);
+  }
+  .brand-gradient-dark {
+    background-image: linear-gradient(to bottom right, #0C0822, #0A051E);
+  }
+  .brand-gradient-text {
+    background-image: linear-gradient(to right, #1C75BC, #101254);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Text colors */
+  .text-brand       { color: #1C75BC; }
+  .text-brand-light { color: #45d1f5; }
+
+  /* Background colors */
+  .bg-brand       { background-color: #1C75BC; }
+  .bg-brand-light { background-color: #45d1f5; }
+  .bg-dark        { background-color: #0A051E; }
+  .bg-dark-card   { background-color: #0C0822; }
+  .bg-dark-card-2 { background-color: #110B29; }
+
+  /* Border colors */
+  .border-brand       { border-color: #1C75BC; }
+  .border-brand-light { border-color: #45d1f5; }
 }

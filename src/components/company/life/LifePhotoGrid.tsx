@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function LifePhotoGrid() {
   return (
-    <section className="w-full relative z-20 py-16 md:py-20 bg-[#0A051E] overflow-hidden">
+    <section className="w-full relative z-20 py-16 md:py-20 bg-dark-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12 lg:gap-16">
         
         {/* Left Side: Overlapping Image Collage */}
@@ -34,8 +34,8 @@ export default function LifePhotoGrid() {
                 fill 
                 className="object-cover" 
               />
-              <div className="absolute inset-0 bg-[#1C75BC]/20 mix-blend-overlay hover:bg-transparent transition-colors duration-500" />
-              <div className="absolute inset-0 bg-linear-to-t from-[#0A051E]/60 via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-brand/20 mix-blend-overlay hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-linear-to-t from-dark-bg/60 via-transparent to-transparent opacity-80" />
             </div>
           </motion.div>
 
@@ -62,17 +62,17 @@ export default function LifePhotoGrid() {
                 fill 
                 className="object-cover" 
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#0A051E]/80 via-[#0A051E]/20 to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-linear-to-t from-dark-bg/80 via-dark-bg/20 to-transparent opacity-90" />
               
               {/* Overlay Badge */}
               <div 
                 className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 flex items-center gap-2 shadow-xl"
               >
-                 <div className="w-2 h-2 rounded-full bg-[#45d1f5] animate-pulse" />
+                 <div className="w-2 h-2 rounded-full bg-brand animate-pulse" />
                  <span className="text-white text-xs font-bold tracking-wide">Remote Hubs</span>
               </div>
             </div>
-          </motion.div>
+          </motion.div> 
 
           {/* Floating graphic element removed per user request */}
         </div>
@@ -86,13 +86,13 @@ export default function LifePhotoGrid() {
           className="flex-1 max-w-lg lg:ml-auto order-1 md:order-2"
         >
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-6 h-[2px] bg-linear-to-r from-[#1C75BC] to-[#101254]" />
-            <span className="text-[#1C75BC] text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">The Environment</span>
+            <div className="w-6 h-[2px] brand-gradient" />
+            <span className="text-brand text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">The Environment</span>
           </div>
 
-           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight max-w-lg border-l-4 border-[#1C75BC] pl-4">
+           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight max-w-lg border-l-4 border-brand pl-4">
              Spaces built for <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#1C75BC] to-[#101254]">
+            <span className="text-transparent bg-clip-text brand-gradient-text">
               deep focus
             </span> & play.
             </h2>
@@ -108,7 +108,7 @@ export default function LifePhotoGrid() {
               "Ergonomic home office stipends"
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-3 text-gray-300 text-sm font-medium">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#1C75BC] shadow-[0_0_8px_rgba(28,117,188,0.8)]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-brand shadow-[0_0_8px_rgba(28,117,188,0.8)]" />
                 {item}
               </li>
             ))}

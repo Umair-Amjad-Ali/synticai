@@ -5,11 +5,11 @@ import Image from "next/image";
 
 export default function LifeHero() {
   return (
-    <section className="relative w-full bg-[#0A051E] pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen flex items-center">
+    <section className="relative w-full bg-dark-bg pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen flex items-center">
       
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-linear-to-bl from-[#1C75BC]/10 to-transparent rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-linear-to-tr from-[#45d1f5]/5 to-transparent rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-linear-to-bl from-brand/10 to-transparent rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-linear-to-tr from-brand-light/5 to-transparent rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
 
       {/* Grid Pattern */}
       <div 
@@ -28,13 +28,13 @@ export default function LifeHero() {
           className="text-center max-w-4xl mx-auto"
         >
           <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-white/5 border border-white/10">
-            <span className="w-2 h-2 rounded-full bg-[#45d1f5] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
             <span className="text-white text-sm font-bold tracking-widest uppercase">The SynticAI Experience</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tight">
             Work where your <br/>
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#1C75BC] to-[#101254]">
+            <span className="text-transparent bg-clip-text brand-gradient-text">
               best ideas 
             </span> happen.
           </h1>
@@ -59,15 +59,15 @@ export default function LifeHero() {
               "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
               "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
             ].map((src, i) => (
-              <div key={i} className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#0A051E] overflow-hidden relative shadow-lg">
+              <div key={i} className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-dark-bg overflow-hidden relative shadow-lg">
                 <Image src={src} alt="Team member" fill className="object-cover" />
               </div>
             ))}
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#0A051E] overflow-hidden relative shadow-lg bg-[#1C75BC] flex items-center justify-center">
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-dark-bg overflow-hidden relative shadow-lg bg-brand flex items-center justify-center">
               <span className="text-white font-bold text-sm">+50</span>
             </div>
           </div>
-          <p className="text-[#45d1f5] font-semibold text-sm tracking-widest uppercase">
+          <p className="text-brand font-semibold text-sm tracking-widest uppercase">
             Join 50+ Global Innovators
           </p>
         </motion.div>
