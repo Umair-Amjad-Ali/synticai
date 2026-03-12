@@ -42,7 +42,7 @@ export default function ResourceHero({ search, onSearch }: ResourceHeroProps) {
           className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.05] mb-4"
         >
           Built by Engineers.<br />
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-light to-brand">
+          <span className="text-transparent bg-clip-text brand-gradient-text">
             Shared with the World.
           </span>
         </motion.h1>

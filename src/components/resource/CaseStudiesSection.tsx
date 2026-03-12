@@ -55,16 +55,6 @@ function Card3D({ cs, i }: { cs: CaseStudy; i: number }) {
         }}
         className="group relative rounded-3xl bg-white overflow-hidden transition-colors duration-300 hover:bg-gray-50 p-7 flex flex-col gap-5 cursor-default"
       >
-        {/* Colored top accent bar — raised in Z */}
-        <div
-          className="-mt-5 -mx-5 mb-0 h-[3px]"
-          style={{
-            width: "calc(100% + 2.5rem)",
-            background: `linear-gradient(90deg, ${cs.color}, transparent)`,
-            transform: "translateZ(20px)",
-          }}
-        />
-
         {/* Subtle inner highlight on top edge */}
         <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-white/80 via-white/40 to-transparent pointer-events-none" />
 
