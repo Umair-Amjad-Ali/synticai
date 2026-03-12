@@ -46,7 +46,7 @@ export default function Navbar() {
           : "bg-white/95 backdrop-blur-xl border-b border-gray-100/50"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <div className="flex items-center justify-between h-[70px]">
 
           {/* Logo */}
@@ -60,7 +60,7 @@ export default function Navbar() {
                 src="/assets/synticai-logo-footer.png"
                 alt="SynticAI Logo"
                 width={140}
-                height={40}
+                height={30}
                 className="h-9 w-auto object-contain"
                 priority
               />
@@ -83,8 +83,8 @@ export default function Navbar() {
                       transition={{ duration: 0.4, delay: 0.08 * index }}
                       className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                         isActive
-                          ? "text-[#1C75BC] bg-[#1C75BC]/8"
-                          : "text-gray-500 hover:text-[#1C75BC] hover:bg-gray-50"
+                          ? "text-brand bg-brand/8"
+                          : "text-gray-500 hover:text-brand hover:bg-gray-50"
                       }`}
                     >
                       {link.name}
@@ -103,11 +103,11 @@ export default function Navbar() {
                             href={sub.href}
                             className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 group/sub ${
                               pathname === sub.href
-                                ? "text-[#1C75BC] bg-[#1C75BC]/8"
-                                : "text-gray-500 hover:text-[#1C75BC] hover:bg-gray-50"
+                                ? "text-brand bg-brand/8"
+                                : "text-gray-500 hover:text-brand hover:bg-gray-50"
                             }`}
                           >
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#45d1f5]/50 group-hover/sub:bg-[#45d1f5] transition-colors" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-brand-light/50 group-hover/sub:bg-brand-light transition-colors" />
                             {sub.name}
                           </Link>
                         ))}
@@ -128,8 +128,8 @@ export default function Navbar() {
                     href={link.href}
                     className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                       isActive
-                        ? "text-[#1C75BC] border border-[#1C75BC]/20 bg-linear-to-b from-[#1C75BC]/10 to-[#1C75BC]/3 shadow-[0_1px_8px_rgba(28,117,188,0.1)]"
-                        : "text-gray-500 hover:text-[#1C75BC] hover:border hover:border-[#1C75BC]/10 hover:bg-[#1C75BC]/5 border border-transparent"
+                        ? "text-brand border border-brand/20 bg-linear-to-b from-brand/10 to-brand/3 shadow-[0_1px_8px_rgba(28,117,188,0.1)]"
+                        : "text-gray-500 hover:text-brand hover:border hover:border-brand/10 hover:bg-brand/5 border border-transparent"
                     }`}
                   >
                     {link.name}
@@ -148,7 +148,7 @@ export default function Navbar() {
             >
               <Link
                 href="/contact"
-                className="relative group px-5 py-2.5 text-sm font-bold rounded-full overflow-hidden border border-[#1C75BC]/30 bg-[#1C75BC]/5 text-[#1C75BC] hover:bg-[#1C75BC] hover:text-white hover:border-[#1C75BC] transition-all duration-300"
+                className="relative group px-5 py-2.5 text-sm font-bold rounded-full overflow-hidden border border-brand/30 bg-brand/5 text-brand hover:bg-brand hover:text-white hover:border-brand transition-all duration-300"
               >
 
                 <span className="relative">Get in Touch</span>
@@ -159,7 +159,7 @@ export default function Navbar() {
           {/* Mobile Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-500 hover:text-[#1C75BC] transition-colors p-2 rounded-xl hover:bg-gray-50"
+            className="md:hidden text-gray-500 hover:text-brand transition-colors p-2 rounded-xl hover:bg-gray-50"
           >
             <AnimatePresence mode="wait">
               {isOpen ? (
@@ -197,7 +197,7 @@ export default function Navbar() {
                     <div key={link.name}>
                       <button
                         onClick={() => setCompanyOpen(!companyOpen)}
-                        className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold text-gray-500 hover:text-[#1C75BC] hover:bg-gray-50 transition-all"
+                        className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold text-gray-500 hover:text-brand hover:bg-gray-50 transition-all"
                       >
                         {link.name}
                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${companyOpen ? "rotate-180" : ""}`} />
@@ -216,10 +216,10 @@ export default function Navbar() {
                                 href={sub.href}
                                 onClick={() => setIsOpen(false)}
                                 className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
-                                  pathname === sub.href ? "text-[#1C75BC]" : "text-gray-500 hover:text-[#1C75BC] hover:bg-gray-50"
+                                  pathname === sub.href ? "text-brand" : "text-gray-500 hover:text-brand hover:bg-gray-50"
                                 }`}
                               >
-                                <div className="w-1 h-1 rounded-full bg-[#1C75BC]/50" />
+                                <div className="w-1 h-1 rounded-full bg-brand-light/50" />
                                 {sub.name}
                               </Link>
                             ))}
@@ -237,8 +237,8 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className={`px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
                       isActive
-                        ? "text-[#1C75BC] bg-[#1C75BC]/8 border border-[#1C75BC]/10"
-                        : "text-gray-500 hover:text-[#1C75BC] hover:bg-gray-50"
+                        ? "text-brand bg-brand/8 border border-brand/10"
+                        : "text-gray-500 hover:text-brand hover:bg-gray-50"
                     }`}
                   >
                     {link.name}
@@ -250,7 +250,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="block w-full text-center px-5 py-3 text-sm font-bold rounded-full border border-[#1C75BC]/30 bg-[#1C75BC]/5 text-[#1C75BC] hover:bg-[#1C75BC] hover:text-white transition-all"
+                  className="block w-full text-center px-5 py-3 text-sm font-bold rounded-full border border-brand/30 bg-brand/5 text-brand hover:bg-brand hover:text-white transition-all"
                 >
                   Get in Touch
                 </Link>

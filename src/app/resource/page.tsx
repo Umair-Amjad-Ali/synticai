@@ -12,7 +12,7 @@ export default function ResourcePage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   return (
-    <main className="min-h-screen bg-[#0A051E] font-sans pt-[70px] selection:bg-[#45d1f5]/20">
+    <main className="min-h-screen bg-dark-bg font-sans pt-[70px] selection:bg-brand-light/20">
       <ResourceHero search={search} onSearch={setSearch} />
       <ArticlesGrid
         articles={articles}

@@ -57,9 +57,9 @@ function Card3D({ cs, i }: { cs: CaseStudy; i: number }) {
       >
         {/* Colored top accent bar — raised in Z */}
         <div
-          className="-mt-7 -mx-7 mb-0 h-[4px]"
+          className="-mt-5 -mx-5 mb-0 h-[3px]"
           style={{
-            width: "calc(100% + 3.5rem)",
+            width: "calc(100% + 2.5rem)",
             background: `linear-gradient(90deg, ${cs.color}, transparent)`,
             transform: "translateZ(20px)",
           }}
@@ -73,25 +73,25 @@ function Card3D({ cs, i }: { cs: CaseStudy; i: number }) {
           <div className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: cs.color }}>
             {cs.vertical}
           </div>
-          <div className="text-lg font-extrabold text-gray-900">{cs.client}</div>
+          <div className="text-base font-extrabold text-gray-900">{cs.client}</div>
         </div>
 
         {/* Problem */}
         <div>
-          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">The Problem</div>
-          <p className="text-sm text-gray-500 leading-relaxed">{cs.problem}</p>
+          <div className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">The Problem</div>
+          <p className="text-xs text-gray-500 leading-relaxed">{cs.problem}</p>
         </div>
 
         {/* Solution */}
         <div>
-          <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: cs.color }}>
+          <div className="text-[9px] font-bold uppercase tracking-widest mb-1.5" style={{ color: cs.color }}>
             Our Solution
           </div>
-          <p className="text-sm text-gray-700 leading-relaxed font-medium">{cs.solution}</p>
+          <p className="text-xs text-gray-700 leading-relaxed font-medium">{cs.solution}</p>
         </div>
 
         {/* Results */}
-        <div className="pt-5 border-t border-gray-100 flex flex-col gap-2" style={{ transform: "translateZ(6px)" }}>
+        <div className="pt-4 border-t border-gray-100 flex flex-col gap-1.5" style={{ transform: "translateZ(6px)" }}>
           {cs.results.map((r, ri) => (
             <div key={ri} className="flex items-center gap-2">
               <ChevronRight className="w-3.5 h-3.5 shrink-0" style={{ color: cs.color }} />
@@ -106,18 +106,18 @@ function Card3D({ cs, i }: { cs: CaseStudy; i: number }) {
 
 export default function CaseStudiesSection({ caseStudies }: CaseStudiesSectionProps) {
   return (
-    <section className="w-full border-t border-gray-100 py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="w-full border-t border-gray-100 py-16 lg:py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="flex items-center gap-3 mb-3">
-          <BarChart2 className="w-5 h-5 text-[#1C75BC]" />
+          <BarChart2 className="w-5 h-5 text-brand" />
           <h2 className="text-xl font-extrabold text-gray-900">Case Studies</h2>
         </div>
-        <p className="text-gray-400 text-sm mb-12 max-w-xl">
+        <p className="text-gray-400 text-sm mb-10 max-w-xl">
           Real problems. Engineered solutions. Measurable results.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {caseStudies.map((cs, i) => (
             <Card3D key={cs.id} cs={cs} i={i} />
           ))}

@@ -1,7 +1,6 @@
 import { Globe, Smartphone, Server, Layers, LucideProps } from "lucide-react";
 import type { ComponentType } from "react";
 
-// ── Types ────────────────────────────────────────────────────────────────────
 
 export interface TechItem {
   name: string;
@@ -28,8 +27,6 @@ export interface Stat {
   value: string;
   label: string;
 }
-
-// ── Data ─────────────────────────────────────────────────────────────────────
 
 export const capabilities: Capability[] = [
   {

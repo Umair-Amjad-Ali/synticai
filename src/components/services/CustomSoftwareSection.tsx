@@ -50,7 +50,7 @@ export default function CustomSoftwareSection() {
   return (
     <section id="custom-software" className="w-full bg-dark-bg relative">
 
-      <div className="max-w-6xl mx-auto px-6 pt-24 pb-12 text-left flex flex-col items-start gap-5 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 pt-14 pb-8 text-left flex flex-col items-start gap-4 relative z-10">
         
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -72,7 +72,7 @@ export default function CustomSoftwareSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
-          className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.1]"
+          className="text-3xl md:text-4xl lg:text-4xl font-extrabold text-white tracking-tight leading-[1.1]"
         >
           We Build.{" "}
           <span className="text-transparent bg-clip-text brand-gradient-text">
@@ -85,14 +85,14 @@ export default function CustomSoftwareSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-[#8b92a5] text-base md:text-lg max-w-2xl leading-relaxed mt-2 font-medium"
+          className="text-[#8b92a5] text-sm md:text-base max-w-2xl leading-relaxed mt-1 font-medium"
         >
           Full-spectrum software engineering across web, mobile, backend, and cloud — from raw idea to beautifully shipped product. Click on any capability below to explore our process.
         </motion.p>
       </div>
 
       {/* ── B. Unique Capability Directory (Interactive Accordion Rows) ── */}
-      <div className="max-w-6xl mx-auto px-6 pb-24">
+      <div className="max-w-6xl mx-auto px-6 pb-14">
         <div className="flex flex-col border-t border-white/5 relative z-10 w-full">
           {capabilities.map((cap, idx) => {
             const Icon = cap.icon;
@@ -107,7 +107,7 @@ export default function CustomSoftwareSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`group relative flex flex-col py-6 md:py-8 border-b border-white/5 cursor-pointer transition-colors duration-500 overflow-hidden ${
+                className={`group relative flex flex-col py-5 md:py-6 border-b border-white/5 cursor-pointer transition-colors duration-500 overflow-hidden ${
                   isExpanded ? "bg-white/3" : "hover:bg-white/2"
                 }`}
               >
@@ -284,7 +284,7 @@ export default function CustomSoftwareSection() {
       </div>
 
       {/* ── C. Tech Stack Carousel ── */}
-      <div className="w-full py-20 relative bg-dark-bg border-y border-white/5 overflow-hidden">
+      <div className="w-full py-14 relative bg-dark-bg border-y border-white/5 overflow-hidden">
         {/* Ambient background glows */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-light/10 rounded-full blur-[120px] pointer-events-none" />
@@ -307,7 +307,7 @@ export default function CustomSoftwareSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight"
+            className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight"
           >
             Our Complete Tech Stack
           </motion.h3>
@@ -326,7 +326,7 @@ export default function CustomSoftwareSection() {
       </div>
 
       {/* ── D. Stats Strip (Premium Dark Dashboard) ── */}
-      <div className="w-full relative overflow-hidden bg-dark-bg py-20 border-b border-white/5">
+      <div className="w-full relative overflow-hidden bg-dark-bg py-14 border-b border-white/5">
         
         {/* Subtle Animated Grid Background */}
         <div 
@@ -347,7 +347,7 @@ export default function CustomSoftwareSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="group relative flex flex-col items-center justify-center py-10 px-6 rounded-3xl border bg-dark-card-2/40 backdrop-blur-md cursor-default transition-all duration-500 hover:bg-dark-card-2/80 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] overflow-hidden"
+                className="group relative flex flex-col items-center justify-center py-6 px-5 rounded-2xl border bg-dark-card-2/40 backdrop-blur-md cursor-default transition-all duration-500 hover:bg-dark-card-2/80 hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(0,0,0,0.4)] overflow-hidden"
                 style={{ borderColor: "rgba(255,255,255,0.05)" }}
               >
                 {/* Glowing Top Border Line */}
@@ -356,13 +356,13 @@ export default function CustomSoftwareSection() {
                 {/* Ambient Center Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand/20 rounded-full blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-                <div className="text-5xl md:text-6xl font-extrabold mb-3 tracking-tighter relative z-10 transition-transform duration-500 group-hover:scale-110">
+                <div className="text-3xl md:text-4xl font-extrabold mb-2 tracking-tighter relative z-10 transition-transform duration-500 group-hover:scale-110">
                   <span className="text-transparent bg-clip-text bg-linear-to-b from-white to-gray-400 group-hover:from-white group-hover:to-brand transition-all duration-500">
                     {s.value}
                   </span>
                 </div>
                 
-                <div className="text-xs md:text-sm text-[#8b92a5] font-bold uppercase tracking-[0.2em] relative z-10 group-hover:text-gray-300 transition-colors duration-500">
+                <div className="text-[10px] md:text-xs text-[#8b92a5] font-bold uppercase tracking-[0.2em] relative z-10 group-hover:text-gray-300 transition-colors duration-500">
                   {s.label}
                 </div>
               </motion.div>
