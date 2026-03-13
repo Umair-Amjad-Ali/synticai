@@ -218,7 +218,7 @@ export default function IndustriesSection({
                       <p className="text-gray-300 text-[11px] leading-relaxed mb-2 truncate" title={industry.description || industry.solution}>
                         {industry.description || industry.solution}
                       </p>
-                      <a href="#" className="inline-flex items-center gap-1.5 text-cyan-400 text-[11px] font-semibold hover:gap-2 transition-all duration-200 mt-auto">
+                      <a href="#" className="inline-flex items-center gap-1.5 text-brand text-[11px] font-semibold hover:gap-2 transition-all duration-200 mt-auto">
                         Read More
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                           <path d="M5 12h14M12 5l7 7-7 7"/>
