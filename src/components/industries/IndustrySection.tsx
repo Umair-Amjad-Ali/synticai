@@ -18,7 +18,7 @@ export default function IndustrySection({
 
   return (
     <section
-      id={ind.id}
+      id={String(ind.id)}
       className={`w-full py-16 lg:py-24 relative ${
         isLight ? "bg-white" : "bg-dark-bg"
       }`}

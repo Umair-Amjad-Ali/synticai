@@ -62,7 +62,7 @@ export default function Home() {
       <IndustriesSection
         title="Industries We Transformed with Innovative Software Solutions"
         subtitle="We are committed to innovating across industries with our custom AI solutions, empowering businesses to thrive in the digital era."
-        industries={industriesData}
+        industries={industriesData.map(({ icon, ...rest }) => rest)}
       />
       <ClientSolutionsSection />
       <MethodologySection />

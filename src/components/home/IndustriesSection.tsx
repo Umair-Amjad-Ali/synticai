@@ -8,55 +8,54 @@ import type { Industry } from "@/data/industriesData";
 interface IndustriesSectionProps {
   title: string;
   subtitle?: string;
-  industries: Industry[];
+  industries: Omit<Industry, "icon">[];
 }
 
 // Simple inline SVG icons for each industry type
 const industryIcons: Record<string, React.ReactElement> = {
-  "Health Tech": (
+  "Health Tech & Medical": (
     <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
       <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
     </svg>
   ),
-  "Ed Tech": (
+  "EdTech & Learning": (
     <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
     </svg>
   ),
-  "Retail": (
+  "Retail & eCommerce": (
     <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
       <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
     </svg>
   ),
-  "AI Diagnostics": (
-    <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/>
-    </svg>
-  ),
-  "Green Tech": (
-    <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-      <path d="M2 22 16 8"/><path d="M17.5 6.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0z"/>
-    </svg>
-  ),
-  "IoT": (
+  "Industrial IoT": (
     <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
       <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/>
     </svg>
   ),
-  "Fin Tech": (
+  "FinTech & Banking": (
     <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
       <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
     </svg>
   ),
-  "HIPAA Compliance": (
+  "Enterprise ERP": (
     <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/>
     </svg>
   ),
-  "eCommerce": (
+  "App Development": (
     <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-      <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/>
+    </svg>
+  ),
+  "AI & Automation": (
+    <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+       <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  ),
+  "Cybersecurity": (
+    <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
     </svg>
   ),
 };
@@ -84,8 +83,8 @@ export default function IndustriesSection({
           transition={{ duration: 0.5 }}
           className="mb-10"
         >
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0A051E] mb-2">
-            <span className="inline-block border-l-4 border-[#1C75BC] pl-4">{title}</span>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-dark-bg mb-2">
+            <span className="inline-block border-l-4 border-brand pl-4">{title}</span>
           </h2>
           {subtitle && (
             <p className="text-gray-500 text-sm md:text-base max-w-2xl leading-relaxed pl-5">
@@ -132,14 +131,14 @@ export default function IndustriesSection({
             <div className="absolute inset-0 flex flex-col justify-between p-7">
               {/* Top: number + icon */}
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-bold text-cyan-400 tracking-[0.2em]">01</span>
+                <span className="text-[11px] font-bold text-brand tracking-[0.2em]">01</span>
                 <span className="text-white/70">{industryIcons[featured.name]}</span>
               </div>
               {/* Bottom: name + description */}
               <div>
                 <h3 className="text-white font-bold text-xl mb-2">{featured.name}</h3>
-                <p className="text-gray-300 text-[13px] leading-relaxed truncate mb-3">{featured.description}</p>
-                <a href="#" className="inline-flex items-center gap-1.5 text-cyan-400 text-[12px] font-semibold hover:gap-2.5 transition-all duration-200">
+                <p className="text-gray-300 text-[13px] leading-relaxed truncate mb-3">{featured.description || featured.solution}</p>
+                <a href="#" className="inline-flex items-center gap-1.5 text-brand text-[12px] font-semibold hover:gap-2.5 transition-all duration-200">
                   Read More
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -192,7 +191,7 @@ export default function IndustriesSection({
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-between p-4">
                   {/* Top: number */}
-                  <span className="text-[10px] font-bold text-cyan-400/70 tracking-[0.2em]">{num}</span>
+                  <span className="text-[10px] font-bold text-brand tracking-[0.2em]">{num}</span>
 
                   {/* Bottom content */}
                   <div>
@@ -216,8 +215,8 @@ export default function IndustriesSection({
                       className="overflow-hidden transition-all duration-400 flex flex-col justify-end"
                       style={{ maxHeight: isHov ? "80px" : "0px", opacity: isHov ? 1 : 0 }}
                     >
-                      <p className="text-gray-300 text-[11px] leading-relaxed mb-2 truncate" title={industry.description}>
-                        {industry.description}
+                      <p className="text-gray-300 text-[11px] leading-relaxed mb-2 truncate" title={industry.description || industry.solution}>
+                        {industry.description || industry.solution}
                       </p>
                       <a href="#" className="inline-flex items-center gap-1.5 text-cyan-400 text-[11px] font-semibold hover:gap-2 transition-all duration-200 mt-auto">
                         Read More
