@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, BookOpen } from "lucide-react";
+import Link from "next/link";
 import { Article, categories } from "@/data/resourceData";
 
 interface ArticlesGridProps {
@@ -14,12 +15,13 @@ interface ArticlesGridProps {
 function ArticleCard({ article, index }: { article: Article; index: number }) {
   const Icon = article.icon;
   return (
+    <Link href={`/resource/${article.id}`} className="block h-full">
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="group relative flex flex-col rounded-3xl border border-white/5 bg-dark-card hover:bg-[#110B2D] hover:border-white/10 transition-all duration-500 overflow-hidden cursor-pointer"
+      className="group relative h-full flex flex-col rounded-3xl border border-white/5 bg-dark-card hover:bg-[#110B2D] hover:border-white/10 transition-all duration-500 overflow-hidden cursor-pointer"
     >
       {/* Uniform top bar */}
       <div
@@ -63,6 +65,7 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
         </div>
       </div>
     </motion.div>
+    </Link>
   );
 }
 

@@ -41,8 +41,8 @@ export default function StatsSection({ title, subtitle, stats }: StatsSectionPro
           transition={{ duration: 0.5 }}
           className="mb-14"
         >
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0A051E] mb-2">
-            <span className="inline-block border-l-4 border-[#1C75BC] pl-4">{title}</span>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-dark-bg mb-2">
+            <span className="inline-block border-l-4 border-brand pl-4">{title}</span>
           </h2>
           {subtitle && (
             <p className="text-gray-500 text-sm md:text-base max-w-2xl leading-relaxed pl-5 mt-2">
@@ -75,7 +75,7 @@ export default function StatsSection({ title, subtitle, stats }: StatsSectionPro
                   border: "1px solid rgba(28,117,188,0.18)",
                 }}
               >
-                <span className="text-[#1C75BC]">{stat.icon}</span>
+                <span className="text-brand">{stat.icon}</span>
               </div>
 
               {/* Number */}
@@ -93,7 +93,7 @@ export default function StatsSection({ title, subtitle, stats }: StatsSectionPro
 
               {/* Label */}
               <div>
-                <p className="text-[13px] font-semibold text-[#0A051E]">{stat.label}</p>
+                <p className="text-[13px] font-semibold text-dark-bg">{stat.label}</p>
               </div>
 
               {/* Animated bottom accent bar */}

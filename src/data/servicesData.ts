@@ -9,12 +9,14 @@ export interface ServiceTab {
   description: string;
   benefitsTitle?: string;
   benefits?: BenefitItem[];
+  href?: string;
 }
 
 export const servicesTabs: ServiceTab[] = [
   {
     name: "AI Development",
     heading: "AI Development",
+    href: "/services#ai-development",
     description:
       "At SynticAI, innovation meets intelligence. Our team of experts utilizes cutting-edge technologies to craft custom AI solutions that seamlessly integrate with your unique requirements, revolutionizing how you operate.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -44,6 +46,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "AI Chatbot Development",
     heading: "AI Chatbot Development",
+    href: "/services#genai-bots",
     description:
       "Our AI Chatbot Development Services are designed to transform customer interactions for businesses. We specialize in crafting Intelligent chatbots that engage in human-like dialogue.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -73,6 +76,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "ChatGPT Integration",
     heading: "ChatGPT Integration",
+    href: "/services#genai-bots",
     description:
       "Elevate user experiences by leveraging our ChatGPT Integration Services into your business processes. It enables you to leverage the advanced capabilities of NLP and ML to provide more intuitive and personalized interactions for your customers.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -102,6 +106,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "Machine & Deep Learning",
     heading: "Machine & Deep Learning",
+    href: "/services#machine-deep-learning",
     description:
       "Machine Learning (ML) has transformed numerous industries, with the ML market forecasted to soar to $204.30 billion by 2024. Leveraging our proficiency in AI development solutions, we harness the power of machine and deep learning to create innovative systems.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -131,6 +136,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "Computer Vision",
     heading: "Computer Vision",
+    href: "/services#ai-ml-grid",
     description:
       "At SynticAI, we help businesses maximize their profits by leveraging our advanced Computer Vision Services. Our Computer Vision systems identify objects and detect patterns by analyzing digital photos and videos.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -160,6 +166,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "Big Data Analytics",
     heading: "Big Data Analytics",
+    href: "/services#digital",
     description:
       "Benefit your data-driven business from actionable insights and improved decision-making with our Big Data Analytics Services. Our experienced team of data specialists offers an extensive range of data analytics services crafted to drive the growth of your business.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -189,6 +196,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "Predictive Modeling",
     heading: "Predictive Modeling",
+    href: "/services#digital",
     description:
       "At SynticAI, we offer innovative Predictive Modeling Services for your business. Our Predictive Modeling services help you to make better decisions, anticipate market trends, identify potential risks and opportunities, and remain agile.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -218,6 +226,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "Custom Software Development",
     heading: "Custom Software Development",
+    href: "/services",
     description:
       "With over 10 years of experience, SynticAI is a reliable custom software development company that transforms your unique ideas into reality. Our Custom Software Development Services will give you a competitive edge in your industry.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -247,6 +256,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "Digital Marketing",
     heading: "Digital Marketing",
+    href: "/services#digital",
     description:
       "Ignite your brand's digital potential with our comprehensive Digital Marketing Services. We specialize in data-driven strategies and creative campaigns that enhance your online presence.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -271,6 +281,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "Natural Language Processing",
     heading: "Natural Language Processing",
+    href: "/services#ai-ml-grid",
     description:
       "From sentiment analysis to chatbot development, our expert NLP Services cover a range of applications across industries. Our expertise involves creating models for computers to understand and generate natural language.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -300,6 +311,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "DevOps",
     heading: "DevOps",
+    href: "/services#digital",
     description:
       "Experience the transformative power of our DevOps Services, where seamless integration, automation, and AI-powered optimization converge to redefine your software development landscape.",
     benefitsTitle: "Business Benefits of Choosing Us",
@@ -329,6 +341,7 @@ export const servicesTabs: ServiceTab[] = [
   {
     name: "UI/UX",
     heading: "UI/UX",
+    href: "/services#digital",
     description:
       "The importance of a first impression cannot be overstated. Whether it's your website or mobile app, the initial interaction with users sets the tone for their entire experience. Building a strong digital presence is imperative in today's competitive landscape.",
     benefitsTitle: "Business Benefits of Choosing Us",

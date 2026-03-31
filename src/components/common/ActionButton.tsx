@@ -23,7 +23,7 @@ export default function ActionButton({ children, onClick, className = "", type =
       style={{
         background: "linear-gradient(to right, #1C75BC, #000000)"
       }}
-      className={`text-white px-8 py-3 rounded-md font-medium text-sm transition-all focus:outline-none focus:ring-2 focus:ring-[#1C75BC] focus:ring-offset-2 shadow-lg ${className}`}
+      className={`text-white px-8 py-3 rounded-md font-medium text-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 shadow-lg ${className}`}
     >
       {children}
     </motion.button>

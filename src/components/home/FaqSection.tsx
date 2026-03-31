@@ -14,12 +14,12 @@ const AccordionItem = ({ faq, isOpen, onClick }: { faq: FaqItem; isOpen: boolean
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <h3 className={`font-bold text-[14.5px] md:text-[15px] leading-snug transition-colors duration-300 ${isOpen ? 'text-[#1C75BC]' : 'text-[#0A051E] group-hover:text-[#1C75BC]'}`}>
+        <h3 className={`font-bold text-[14.5px] md:text-[15px] leading-snug transition-colors duration-300 ${isOpen ? 'text-brand' : 'text-dark-bg group-hover:text-brand'}`}>
           {faq.question}
         </h3>
         
         {/* Modern animated plus/minus icon */}
-        <div className={`shrink-0 w-7 h-7 rounded-md flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-[#1C75BC] text-white rotate-45' : 'bg-gray-50 text-gray-400 group-hover:bg-[#1C75BC]/10 group-hover:text-[#1C75BC]'}`}>
+        <div className={`shrink-0 w-7 h-7 rounded-md flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-brand text-white rotate-45' : 'bg-gray-50 text-gray-400 group-hover:bg-brand/10 group-hover:text-brand'}`}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -65,8 +65,8 @@ export default function FaqSection() {
            transition={{ duration: 0.5 }}
            className="mb-2"
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A051E] mb-2">
-            <span className="inline-block border-l-4 border-[#1C75BC] pl-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark-bg mb-2">
+            <span className="inline-block border-l-4 border-brand pl-4">
               Frequently Asked Questions
             </span>
           </h2>

@@ -11,7 +11,7 @@ export interface TimelineItem {
 
 export const timeline: TimelineItem[] = [
   {
-    year: "2019",
+    year: "2016",
     title: "The Genesis",
     desc: "Founded with a unified vision: to democratize enterprise AI and make it accessible worldwide.",
     icon: Sparkles,

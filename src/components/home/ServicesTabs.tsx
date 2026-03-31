@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ActionButton from "@/components/common/ActionButton";
+import Link from "next/link";
 import type { ServiceTab } from "@/data/servicesData";
 
 interface ServicesTabsProps {
@@ -24,8 +25,8 @@ export default function ServicesTabs({
     <section className="pt-8 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
         {/* Section Title */}
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0A051E] mb-8 leading-tight">
-          <span className="inline-block border-l-4 border-[#1C75BC] pl-4">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-dark-bg mb-8 leading-tight">
+          <span className="inline-block border-l-4 border-brand pl-4">
             {sectionTitle}
           </span>
         </h2>
@@ -45,7 +46,7 @@ export default function ServicesTabs({
           >
             {/* Logo accent at top */}
             <div className="px-6 pt-7 pb-4">
-              <div className="w-8 h-[3px] bg-[#1C75BC] rounded-full" />
+              <div className="w-8 h-[3px] bg-brand rounded-full" />
             </div>
 
             {/* Tabs */}
@@ -132,11 +133,11 @@ export default function ServicesTabs({
                     }}
                   >
                     {/* Service name chip */}
-                    <span className="inline-block text-[11px] font-semibold tracking-widest text-[#1C75BC] uppercase mb-3">
+                    <span className="inline-block text-[11px] font-semibold tracking-widest text-brand uppercase mb-3">
                       SynticAI Services
                     </span>
 
-                    <h3 className="text-xl md:text-2xl font-bold text-[#0A051E] mb-3 leading-snug">
+                    <h3 className="text-xl md:text-2xl font-bold text-dark-bg mb-3 leading-snug">
                       {tab.heading}
                     </h3>
 
@@ -146,8 +147,8 @@ export default function ServicesTabs({
 
                     {tab.benefitsTitle && (
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="w-5 h-[2px] bg-[#1C75BC]" />
-                        <h4 className="text-[13px] font-bold text-[#0A051E] uppercase tracking-widest">
+                        <div className="w-5 h-[2px] bg-brand" />
+                        <h4 className="text-[13px] font-bold text-dark-bg uppercase tracking-widest">
                           {tab.benefitsTitle}
                         </h4>
                       </div>
@@ -167,7 +168,7 @@ export default function ServicesTabs({
                               }}
                             />
                             <p className="text-[13.5px] text-gray-600 leading-relaxed">
-                              <span className="font-semibold text-[#0A051E]">
+                              <span className="font-semibold text-dark-bg">
                                 {benefit.title}:
                               </span>{" "}
                               {benefit.description}
@@ -179,7 +180,9 @@ export default function ServicesTabs({
 
                     {showButton && (
                       <div className="flex justify-end mt-auto pt-4">
-                        <ActionButton className="rounded-md! py-2.5 px-6 text-sm">{buttonText}</ActionButton>
+                        <Link href={tab.href ?? "/services"} scroll={true}>
+                          <ActionButton className="rounded-md! py-2.5 px-6 text-sm">{buttonText}</ActionButton>
+                        </Link>
                       </div>
                     )}
                   </motion.div>

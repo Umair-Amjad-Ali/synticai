@@ -17,8 +17,8 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email Us",
-    value: "hello@synticai.com",
-    href: "mailto:hello@synticai.com",
+    value: "contact@synticai.com",
+    href: "mailto:contact@synticai.com",
   },
   {
     icon: Phone,
@@ -36,7 +36,6 @@ const contactDetails = [
 
 const socials = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Github, href: "#", label: "GitHub" },
 ];
 

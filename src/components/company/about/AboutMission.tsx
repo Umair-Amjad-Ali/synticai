@@ -63,7 +63,7 @@ export default function AboutMission() {
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
               {[
-                { icon: <Target className="w-4 h-4 sm:w-5 sm:h-5" />, value: "50+", label: "Products Shipped" },
+                { icon: <Target className="w-4 h-4 sm:w-5 sm:h-5" />, value: "110+", label: "Products Shipped" },
                 { icon: <Users className="w-4 h-4 sm:w-5 sm:h-5" />, value: "100%", label: "In-House Talent" },
               ].map((s) => (
                 <div

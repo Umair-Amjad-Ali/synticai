@@ -41,6 +41,8 @@ export const industriesData: Industry[] = [
       "Telehealth Video Streaming",
       "IoMT Device Connectivity",
       "AI-Powered Diagnostics",
+      "Clinical Workflow Automation",
+      "Patient Portal Development",
     ],
     tech: ["Node.js", "PostgreSQL", "AWS Healthcare", "React Native"],
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
@@ -64,6 +66,8 @@ export const industriesData: Industry[] = [
       "Blockchain Smart Contracts",
       "Real-Time Payment Gateways",
       "Automated KYC Pipelines",
+      "ML Fraud Detection",
+      "Open Banking Integrations",
     ],
     tech: ["Python", "FastAPI", "Redis", "Solidity"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
@@ -87,6 +91,8 @@ export const industriesData: Industry[] = [
       "AR Fitting Rooms",
       "Predictive Logistics",
       "Custom Loyalty Portals",
+      "Omnichannel Order Management",
+      "Personalization Engines",
     ],
     tech: ["Next.js", "Shopify Plus", "Supabase", "Flutter"],
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80"
@@ -110,6 +116,8 @@ export const industriesData: Industry[] = [
       "WebRTC Virtual Classrooms",
       "AI Progress Tracking",
       "Gamification Engines",
+      "Adaptive Curriculum AI",
+      "Student Analytics Dashboards",
     ],
     tech: ["React", "WebRTC", "Firebase", "TypeScript"],
     image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80"
@@ -133,6 +141,8 @@ export const industriesData: Industry[] = [
       "Digital Twin Modeling",
       "Predictive Maintenance",
       "SCADA Integrations",
+      "Real-Time Sensor Dashboards",
+      "OTA Firmware Management",
     ],
     tech: ["C++", "AWS IoT Core", "Docker", "Vue.js"],
     image: "https://images.unsplash.com/photo-1518349619113-03114f06ac3a?w=800&q=80"
@@ -156,6 +166,8 @@ export const industriesData: Industry[] = [
       "Custom BI Dashboards",
       "Automated Invoicing",
       "Cross-Department Workflows",
+      "Role-Based Access Control",
+      "Multi-Currency & Multi-Entity",
     ],
     tech: ["Next.js", "Java", "PostgreSQL", "Kubernetes"],
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
@@ -179,6 +191,8 @@ export const industriesData: Industry[] = [
       "Cross-Platform Apps",
       "App Store Optimization",
       "Mobile Backend as a Service",
+      "Offline-First Architecture",
+      "Push Notification Systems",
     ],
     tech: ["Swift", "Kotlin", "Flutter", "React Native"],
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80"
@@ -202,6 +216,8 @@ export const industriesData: Industry[] = [
       "Robotic Process Automation",
       "Predictive Analytics",
       "Computer Vision",
+      "Smart OCR Pipelines",
+      "Autonomous Workflow Agents",
     ],
     tech: ["Python", "TensorFlow", "OpenAI", "PyTorch"],
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
@@ -225,6 +241,8 @@ export const industriesData: Industry[] = [
       "Penetration Testing",
       "SOC as a Service",
       "Incident Response",
+      "Vulnerability Management",
+      "Security Awareness Training",
     ],
     tech: ["Rust", "CrowdStrike", "AWS Security", "Kali Linux"],
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80"

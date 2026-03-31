@@ -54,7 +54,7 @@ export default function ResourceHero({ search, onSearch }: ResourceHeroProps) {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-8"
         >
-          Deep dives, case studies, and engineering blueprints from the teams behind 500+ shipped products.
+          Deep dives, case studies, and engineering blueprints from the teams behind 110+ shipped products.
         </motion.p>
 
         {/* Search */}

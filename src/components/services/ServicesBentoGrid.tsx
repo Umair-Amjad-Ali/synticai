@@ -106,6 +106,7 @@ export default function ServicesBentoGrid({ id, categoryTitle, categoryDescripti
             {services.map((service, idx) => (
               <motion.div 
                 key={idx}
+                id={service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}

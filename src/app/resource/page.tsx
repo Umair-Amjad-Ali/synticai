@@ -21,7 +21,7 @@ export default function ResourcePage() {
         search={search}
       />
       <CaseStudiesSection caseStudies={caseStudies} />
-      <NewsletterCTA />
+      {/* <NewsletterCTA /> */}
     </main>
   );
 }

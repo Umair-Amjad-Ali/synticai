@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import ActionButton from "@/components/common/ActionButton";
+import Link from "next/link";
 import { solutionsData, type SolutionTab } from '@/data/ClientSolutionData';
 
 
@@ -31,8 +32,8 @@ export default function ClientSolutionsSection() {
           transition={{ duration: 0.5 }}
           className="mb-10"
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A051E]">
-            <span className="inline-block border-l-4 border-[#1C75BC] pl-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark-bg">
+            <span className="inline-block border-l-4 border-brand pl-4">
               Our Client-Centric AI Solutions
             </span>
           </h2>
@@ -49,21 +50,21 @@ export default function ClientSolutionsSection() {
                 className={`relative px-5 py-2.5 rounded-xl text-[13px] md:text-[14.5px] font-bold transition-all duration-500 overflow-hidden ${
                   isActive 
                     ? "text-white shadow-[0_8px_20px_rgba(28,117,188,0.3)] transform -translate-y-0.5" 
-                    : "text-[#0A051E] bg-white border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.06)] hover:-translate-y-px"
+                    : "text-dark-bg bg-white border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.06)] hover:-translate-y-px"
                 }`}
               >
                 {/* Active Background Gradient */}
                 {isActive && (
                   <motion.div
                     layoutId="active-card"
-                    className="absolute inset-0 bg-linear-to-r from-[#1C75BC] to-[#0A051E]"
+                    className="absolute inset-0 brand-gradient"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
                 
                 <span className="relative z-10 flex items-center gap-2">
                   {/* Small decorative dot for active state */}
-                  <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${isActive ? "bg-[#45d1f5] shadow-[0_0_8px_#45d1f5]" : "bg-gray-300"}`} />
+                  <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${isActive ? "bg-brand-light shadow-[0_0_8px_#45d1f5]" : "bg-gray-300"}`} />
                   {tab.tabTitle}
                 </span>
               </button>
@@ -92,7 +93,7 @@ export default function ClientSolutionsSection() {
                     pointerEvents: isActive ? "auto" : "none",
                   }}
                 >
-                  <h3 className="text-2xl md:text-[24px] font-bold text-[#0A051E] mb-6 leading-snug">
+                  <h3 className="text-2xl md:text-[24px] font-bold text-dark-bg mb-6 leading-snug">
                     {tab.heading}
                   </h3>
                   <p className="text-gray-500 text-[15px] leading-relaxed mb-4">
@@ -102,9 +103,11 @@ export default function ClientSolutionsSection() {
                     {tab.description2}
                   </p>
                   <div>
-                    <ActionButton className="rounded-md! px-8 shadow-lg shadow-[#1C75BC]/20">
-                      Read More
-                    </ActionButton>
+                    <Link href={tab.link} scroll={true}>
+                      <ActionButton className="rounded-md! px-8 shadow-lg shadow-brand/20">
+                        Read More
+                      </ActionButton>
+                    </Link>
                   </div>
                 </motion.div>
               );
@@ -114,7 +117,7 @@ export default function ClientSolutionsSection() {
           {/* Right Image Layout with floating glassmorphism card */}
           <div className="relative w-full aspect-square md:aspect-4/3 flex items-center justify-center lg:pl-10">
             {/* Background glowing blob */}
-            <div className="absolute inset-0 bg-linear-to-tr from-[#1C75BC]/20 via-blue-200/20 to-[#e356e8]/20 blur-[60px] md:blur-[80px] rounded-full opacity-60 transform scale-90" />
+            <div className="absolute inset-0 bg-linear-to-tr from-brand/20 via-blue-200/20 to-[#e356e8]/20 blur-[60px] md:blur-[80px] rounded-full opacity-60 transform scale-90" />
             
             {solutionsData.map((tab, idx) => {
               const isActive = activeTab === idx;
@@ -140,14 +143,14 @@ export default function ClientSolutionsSection() {
                     
                     {/* Floating Tech Badge */}
                     <div className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-10 bg-white/90 backdrop-blur-xl border border-white shadow-[0_12px_40px_rgba(0,0,0,0.12)] rounded-2xl p-4 md:p-5 flex items-center gap-4">
-                      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-linear-to-br from-[#1C75BC] to-[#45d1f5] flex items-center justify-center text-white shadow-inner">
+                      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-linear-to-br from-brand to-brand-light flex items-center justify-center text-white shadow-inner">
                         <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                         </svg>
                       </div>
                       <div className="pr-2">
                         <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-0.5">{tab.badgeTitle}</p>
-                        <p className="text-[14px] md:text-lg font-black text-[#0A051E] whitespace-nowrap">{tab.badgeSubtitle}</p>
+                        <p className="text-[14px] md:text-lg font-black text-dark-bg whitespace-nowrap">{tab.badgeSubtitle}</p>
                       </div>
                     </div>
                     

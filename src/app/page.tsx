@@ -18,17 +18,7 @@ export default function Home() {
         subtitle="We build meaningful AI Healthcare Solutions to shape the future of your business"
       />
 
-      <InfoSection
-        title="Drive Unstoppable Business Success Through AI!"
-        paragraphs={[
-          "Maximize your business potential with our exceptional AI Development Services. Our customer-centric and passionate team of engineers is committed to delivering tailored solutions that exceed your expectations.",
-          "We leverage our expertise in machine learning, deep learning, and AI development to deliver exceptional solutions in NLP, computer vision, predictive analytics, generative AI, AI chatbot development, and more.",
-          "Our AI-based solutions offer a clear pathway to success, helping businesses improve decision-making, automate operations, save time, and boost profits. Partner with SynticAI – AI Experts in Pakistan, to seamlessly integrate, scale, and access data-driven insights, leading to exceptional business outcomes.",
-        ]}
-        buttonText="Get A Free Quote"
-        imageSrc="/assets/service-business.png"
-        imageAlt="AI Development Services"
-      />
+      <InfoSection />
 
       <ServicesTabs
         sectionTitle="Services We Offer"
@@ -46,11 +36,11 @@ export default function Home() {
             icon: <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
           },
           {
-            value: 170, suffix: "+", label: "Happy Clients",
+            value: 100, suffix: "+", label: "Happy Clients",
             icon: <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
           },
           {
-            value: 200, suffix: "+", label: "Projects Delivered",
+            value: 110, suffix: "+", label: "Projects Delivered",
             icon: <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
           },
           {

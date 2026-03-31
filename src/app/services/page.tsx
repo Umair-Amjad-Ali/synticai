@@ -39,7 +39,7 @@ export default function ServicesPage() {
       <div id="ai-ml">
         {featuredAI && (
           <StickyFeatureService
-            id="featured-ai"
+            id="ai-development"
             service={featuredAI}
             theme="dark"
             imageSrc="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop"
@@ -47,7 +47,7 @@ export default function ServicesPage() {
         )}
         {featuredML && (
           <StickyFeatureService
-            id="featured-ml"
+            id="machine-deep-learning"
             service={featuredML}
             theme="light"
             imageSrc="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1000&auto=format&fit=crop"

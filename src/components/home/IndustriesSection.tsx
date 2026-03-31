@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { motion, useInView } from "framer-motion";
 import type { Industry } from "@/data/industriesData";
 
@@ -66,6 +67,7 @@ export default function IndustriesSection({
   industries,
 }: IndustriesSectionProps) {
   const [hovered, setHovered] = useState<number | null>(null);
+  const router = useRouter();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-60px" });
 
@@ -96,7 +98,6 @@ export default function IndustriesSection({
         {/* Grid: Featured card (2-col) + 3 cards in row 1, then 4 cards row 2 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
 
-          {/* Featured Card (spans 2 cols & 2 rows) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -105,6 +106,7 @@ export default function IndustriesSection({
             style={{ minHeight: 320 }}
             onMouseEnter={() => setHovered(0)}
             onMouseLeave={() => setHovered(null)}
+            onClick={() => router.push(`/industries#${featured.id}`)}
           >
             <img
               src={featured.image}
@@ -138,12 +140,6 @@ export default function IndustriesSection({
               <div>
                 <h3 className="text-white font-bold text-xl mb-2">{featured.name}</h3>
                 <p className="text-gray-300 text-[13px] leading-relaxed truncate mb-3">{featured.description || featured.solution}</p>
-                <a href="#" className="inline-flex items-center gap-1.5 text-brand text-[12px] font-semibold hover:gap-2.5 transition-all duration-200">
-                  Read More
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
               </div>
             </div>
           </motion.div>
@@ -164,6 +160,7 @@ export default function IndustriesSection({
                 style={{ minHeight: 150 }}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
+                onClick={() => router.push(`/industries#${industry.id}`)}
               >
                 <img
                   src={industry.image}
@@ -218,12 +215,6 @@ export default function IndustriesSection({
                       <p className="text-gray-300 text-[11px] leading-relaxed mb-2 truncate" title={industry.description || industry.solution}>
                         {industry.description || industry.solution}
                       </p>
-                      <a href="#" className="inline-flex items-center gap-1.5 text-brand text-[11px] font-semibold hover:gap-2 transition-all duration-200 mt-auto">
-                        Read More
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                      </a>
                     </div>
                   </div>
                 </div>

@@ -133,7 +133,7 @@ export const techIcons: Record<string, string> = {
 };
 
 export const stats: Stat[] = [
-  { value: "500+", label: "Projects Delivered" },
+  { value: "110+", label: "Projects Delivered" },
   { value: "12+", label: "Technologies" },
   { value: "98%", label: "Client Satisfaction" },
 ];

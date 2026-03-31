@@ -50,11 +50,11 @@ export default function AboutHero() {
 
             <div className="grid grid-cols-3 w-full border border-white/10 rounded-2xl overflow-hidden">
               <div className="px-2 sm:px-6 py-3 sm:py-5 bg-white/5">
-                <h4 className="text-xl sm:text-3xl font-black text-white leading-none">2019</h4>
+                <h4 className="text-xl sm:text-3xl font-black text-white leading-none">2016</h4>
                 <p className="text-brand text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2">Established</p>
               </div>
               <div className="px-2 sm:px-6 py-3 sm:py-5 bg-white/5 border-x border-white/10">
-                <h4 className="text-xl sm:text-3xl font-black text-white leading-none">50+</h4>
+                <h4 className="text-xl sm:text-3xl font-black text-white leading-none">110+</h4>
                 <p className={newLocal}>Products</p>
               </div>
               <div className="px-2 sm:px-6 py-3 sm:py-5 bg-white/5">

@@ -78,7 +78,7 @@ export default function AboutWhyChoose() {
               <div className="absolute inset-0 bg-linear-to-t from-[#060B18]/70 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 text-center">
-                  <p className="text-white text-2xl font-black leading-none">50+</p>
+                  <p className="text-white text-2xl font-black leading-none">110+</p>
                   <p className="text-brand text-[11px] font-bold uppercase tracking-widest mt-1">Products Delivered</p>
                 </div>
               </div>
