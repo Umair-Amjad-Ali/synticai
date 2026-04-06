@@ -1,5 +1,5 @@
 "use client";
-
+// NOTE: Metadata is defined in metadata.ts in this directory (Next.js segment pattern)
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {

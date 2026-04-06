@@ -7,7 +7,7 @@ import IndustriesCTA from "@/components/industries/IndustriesCTA";
 
 export default function IndustriesPage() {
   return (
-    <main className="min-h-screen font-sans">
+    <main className="min-h-screen font-sans overflow-x-hidden w-full">
       <IndustriesHero />
 
       {industriesData.map((ind, idx) => (
@@ -18,4 +18,3 @@ export default function IndustriesPage() {
     </main>
   );
 }
-

@@ -4,8 +4,16 @@ import JobPostings from "@/components/company/careers/JobPostings";
 // import ApplicationForm from "@/components/company/careers/ApplicationForm";
 
 export const metadata: Metadata = {
-  title: "Careers | SynticAI",
-  description: "Join us at SynticAI and help build the future of artificial intelligence. Explore our open positions.",
+  title: "Careers",
+  description:
+    "Join the SynticAI team and help shape the future of artificial intelligence. Explore open positions in AI development, engineering, and design.",
+  alternates: { canonical: "https://synticai.com/company/careers" },
+  openGraph: {
+    title: "Careers at SynticAI – Join Our AI Team",
+    description:
+      "Join the SynticAI team and help shape the future of artificial intelligence. Explore open positions in AI development, engineering, and design.",
+    url: "https://synticai.com/company/careers",
+  },
 };
 
 export default function CareersPage() {

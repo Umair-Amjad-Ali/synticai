@@ -15,7 +15,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <PageHero
         title="Your Trusted AI Development Company"
-        subtitle="We build meaningful AI Healthcare Solutions to shape the future of your business"
+        subtitle="We build meaningful AI Solutions to shape the future of your business"
       />
 
       <InfoSection />

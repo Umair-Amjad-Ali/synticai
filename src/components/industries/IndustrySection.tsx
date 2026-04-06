@@ -186,8 +186,8 @@ export default function IndustrySection({
                   />
                 </div>
 
-                {/* Numbered capability rows — 2 columns, 3 rows */}
-                <div className="p-4 grid grid-cols-2 gap-2">
+                {/* Numbered capability rows — 1 col on mobile, 2 columns on sm+ */}
+                <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {ind.capabilities.map((cap, i) => (
                     <motion.div
                       key={i}
@@ -310,8 +310,8 @@ export default function IndustrySection({
                   className="absolute right-0 top-0 bottom-0 w-28 pointer-events-none"
                   style={{ background: "linear-gradient(to left, rgba(28,117,188,0.1), transparent)" }}
                 />
-                <div className="relative flex items-center justify-between gap-4">
-                  <div className="min-w-0">
+                <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div className="min-w-0 w-full sm:w-auto">
                     <p
                       className="text-[9px] font-extrabold uppercase tracking-[0.3em] mb-1"
                       style={{ color: BRAND_START }}

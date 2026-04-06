@@ -1,8 +1,22 @@
+import type { Metadata } from "next";
 import ServicesHero from "@/components/services/ServicesHero";
 import StickyFeatureService from "@/components/services/StickyFeatureService";
 import ServicesBentoGrid from "@/components/services/ServicesBentoGrid";
 import CustomSoftwareSection from "@/components/services/CustomSoftwareSection";
 import { servicesTabs } from "@/data/servicesData";
+
+export const metadata: Metadata = {
+  title: "Our Services",
+  description:
+    "Explore SynticAI's full range of services: AI development, custom software, machine learning, NLP, computer vision, chatbots, ChatGPT integration, big data analytics, and DevOps.",
+  alternates: { canonical: "https://synticai.com/services" },
+  openGraph: {
+    title: "AI & Software Development Services – SynticAI",
+    description:
+      "Explore SynticAI's full range of services: AI development, custom software, machine learning, NLP, computer vision, chatbots, ChatGPT integration, big data analytics, and DevOps.",
+    url: "https://synticai.com/services",
+  },
+};
 
 export default function ServicesPage() {
   // Section 1: Custom Software Development (featured)

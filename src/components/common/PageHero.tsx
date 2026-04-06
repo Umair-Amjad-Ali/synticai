@@ -21,7 +21,7 @@ export default function PageHero({ title, subtitle }: PageHeroProps) {
   };
 
   return (
-    <div className="relative w-full min-h-[60vh] md:min-h-[70vh] flex flex-col items-center justify-center px-4 overflow-hidden bg-dark-bg pt-32 pb-20" style={{ height: 'calc(100vh - 0rem)' }}>
+    <div className="relative w-full  min-h-[60vh] md:min-h-[70vh] flex flex-col items-center justify-center px-4 overflow-hidden bg-dark-bg pt-32 pb-20" style={{ height: 'calc(100vh - 0rem)' }}>
       {/* --- UNIQUE BACKGROUND ARCHITECTURE --- */}
       <div className="absolute inset-0 z-0">
         
@@ -85,7 +85,7 @@ export default function PageHero({ title, subtitle }: PageHeroProps) {
       </div>
 
       {/* --- CONTENT LAYOUT --- */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 mt-8 px-6 lg:px-12">
+      <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 mt-8 px-6 md:px-20">
         
         {/* Left Side: Text Content */}
         <div className="flex-1 w-full text-left">

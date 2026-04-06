@@ -55,7 +55,7 @@ export default function LifeCTA() {
           {/* Right Button */}
           <div className="shrink-0">
             <Link 
-              href="/careers"
+              href="/company/careers"
               className="group/btn relative inline-flex items-center justify-center"
             >
               {/* Button Shadow */}

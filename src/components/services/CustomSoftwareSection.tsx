@@ -50,7 +50,7 @@ export default function CustomSoftwareSection() {
   return (
     <section id="custom-software" className="w-full bg-dark-bg relative">
 
-      <div className="max-w-6xl mx-auto px-6 pt-14 pb-8 text-left flex flex-col items-start gap-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 pt-14 pb-8 text-left flex flex-col items-start gap-4 relative z-10">
         
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -92,7 +92,7 @@ export default function CustomSoftwareSection() {
       </div>
 
       {/* ── B. Unique Capability Directory (Interactive Accordion Rows) ── */}
-      <div className="max-w-6xl mx-auto px-6 pb-14">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 pb-14">
         <div className="flex flex-col border-t border-white/5 relative z-10 w-full">
           {capabilities.map((cap, idx) => {
             const Icon = cap.icon;
@@ -289,7 +289,7 @@ export default function CustomSoftwareSection() {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-light/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto px-6 text-center mb-14 relative z-10 flex flex-col items-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 text-center mb-14 relative z-10 flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -338,7 +338,7 @@ export default function CustomSoftwareSection() {
           }}
         />
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stats.map((s, i) => (
               <motion.div
