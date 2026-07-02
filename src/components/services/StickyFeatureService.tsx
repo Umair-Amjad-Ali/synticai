@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { ServiceTab } from "@/data/servicesData";
@@ -16,14 +16,6 @@ interface StickyFeatureServiceProps {
 export default function StickyFeatureService({ id, service, imageSrc, theme = "dark" }: StickyFeatureServiceProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  // Extremely subtle parallax for the image inside its container
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-
   const isLight = theme === "light";
 
   return (
@@ -57,7 +49,7 @@ export default function StickyFeatureService({ id, service, imageSrc, theme = "d
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className={`absolute top-[5%] right-0 lg:-right-[5%] z-20 backdrop-blur-xl px-5 py-3.5 rounded-2xl border flex items-center gap-3 shadow-[0_20px_40px_rgba(0,0,0,0.15)] ${isLight ? "bg-white/90 border-gray-200 text-dark-bg" : "bg-dark-card-2/90 border-white/10 text-white"}`}
+              className={`absolute top-[5%] right-0 lg:-right-[5%] z-20 backdrop-blur-xl px-5 py-3.5 rounded-2xl border flex items-center gap-3 shadow-[0_20px_40px_rgba(0,0,0,0.15)] transform-gpu will-change-transform ${isLight ? "bg-white/90 border-gray-200 text-dark-bg" : "bg-dark-card-2/90 border-white/10 text-white"}`}
             >
                <div className={`w-2 h-2 rounded-full animate-pulse ${isLight ? "bg-brand" : "bg-brand"}`} />
                <span className="text-[10px] font-bold tracking-widest uppercase truncate max-w-[120px]">
@@ -69,7 +61,7 @@ export default function StickyFeatureService({ id, service, imageSrc, theme = "d
             <motion.div 
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className={`absolute bottom-[5%] left-0 lg:-left-[5%] z-20 backdrop-blur-xl p-3 md:p-4 rounded-2xl border shadow-[0_20px_40px_rgba(0,0,0,0.2)] flex items-center gap-3 ${isLight ? "bg-white/90 border-gray-200 text-dark-bg" : "bg-dark-card-2/90 border-white/10 text-white"}`}
+              className={`absolute bottom-[5%] left-0 lg:-left-[5%] z-20 backdrop-blur-xl p-3 md:p-4 rounded-2xl border shadow-[0_20px_40px_rgba(0,0,0,0.2)] flex items-center gap-3 transform-gpu will-change-transform ${isLight ? "bg-white/90 border-gray-200 text-dark-bg" : "bg-dark-card-2/90 border-white/10 text-white"}`}
             >
                <div className={`w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center border shadow-inner ${isLight ? "bg-brand/10 border-brand/20" : "bg-brand-light/10 border-brand-light/20"}`}>
                  <div className="w-4 h-4 rounded-full border-2 border-dashed animate-[spin_4s_linear_infinite]" style={{ borderColor: isLight ? "#1C75BC" : "#45d1f5" }} />

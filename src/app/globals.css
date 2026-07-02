@@ -130,3 +130,36 @@ body {
   .border-brand       { border-color: #1C75BC; }
   .border-brand-light { border-color: #45d1f5; }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   GPU Hardware Acceleration & Scroll Performance Optimizations
+   ───────────────────────────────────────────────────────────── */
+
+/* Automatically offload all large background blur blobs to the GPU */
+[class*="blur-["] {
+  transform: translate3d(0, 0, 0);
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Force hardware acceleration on elements with transitions/animations */
+.transform-gpu,
+[class*="transition-all"],
+[class*="transition-transform"] {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Scroll performance & rendering optimizations */
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent layout shifts on lazy-loaded images */
+img {
+  content-visibility: auto;
+}

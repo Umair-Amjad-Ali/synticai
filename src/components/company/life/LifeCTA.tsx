@@ -16,7 +16,7 @@ export default function LifeCTA() {
         <motion.div 
           animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
-          className="flex gap-8 text-[120px] sm:text-[180px] md:text-[240px] font-black uppercase italic tracking-tighter"
+          className="flex gap-8 text-[120px] sm:text-[180px] md:text-[240px] font-black uppercase italic tracking-tighter transform-gpu will-change-transform"
         >
           <span className="text-white">Build the future.</span>
           <span className="text-transparent" style={{ WebkitTextStroke: "2px white" }}>Democratize AI.</span>

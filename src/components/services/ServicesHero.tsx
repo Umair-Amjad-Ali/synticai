@@ -110,9 +110,9 @@ export default function ServicesHero() {
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, type: "spring", bounce: 0.4 }}
-              className="absolute w-40 h-40 sm:w-56 sm:h-56 rounded-[32px] border-4 border-white/5 bg-brand/10 backdrop-blur-2xl shadow-[0_0_80px_rgba(28,117,188,0.3)] flex items-center justify-center z-20 rotate-12 hover:rotate-0 transition-transform duration-700"
+              className="absolute w-40 h-40 sm:w-56 sm:h-56 rounded-[32px] border-4 border-white/5 bg-brand/10 backdrop-blur-2xl shadow-[0_0_80px_rgba(28,117,188,0.3)] flex items-center justify-center z-20 rotate-12 hover:rotate-0 transition-transform duration-700 transform-gpu will-change-transform"
             >
-              <div className="w-28 h-28 sm:w-40 sm:h-40 rounded-[24px] border border-white/20 bg-dark-bg/90 backdrop-blur-xl flex flex-col items-center justify-center -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+              <div className="w-28 h-28 sm:w-40 sm:h-40 rounded-[24px] border border-white/20 bg-dark-bg/90 backdrop-blur-xl flex flex-col items-center justify-center -rotate-12 group-hover:rotate-0 transition-transform duration-700 transform-gpu" >
                 <span className="block text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-b from-white to-white/50 mb-1">12+</span>
                 <span className="block text-brand text-[10px] sm:text-xs font-bold tracking-widest uppercase">Specialties</span>
               </div>
@@ -123,7 +123,7 @@ export default function ServicesHero() {
               variants={floatAnimation1}
               initial="initial"
               animate="animate"
-              className="absolute top-[5%] left-[0%] md:-left-[5%] z-30 p-3 pr-5 rounded-2xl border border-white/10 bg-dark-bg/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex items-center gap-3"
+              className="absolute top-[5%] left-[0%] md:-left-[5%] z-30 p-3 pr-5 rounded-2xl border border-white/10 bg-dark-bg/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex items-center gap-3 transform-gpu will-change-transform"
             >
               <div className="w-10 h-10 rounded-xl border border-white/10 bg-brand/20 flex items-center justify-center shadow-inner">
                 <BrainCircuit className="w-5 h-5 text-brand" />
@@ -136,7 +136,7 @@ export default function ServicesHero() {
               variants={floatAnimation2}
               initial="initial"
               animate="animate"
-              className="absolute bottom-[10%] left-[5%] md:left-[10%] z-30 p-3 pr-5 rounded-2xl border border-brand-light/30 bg-dark-bg/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(69,209,245,0.15)] flex items-center gap-3"
+              className="absolute bottom-[10%] left-[5%] md:left-[10%] z-30 p-3 pr-5 rounded-2xl border border-brand-light/30 bg-dark-bg/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(69,209,245,0.15)] flex items-center gap-3 transform-gpu will-change-transform"
             >
               <div className="w-10 h-10 rounded-xl border border-white/10 bg-brand/20 flex items-center justify-center shadow-inner">
                 <Code2 className="w-5 h-5 text-white" />
@@ -149,7 +149,7 @@ export default function ServicesHero() {
               variants={floatAnimation3}
               initial="initial"
               animate="animate"
-              className="absolute top-[35%] right-[0%] md:-right-[5%] z-50 p-3 pl-5 rounded-2xl border border-white/10 bg-dark-bg/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex items-center gap-3"
+              className="absolute top-[35%] right-[0%] md:-right-[5%] z-50 p-3 pl-5 rounded-2xl border border-white/10 bg-dark-bg/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex items-center gap-3 transform-gpu will-change-transform"
             >
               <span className="text-white text-sm font-bold leading-tight text-right">Data &<br/>Analytics</span>
               <div className="w-10 h-10 rounded-xl border border-white/10 bg-brand-dark/60 flex items-center justify-center shadow-inner">

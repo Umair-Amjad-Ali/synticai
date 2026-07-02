@@ -13,6 +13,10 @@ export default function IndustriesHero() {
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
+          maskImage:
+            "linear-gradient(to bottom, transparent, transparent 100px, black 160px, black 80%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent, transparent 100px, black 160px, black 80%, transparent 100%)",
         }}
       />
       {/* Radial glow */}

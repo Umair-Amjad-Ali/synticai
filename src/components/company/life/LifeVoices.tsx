@@ -116,7 +116,7 @@ export default function LifeVoices() {
                       ease: "easeInOut",
                       delay: idx * 0.2
                     }}
-                    className={`relative w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border-2 transition-all duration-500 ease-out focus:outline-hidden ${
+                    className={`relative w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border-2 transition-all duration-500 ease-out focus:outline-hidden transform-gpu ${
                       isActive 
                         ? "border-brand shadow-[0_0_30px_rgba(69,209,245,0.6)] scale-125 z-40" 
                         : "border-white/20 opacity-50 hover:opacity-100 hover:scale-110 hover:border-white/50"

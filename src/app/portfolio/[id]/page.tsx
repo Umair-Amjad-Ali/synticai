@@ -1,6 +1,26 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { portfolioProjects } from "@/data/PortfolioData";
 import CaseStudyLayout from "@/components/portfolio/CaseStudyLayout";
+
+export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = portfolioProjects.find((p) => p.id === id);
+  if (!project) return {};
+
+  return {
+    title: `${project.title} Case Study`,
+    description: project.description,
+    alternates: {
+      canonical: `https://synticai.com/portfolio/${project.id}`,
+    },
+    openGraph: {
+      title: `${project.title} | SynticAI Case Study`,
+      description: project.description,
+      url: `https://synticai.com/portfolio/${project.id}`,
+    },
+  };
+}
 
 interface CaseStudyPageProps {
   params: {

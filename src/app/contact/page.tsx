@@ -9,7 +9,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Linkedin,
-  Github,
   Twitter,
 } from "lucide-react";
 
@@ -23,20 +22,15 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+1 (555) 000-0000",
-    href: "tel:+15550000000",
+    value: "03288761182",
+    href: "tel:03288761182",
   },
   {
     icon: MapPin,
-    label: "Our Office",
-    value: "San Francisco, CA · Remote-first worldwide",
+    label: "Locations",
+    value: "United States · Pakistan",
     href: "#",
   },
-];
-
-const socials = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Github, href: "#", label: "GitHub" },
 ];
 
 export default function ContactPage() {
@@ -47,6 +41,7 @@ export default function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -54,13 +49,47 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/synticaidev@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            Name: form.name,
+            Email: form.email,
+            Company: form.company,
+            Message: form.message,
+          }),
+        },
+      );
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert(
+          "Failed to send message. Please try again or email us directly at contact@synticai.com",
+        );
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      alert(
+        "An error occurred. Please try again or email us directly at contact@synticai.com",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
-    <main className="min-h-screen bg-dark-bg pt-17.5 font-sans selection:bg-brand-light/20">
+    <main className="min-h-screen bg-dark-bg pt-10 font-sans selection:bg-brand-light/20">
       {/* ── HERO ── */}
       <section className="relative w-full pt-20 pb-16 overflow-hidden">
         {/* Grid */}
@@ -70,9 +99,9 @@ export default function ContactPage() {
             backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
             backgroundSize: "50px 50px",
             maskImage:
-              "radial-gradient(ellipse at center, black 20%, transparent 75%)",
+              "linear-gradient(to bottom, transparent, transparent 100px, black 160px, black 80%, transparent 100%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse at center, black 20%, transparent 75%)",
+              "linear-gradient(to bottom, transparent, transparent 100px, black 160px, black 80%, transparent 100%)",
           }}
         />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
@@ -113,7 +142,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── MAIN CONTENT ── */}
-      <section className="max-w-6xl mx-auto px-6 pb-32">
+      <section className="max-w-6xl mx-auto px-6 pb-22">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
           {/* ── LEFT: Contact Info ── */}
           <motion.div
@@ -123,7 +152,7 @@ export default function ContactPage() {
             className="lg:col-span-2 flex flex-col gap-8"
           >
             <div>
-              <h2 className="text-sm font-bold text-white/40 uppercase tracking-widest mb-6">
+              <h2 className="text-sm font-bold text-white/40 uppercase tracking-widest mb-5">
                 Contact Info
               </h2>
               <div className="flex flex-col gap-5">
@@ -152,25 +181,24 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Divider */}
-            <div className="h-px bg-white/5" />
-
             {/* Socials */}
             <div>
-              <h2 className="text-sm font-bold text-white/40 uppercase tracking-widest mb-5">
+              <h2 className="text-sm font-bold text-white/40 uppercase tracking-widest mb-3">
                 Find Us Online
               </h2>
               <div className="flex gap-3">
-                {socials.map(({ icon: Icon, href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    aria-label={label}
-                    className="w-10 h-10 rounded-xl border border-white/10 bg-white/5 hover:bg-brand/20 hover:border-brand/30 flex items-center justify-center transition-all duration-300"
-                  >
-                    <Icon className="w-4 h-4 text-gray-400 hover:text-brand" />
-                  </a>
-                ))}
+                <a
+                  href="https://www.linkedin.com/company/synticai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex items-center gap-2 px-4 py-2.5 text-[13px] font-semibold rounded-xl bg-linear-to-r from-indigo-500/10 to-purple-500/10 border border-white/10 hover:border-brand hover:from-brand/20 hover:to-brand-light/20 transition-all duration-300 text-gray-300 hover:text-white shadow-xs"
+                >
+                  <Linkedin
+                    size={15}
+                    className="text-[#0077B5] group-hover:text-white transition-colors"
+                  />
+                  <span>Follow on LinkedIn</span>
+                </a>
               </div>
             </div>
 
@@ -310,10 +338,13 @@ export default function ContactPage() {
                     {/* Submit */}
                     <button
                       type="submit"
-                      className="group relative w-full py-4 rounded-2xl bg-brand hover:bg-brand-dark text-white font-bold text-sm transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 mt-2"
+                      disabled={submitting}
+                      className="group relative w-full py-4 rounded-2xl bg-brand hover:bg-brand-dark text-white font-bold text-sm transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      {submitting ? "Sending..." : "Send Message"}
+                      {!submitting && (
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      )}
                     </button>
 
                     <p className="text-[11px] text-center text-gray-600">

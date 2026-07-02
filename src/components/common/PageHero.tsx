@@ -223,10 +223,10 @@ export default function PageHero({ title, subtitle }: PageHeroProps) {
                   fill="none" 
                   stroke="url(#gradient-ring)" 
                   strokeWidth="4"
-                  strokeDasharray="314"
-                  initial={{ strokeDashoffset: 314 }}
-                  animate={{ strokeDashoffset: [314, 0, 314] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  strokeDasharray="120 194"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                  style={{ transformOrigin: "64px 64px" }}
                   strokeLinecap="round"
                 />
                 <defs>

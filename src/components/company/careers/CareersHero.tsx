@@ -7,7 +7,7 @@ export default function CareersHero() {
     <section className="relative w-full pt-32 pb-20 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-brand/10 blur-[150px] rounded-full pointer-events-none z-0" />
-      
+
       {/* Grid Pattern Background */}
       <div
         className="absolute inset-0 opacity-[0.05] pointer-events-none z-0"
@@ -15,9 +15,9 @@ export default function CareersHero() {
           backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
           maskImage:
-            "radial-gradient(ellipse at center 40%, black 20%, transparent 80%)",
+            "linear-gradient(to bottom, transparent, transparent 100px, black 160px, black 80%, transparent 100%)",
           WebkitMaskImage:
-            "radial-gradient(ellipse at center 40%, black 20%, transparent 80%)",
+            "linear-gradient(to bottom, transparent, transparent 100px, black 160px, black 80%, transparent 100%)",
         }}
       />
 
@@ -53,7 +53,8 @@ export default function CareersHero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-medium"
         >
-          We are always looking for passionate people to join our mission. Explore our open roles and find where you fit in.
+          We are always looking for passionate people to join our mission.
+          Explore our open roles and find where you fit in.
         </motion.p>
       </div>
     </section>

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
   return (
-    <main className="min-h-screen bg-dark-bg font-sans selection:bg-brand-light/20 pt-17.5">
+    <main className="min-h-screen bg-dark-bg font-sans selection:bg-brand-light/20 pt-20">
       <CareersHero />
       <JobPostings />
       {/* <ApplicationForm /> */}

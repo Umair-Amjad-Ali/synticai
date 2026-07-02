@@ -14,6 +14,7 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const pathname = usePathname();
+  const isLightPage = pathname.startsWith("/portfolio");
   const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
 
@@ -38,6 +39,7 @@ export default function Navbar() {
     },
     { name: "Industries", href: "/industries" },
     { name: "Portfolio", href: "/portfolio" },
+    { name: "Careers", href: "/company/careers" },
     {
       name: "Company",
       href: "/company",
@@ -62,25 +64,27 @@ export default function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              boxShadow: scrolled
+              boxShadow: (scrolled || isLightPage)
                 ? "0 0 0 1px rgba(255,255,255,0.08), 0 24px 64px rgba(0,0,0,0.18), 0 0 0 0.5px rgba(99,102,241,0.15) inset"
-                : "none",
+                : "0 0 0 1px rgba(255,255,255,0), 0 24px 64px rgba(0,0,0,0), 0 0 0 0.5px rgba(99,102,241,0) inset",
+              transitionProperty: "background-color, border-color, backdrop-filter, -webkit-backdrop-filter, box-shadow",
+              transitionDuration: "500ms",
+              transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
             }}
-            className={`w-full rounded-2xl transition-all duration-500 pointer-events-auto ${
-            scrolled
-              ? "bg-[#0d0f1a]/60 backdrop-blur-2xl border border-white/6"
-              : "bg-transparent"
-          }`}
+            className={`w-full rounded-2xl border pointer-events-auto ${
+              (scrolled || isLightPage)
+                ? "bg-[#0d0f1a]/85 backdrop-blur-2xl border-white/10"
+                : "bg-[#0d0f1a]/0 backdrop-blur-none border-white/0"
+            }`}
         >
           {/* Gradient top border shimmer */}
-          {scrolled && (
-            <div
-              className="absolute inset-x-0 top-0 h-px rounded-t-2xl pointer-events-none"
-              style={{
-                background: "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.6) 30%, rgba(168,85,247,0.6) 60%, transparent 100%)",
-              }}
-            />
-          )}
+          <div
+            className="absolute inset-x-0 top-0 h-px rounded-t-2xl pointer-events-none transition-opacity duration-500"
+            style={{
+              background: "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.6) 30%, rgba(168,85,247,0.6) 60%, transparent 100%)",
+              opacity: (scrolled || isLightPage) ? 1 : 0,
+            }}
+          />
 
           <div className="px-4 sm:px-6">
             <div className={`flex items-center justify-between transition-all duration-500 h-[62px]`}>
@@ -109,8 +113,9 @@ export default function Navbar() {
               <div className="hidden md:flex items-center gap-0.5">
                 {navLinks.map((link, index) => {
                   const isActive =
-                    (link.href !== "/" && pathname.startsWith(link.href)) ||
-                    pathname === link.href;
+                    link.href === "/company"
+                      ? pathname.startsWith("/company") && pathname !== "/company/careers"
+                      : (link.href !== "/" && pathname.startsWith(link.href)) || pathname === link.href;
 
                   if (link.subItems) {
                     return (
@@ -127,7 +132,7 @@ export default function Navbar() {
                           className={`relative flex items-center gap-1.5 px-4 py-2 rounded-xl text-[13px] font-medium transition-all duration-200 ${
                             isActive
                               ? "text-white"
-                              : "text-gray-200 hover:text-white"
+                              : "text-white/80 hover:text-white"
                           }`}
                         >
                           {/* Hover pill bg */}
@@ -138,15 +143,15 @@ export default function Navbar() {
                               transition={{ type: "spring", stiffness: 400, damping: 30 }}
                             />
                           )}
-                          {isActive && (
+                           {isActive && (
                             <motion.div
                               layoutId="navActivePill"
-                              className="absolute inset-0 rounded-xl bg-indigo-500/10 border border-indigo-500/20"
+                              className="absolute inset-0 rounded-xl bg-linear-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-400/35 shadow-[0_0_12px_rgba(99,102,241,0.15)]"
                               transition={{ type: "spring", stiffness: 400, damping: 30 }}
                             />
                           )}
                           <span className="relative z-10">{link.name}</span>
-                          <ChevronDown className="relative z-10 w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-gray-500" />
+                          <ChevronDown className="relative z-10 w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-white/40 group-hover:text-white" />
                         </motion.button>
 
                         {/* Bridge */}
@@ -155,38 +160,37 @@ export default function Navbar() {
                         {/* Dropdown */}
                         <div className="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 scale-95 group-hover:scale-100 origin-top z-50">
                           <div
-                            className="rounded-2xl p-2 min-w-[220px] border border-white/8"
+                            className="rounded-2xl p-1.5 w-[250px] border border-white/10"
                             style={{
-                              background: "rgba(13, 15, 26, 0.92)",
-                              backdropFilter: "blur(24px)",
-                              boxShadow: "0 32px 80px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.06) inset",
+                              background: "rgba(10, 11, 20, 0.88)",
+                              backdropFilter: "blur(28px)",
+                              boxShadow: "0 32px 80px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.06) inset",
                             }}
                           >
-                            {/* Dropdown top shimmer */}
-                            <div
-                              className="absolute inset-x-0 top-0 h-px rounded-t-2xl pointer-events-none"
-                              style={{ background: "linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent)" }}
-                            />
                             {link.subItems.map((sub, i) => (
                               <Link
                                 key={sub.name}
                                 href={sub.href}
-                                className={`group/sub flex items-center gap-3 px-3.5 py-3 rounded-xl transition-all duration-200 ${
+                                className={`relative group/sub flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl transition-all duration-300 ${
                                   pathname === sub.href
                                     ? "bg-indigo-500/10 text-indigo-300"
-                                    : "text-gray-200 hover:text-white hover:bg-white/6"
+                                    : "text-gray-200 hover:bg-white/[0.035] hover:text-white"
                                 }`}
                               >
-                                <div className="w-7 h-7 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center shrink-0 group-hover/sub:bg-indigo-500/10 group-hover/sub:border-indigo-500/20 transition-all duration-200">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-gray-600 group-hover/sub:bg-indigo-400 transition-colors" />
-                                </div>
-                                <div>
-                                  <div className="text-[13px] font-semibold leading-none mb-1">{sub.name}</div>
+                                {/* Left slide-in solid vertical pill glow */}
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-[55%] rounded-r-full bg-indigo-500 opacity-0 -translate-x-1 group-hover/sub:opacity-100 group-hover/sub:translate-x-0 transition-all duration-300" />
+                                
+                                <div className="flex-1 min-w-0 pl-1.5">
+                                  <div className="text-[13px] font-semibold text-white/90 leading-tight transition-colors group-hover/sub:text-indigo-400">
+                                    {sub.name}
+                                  </div>
                                   {sub.desc && (
-                                    <div className="text-[11px] text-gray-600 group-hover/sub:text-gray-500 transition-colors">{sub.desc}</div>
+                                    <div className="text-[11px] text-gray-400 leading-tight mt-1 transition-colors group-hover/sub:text-gray-300">
+                                      {sub.desc}
+                                    </div>
                                   )}
                                 </div>
-                                <ArrowUpRight className="ml-auto w-3.5 h-3.5 text-gray-700 opacity-0 group-hover/sub:opacity-100 group-hover/sub:text-indigo-400 transition-all duration-200 -translate-x-1 group-hover/sub:translate-x-0" />
+                                <ArrowUpRight className="w-4 h-4 text-white/20 opacity-0 group-hover/sub:opacity-100 group-hover/sub:text-indigo-400 transition-all duration-300 shrink-0 -translate-x-1 group-hover/sub:translate-x-0" />
                               </Link>
                             ))}
                           </div>
@@ -208,7 +212,7 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         className={`relative flex items-center px-4 py-2 rounded-xl text-[13px] font-medium transition-all duration-200 ${
-                          isActive ? "text-white" : "text-gray-200 hover:text-white"
+                          isActive ? "text-white" : "text-white/80 hover:text-white"
                         }`}
                       >
                         {hoveredLink === link.name && (
@@ -221,7 +225,7 @@ export default function Navbar() {
                         {isActive && (
                           <motion.div
                             layoutId="navActivePill"
-                            className="absolute inset-0 rounded-xl bg-indigo-500/10 border border-indigo-500/20"
+                            className="absolute inset-0 rounded-xl bg-linear-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-400/35 shadow-[0_0_12px_rgba(99,102,241,0.15)]"
                             transition={{ type: "spring", stiffness: 400, damping: 30 }}
                           />
                         )}
@@ -241,29 +245,9 @@ export default function Navbar() {
                 >
                   <Link
                     href="/contact"
-                    className="group relative flex items-center gap-2 px-3 sm:px-5 py-2.5 text-[12px] sm:text-[13px] font-semibold rounded-xl overflow-hidden transition-all duration-300"
+                    className="relative flex items-center px-4 py-2 text-[12px] sm:text-[13px] font-semibold rounded-xl bg-linear-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-400/35 shadow-[0_0_12px_rgba(99,102,241,0.15)] text-white hover:from-indigo-500/30 hover:to-purple-500/30 hover:border-indigo-400/50 hover:shadow-[0_0_16px_rgba(99,102,241,0.25)] transition-all duration-300"
                   >
-                    {/* Gradient border */}
-                    <span
-                      className="absolute inset-0 rounded-xl p-px"
-                      style={{
-                        background: "linear-gradient(135deg, rgba(99,102,241,0.7) 0%, rgba(168,85,247,0.7) 100%)",
-                      }}
-                    >
-                      <span
-                        className="absolute inset-0 rounded-[11px]"
-                        style={{ background: "rgba(30,32,50,0.9)" }}
-                      />
-                    </span>
-                    {/* Hover glow fill */}
-                    <span
-                      className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{
-                        background: "linear-gradient(135deg, rgba(99,102,241,0.85) 0%, rgba(168,85,247,0.85) 100%)",
-                      }}
-                    />
-                    <Sparkles className="relative z-10 w-3.5 h-3.5 text-indigo-400 group-hover:text-white transition-colors duration-300 hidden sm:block" />
-                    <span className="relative z-10 text-gray-200 group-hover:text-white transition-colors duration-300">
+                    <span className="relative z-10">
                       Get in Touch
                     </span>
                   </Link>
@@ -341,8 +325,9 @@ export default function Navbar() {
               <div className="p-3 flex flex-col gap-1">
                 {navLinks.map((link, i) => {
                   const isActive =
-                    (link.href !== "/" && pathname.startsWith(link.href)) ||
-                    pathname === link.href;
+                    link.href === "/company"
+                      ? pathname.startsWith("/company") && pathname !== "/company/careers"
+                      : (link.href !== "/" && pathname.startsWith(link.href)) || pathname === link.href;
 
                   if (link.subItems) {
                     const isExpanded = link.name === "Company" ? companyOpen : servicesOpen;
@@ -385,13 +370,13 @@ export default function Navbar() {
                                     className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-[12px] font-medium transition-all ${
                                       pathname === sub.href
                                         ? "text-indigo-300 bg-indigo-500/10"
-                                        : "text-gray-500 hover:text-white hover:bg-white/5"
+                                        : "text-gray-300 hover:text-white hover:bg-white/5"
                                     }`}
                                   >
                                     <div className="w-1 h-1 rounded-full bg-indigo-500/50" />
                                     {sub.name}
                                     {sub.desc && (
-                                      <span className="ml-auto text-[11px] text-gray-700">{sub.desc}</span>
+                                      <span className="ml-auto text-[11px] text-gray-400">{sub.desc}</span>
                                     )}
                                   </Link>
                                 ))}

@@ -105,12 +105,12 @@ export default function InfoSection() {
           <motion.div
             animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 right-10 w-64 h-64 bg-brand rounded-full blur-[80px] -z-20"
+            className="absolute top-0 right-10 w-64 h-64 bg-brand rounded-full blur-[80px] -z-20 transform-gpu will-change-transform"
           />
           <motion.div
             animate={{ scale: [1, 1.3, 1], opacity: [0.08, 0.15, 0.08] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-10 left-0 w-72 h-72 bg-brand-light rounded-full blur-[90px] -z-20"
+            className="absolute bottom-10 left-0 w-72 h-72 bg-brand-light rounded-full blur-[90px] -z-20 transform-gpu will-change-transform"
           />
 
           {/* Rotating wireframe ring */}
@@ -126,7 +126,7 @@ export default function InfoSection() {
             <motion.div
               animate={{ rotate: [-2, 2, -2] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-x-4 inset-y-[-20px] rounded-4xl border-2 border-brand/20 bg-brand/5 backdrop-blur-sm -z-10"
+              className="absolute inset-x-4 inset-y-[-20px] rounded-4xl border-2 border-brand/20 bg-brand/5 backdrop-blur-sm -z-10 transform-gpu will-change-transform"
             />
 
             {/* Animated image container */}
