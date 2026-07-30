@@ -46,7 +46,6 @@ export default function Navbar() {
       subItems: [
         { name: "About Us", href: "/company/about", desc: "Our story & mission" },
         { name: "Life at SynticAI", href: "/company/life", desc: "Culture & values" },
-        { name: "Careers", href: "/company/careers", desc: "Join our team" },
       ],
     },
     { name: "Resource", href: "/resource" },
