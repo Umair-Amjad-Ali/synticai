@@ -124,11 +124,8 @@ export default function Footer() {
                   <MapPin size={13} className="text-gray-400" />
                 </div>
                 <div className="flex flex-col items-start gap-1 pt-1.5">
-                  <span className="hover:text-white transition-colors cursor-pointer font-medium">
-                    United States
-                  </span>
-                  <span className="hover:text-white transition-colors cursor-pointer font-medium">
-                    Pakistan
+                  <span className="hover:text-white transition-colors cursor-pointer font-medium leading-tight">
+                    Satellite Town 67B Bahawalpur, Punjab, Pakistan
                   </span>
                 </div>
               </div>

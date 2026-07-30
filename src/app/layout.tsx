@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | SynticAI",
   },
   description:
-    "SynticAI is a premier AI and custom software development company. We build enterprise-grade AI solutions, machine learning models, chatbots, and intelligent software for businesses worldwide.",
+    "SynticAI is an AI and custom software development agency. We build intelligent AI applications, Flutter mobile apps, web solutions, and custom software for businesses.",
   keywords: [
     "SynticAI",
     "Syntic AI",

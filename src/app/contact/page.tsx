@@ -27,8 +27,8 @@ const contactDetails = [
   },
   {
     icon: MapPin,
-    label: "Locations",
-    value: "United States · Pakistan",
+    label: "Location",
+    value: "Satellite Town 67B Bahawalpur, Punjab, Pakistan",
     href: "#",
   },
 ];

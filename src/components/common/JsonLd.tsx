@@ -16,13 +16,15 @@ const JsonLd = () => {
       url: "https://synticai.com/og-image.png",
     },
     description:
-      "SynticAI is a premier AI and custom software development company helping businesses across the globe build intelligent, enterprise-grade AI solutions.",
+      "SynticAI is an AI and custom software development agency building intelligent applications, mobile apps, and custom web software solutions.",
     email: "contact@synticai.com",
-    foundingDate: "2015",
-    numberOfEmployees: {
-      "@type": "QuantitativeValue",
-      minValue: 10,
-      maxValue: 50,
+    telephone: "03288761182",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Satellite Town 67B",
+      addressLocality: "Bahawalpur",
+      addressRegion: "Punjab",
+      addressCountry: "Pakistan",
     },
     areaServed: "Worldwide",
     serviceType: [

@@ -43,19 +43,18 @@ export default function AboutHero() {
             <div className="flex gap-5 mb-10">
               <div className="w-[4px] bg-brand rounded-full shrink-0" />
               <p className="text-lg text-gray-400 leading-relaxed">
-                We are a premier engineering collective democratizing highly advanced,
-                enterprise-grade AI and custom software development across the globe.
+                We are an AI & custom software development agency crafting intelligent applications, mobile apps, and custom software solutions.
               </p>
             </div>
 
             <div className="grid grid-cols-3 w-full border border-white/10 rounded-2xl overflow-hidden">
               <div className="px-2 sm:px-6 py-3 sm:py-5 bg-white/5">
-                <h4 className="text-xl sm:text-3xl font-black text-white leading-none">2016</h4>
-                <p className="text-brand text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2">Established</p>
+                <h4 className="text-xl sm:text-3xl font-black text-white leading-none">20+</h4>
+                <p className="text-brand text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2">Products Shipped</p>
               </div>
               <div className="px-2 sm:px-6 py-3 sm:py-5 bg-white/5 border-x border-white/10">
-                <h4 className="text-xl sm:text-3xl font-black text-white leading-none">110+</h4>
-                <p className={newLocal}>Products</p>
+                <h4 className="text-xl sm:text-3xl font-black text-white leading-none">5,000+</h4>
+                <p className="text-brand text-[8px] sm:text-[11px] font-bold uppercase tracking-normal sm:tracking-wider mt-1 sm:mt-2">Downloads</p>
               </div>
               <div className="px-2 sm:px-6 py-3 sm:py-5 bg-white/5">
                 <h4 className="text-xl sm:text-3xl font-black text-white leading-none">100%</h4>

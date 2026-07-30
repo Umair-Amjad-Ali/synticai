@@ -25,14 +25,14 @@ export const infoSlides: InfoSlide[] = [
     title: "Transform Healthcare with Intelligent AI Solutions",
     paragraphs: [
       "We build AI-powered healthcare systems that automate scheduling, secure patient records, and streamline daily medical operations — ensuring better care with reduced workload.",
-      "From diagnostic chatbots to hospital information management, our healthcare AI solutions cut operational costs and elevate patient satisfaction scores significantly.",
-      "Partner with SynticAI to modernize your clinic or hospital with HIPAA-compliant, data-driven systems built for tomorrow.",
+      "From diagnostic chatbots to health tracking, our healthcare AI solutions cut operational costs and elevate user satisfaction scores significantly.",
+      "Partner with SynticAI to modernize your clinic or application with secure, data-driven systems built for tomorrow.",
     ],
     imageSrc:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
     imageAlt: "AI Healthcare Solutions",
     stat: { value: "45%", label: "Wait Time Reduced" },
-    badge: "HIPAA Ready",
+    badge: "Secure Health",
   },
   {
     title: "Unlock the Power of Predictive Analytics & Big Data",
@@ -50,14 +50,14 @@ export const infoSlides: InfoSlide[] = [
   {
     title: "Build Smarter Systems with Custom Software & DevOps",
     paragraphs: [
-      "With over 10 years of experience, SynticAI delivers custom software solutions that transform your unique ideas into reality and give your business a true competitive edge.",
+      "SynticAI delivers custom software solutions that transform your unique ideas into reality and give your business a true competitive edge.",
       "Our DevOps and CI/CD pipelines ensure rapid, reliable software delivery — while containerization maintains consistent performance across all environments.",
       "We prioritize transparency, agile practices, and open communication to deliver innovative solutions that push the boundaries of what's possible.",
     ],
     imageSrc:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop",
     imageAlt: "Custom Software Development",
-    stat: { value: "110+", label: "Projects Delivered" },
+    stat: { value: "20+", label: "Projects Delivered" },
     badge: "Agile Ready",
   },
 ];

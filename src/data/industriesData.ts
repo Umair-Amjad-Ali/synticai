@@ -29,10 +29,10 @@ export const industriesData: Industry[] = [
     icon: HeartPulse,
     color: "#45d1f5",
     gradient: "from-[#45d1f5] to-[#1C75BC]",
-    challenge: "Siloed patient data, legacy system interoperability, and strict HIPAA compliance bottlenecks are creating massive operational friction for healthcare providers.",
+    challenge: "Siloed patient data and legacy system interoperability are creating operational friction for healthcare providers.",
     solution: "We engineer centralized, encrypted EMR systems and telemedicine architectures that unify data silos while maintaining zero-trust security across every access layer.",
     impact: [
-      { metric: "100%", label: "HIPAA Compliant" },
+      { metric: "100%", label: "Encrypted Data" },
       { metric: "40%", label: "Faster Onboarding" },
       { metric: "0", label: "Data Breaches" },
     ],
